@@ -34,7 +34,7 @@ public class DataRepositorySampleMain {
         new_args[new_args.length - 2] = "-addons";
         new_args[new_args.length - 1] = "com/company/addons_datarepository_sample.xml";
         TLcyMain.main(new_args);
-        DatosTiro datosTiro=new DatosTiro();
+       // DatosTiro datosTiro=new DatosTiro();
 
 
     }

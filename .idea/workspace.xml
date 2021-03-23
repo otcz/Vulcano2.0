@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/control/DatosTiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/control/DatosTiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DataRepositorySampleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DataRepositorySampleMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
