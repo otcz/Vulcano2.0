@@ -7,11 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
-      <change beforePath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/VulcanoCAFUE_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/VulcanoCAFUE_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/development.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/milstd2525b/ms2525baddon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/milstd2525b/ms2525baddon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lucy/app6a/app6aaddon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/app6a/app6aaddon.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lucy/milstd2525b/ms2525baddon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/milstd2525b/ms2525baddon.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
