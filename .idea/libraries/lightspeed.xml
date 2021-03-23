@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lightspeed">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/itext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/itextpdf-5.4.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/lightspeed" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/lightspeed" recursive="false" />
+  </library>
+</component>

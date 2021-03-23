@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="development">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/license/development.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
