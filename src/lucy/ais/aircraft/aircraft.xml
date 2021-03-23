@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AircraftPerformanceSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="aircraft.xsd">
+  <Aircraft name="ARINC-424 defaults">
+    <TurnRadius>3650</TurnRadius>
+    <ClimbRate>0.0822894</ClimbRate>
+    <DescentRate>0.0822894</DescentRate>
+    <HoldingLength>6482</HoldingLength>
+    <HoldingRadius>3650</HoldingRadius>
+    <ManualTerminationDistance>5475</ManualTerminationDistance>
+    <DefaultSpeed>108.0333333</DefaultSpeed>
+  </Aircraft>
+</AircraftPerformanceSettings>

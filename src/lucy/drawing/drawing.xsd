@@ -1,0 +1,747 @@
+<schema targetNamespace="http://www.luciad.com/resources/drawing/1.0"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:gml="http://www.opengis.net/gml/3.2"
+        xmlns:draw="http://www.luciad.com/resources/drawing/1.0"
+        xmlns:sld="http://www.opengis.net/sld"
+        elementFormDefault="qualified"
+        version="1.0.1">
+
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/sld" schemaLocation="http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd"/>
+  <!-- Base -->
+
+  <complexType name="ModelType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <!-- The maxOccurs of the featuredDescriptor element can be changed in the future to allow
+               multiple featured descriptors in one document (default value is 1). -->
+          <element ref="draw:featuredDescriptor" minOccurs="0"/>
+          <element ref="draw:styleRepository" minOccurs="0"/>
+          <element name="member" type="draw:MemberType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="version" type="string" default="1.0.1"/>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="model" type="draw:ModelType"/>
+
+
+  <!-- An id attribute can be added in the future to support multiple featured descriptors. -->
+  <complexType name="FeaturedDescriptorType">
+    <sequence>
+      <element name="feature" minOccurs="0" maxOccurs="unbounded">
+        <complexType>
+          <sequence>
+            <element name="name" type="string"/>
+            <element name="type" type="string"/>
+          </sequence>
+
+        </complexType>
+      </element>
+    </sequence>
+    <attribute name="name" type="string" />
+  </complexType>
+
+  <element name="featuredDescriptor" type="draw:FeaturedDescriptorType"/>
+
+  <complexType name="MemberType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureMemberType">
+        <sequence>
+          <element ref="gml:AbstractFeature"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="styleRepository" type="draw:StyleRepositoryType"/>
+
+  <complexType name="StyleRepositoryType">
+    <sequence>
+      <element ref="draw:style" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <element name="style" type="draw:StyleType"/>
+
+  <complexType name="StyleType">
+    <sequence>
+      <element ref="sld:FeatureTypeStyle" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+    <attribute name="id" type="ID" />
+    <attribute name="href" type="IDREF" />
+  </complexType>
+
+  <!-- A featured descriptor id can be added in the future to supporte multiple featured descriptors. -->
+  <complexType name="SLDDomainObjectType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <!-- The maxOccurs of the geometryProperty element can be changed in the future to allow
+               multiple geometries in one feature (default value is 1). -->
+          <element ref="draw:geometryProperty" minOccurs="0"/>
+          <element ref="draw:featureProperty" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="style" type="draw:StyleType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="sldDomainObject" type="draw:SLDDomainObjectType" substitutionGroup="gml:AbstractFeature"/>
+
+  <!-- Geometries -->
+
+  <complexType name="EllipseType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:pos"/>
+          <element name="semiMajorAxis" type="double"/>
+          <element name="semiMinorAxis" type="double"/>
+          <element name="rotationAngle" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="ellipse" type="draw:EllipseType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="ArcType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:pos"/>
+          <element name="semiMajorAxis" type="double"/>
+          <element name="semiMinorAxis" type="double"/>
+          <element name="rotationAngle" type="double"/>
+          <element name="startAngle" type="double"/>
+          <element name="arcAngle" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="arc" type="draw:ArcType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="ArcBandType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:pos"/>
+          <element name="minRadius" type="double"/>
+          <element name="maxRadius" type="double"/>
+          <element name="startAngle" type="double"/>
+          <element name="arcAngle" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="arcBand" type="draw:ArcBandType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="CompositeRingType">
+    <complexContent>
+      <extension base="gml:CompositeCurveType" />
+    </complexContent>
+  </complexType>
+
+  <element name="compositeRing" type="draw:CompositeRingType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="GeoBufferType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element name="baseShape" type="gml:GeometryPropertyType"/>
+          <element name="width" type="double"/>
+          <element name="joinStyle" type="draw:JoinStyleType"/>
+          <element name="endCapStyle" type="draw:EndCapStyle"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="geoBuffer" type="draw:GeoBufferType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="Buffer3DType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element name="axisPolyline" type="gml:CurvePropertyType"/>
+          <element name="width" type="double"/>
+          <element name="height" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="buffer3D" type="draw:Buffer3DType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="VariableGeoBufferType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element name="axisPolyline" type="gml:CurvePropertyType"/>
+          <element name="widths" type="gml:doubleList"/>
+          <element name="heightsBelow" type="gml:doubleList"/>
+          <element name="heightsAbove" type="gml:doubleList"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="variableGeoBuffer" type="draw:VariableGeoBufferType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="RhumbPolylineType">
+    <complexContent>
+      <extension base="gml:LineStringType"/>
+    </complexContent>
+  </complexType>
+
+  <element name="rhumbPolyline" type="draw:RhumbPolylineType" substitutionGroup="gml:LineString"/>
+
+  <complexType name="RhumbPolygonType">
+    <complexContent>
+      <extension base="gml:LineStringType"/>
+    </complexContent>
+  </complexType>
+
+  <element name="rhumbPolygon" type="draw:RhumbPolygonType" substitutionGroup="gml:LineString"/>
+
+
+  <complexType name="ExtrudedType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:AbstractGeometry"/>
+          <element name="minimumHeight" type="double"/>
+          <element name="maximumHeight" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="extruded" type="draw:ExtrudedType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <simpleType name="JoinStyleType">
+    <restriction base="string">
+      <enumeration value="JOIN_ROUND"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="EndCapStyle">
+    <restriction base="string">
+      <enumeration value="CAP_ROUND"/>
+      <enumeration value="CAP_BUTT"/>
+    </restriction>
+  </simpleType>
+
+  <complexType name="BoundsType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:Envelope"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="bounds" type="draw:BoundsType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+
+  <complexType name="DomeType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:pos"/>
+          <element name="radius" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="dome" type="draw:DomeType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+
+  <complexType name="SphereType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:pos"/>
+          <element name="radius" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="sphere" type="draw:SphereType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="MeridianType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element name="lon" type="double"/>
+          <element name="startLat" type="double"/>
+          <element name="endLat" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="meridian" type="draw:MeridianType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="ParallelType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element name="lat" type="double"/>
+          <element name="startLon" type="double"/>
+          <element name="endLon" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="parallel" type="draw:ParallelType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <complexType name="NorthArrowType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:pos"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="northArrow" type="draw:NorthArrowType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <simpleType name="HorizontalAlignmentType">
+    <restriction base="string">
+      <enumeration value="LEFT"/>
+      <enumeration value="CENTER"/>
+      <enumeration value="RIGHT"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="VerticalAlignmentType">
+    <restriction base="string">
+      <enumeration value="TOP"/>
+      <enumeration value="CENTER"/>
+      <enumeration value="BOTTOM"/>
+    </restriction>
+  </simpleType>
+
+  <complexType name="TextType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element name="textString" type="string"/>
+          <element ref="gml:pos" />
+          <element name="characterWidth" type="double"/>
+          <element name="characterHeight" type="double"/>
+          <element name="halign" type="draw:HorizontalAlignmentType"/>
+          <element name="valign" type="draw:VerticalAlignmentType"/>
+          <element name="rotationAngle" type="double"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="text" type="draw:TextType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+
+  <!-- Geometric properties -->
+
+  <element name="geometryProperty" type="gml:GeometryPropertyType"/>
+
+  <complexType name="PointPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Point"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="pointProperty" type="draw:PointPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="PolyPointPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:MultiPoint"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="polypointProperty" type="draw:PolyPointPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="PolylinePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:LineString"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="polylineProperty" type="draw:PolylinePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="RhumbPolylinePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:rhumbPolyline"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="rhumbPolylineProperty" type="draw:RhumbPolylinePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="RhumbPolygonPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:rhumbPolygon"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="rhumbPolygonProperty" type="draw:RhumbPolygonPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="PolygonPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Polygon"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="polygonProperty" type="draw:PolygonPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+<!-- 
+  note that the drawing decoder only accepts circles for which the unit of measure attribute
+  equals "http://www.luciad.com/resources/drawing/1.0/uom". This unit of measure is equal
+  to the unit of measure of the model. In case of geodetic models, this corresponds to
+  meter (m), in case of grid models to the unit of measure defined on the grid model
+  reference.
+ -->
+  <complexType name="CirclePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Curve"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="circleProperty" type="draw:CirclePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="EllipsePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:ellipse"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <complexType name="CircleBy3PointsPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Curve"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="circleBy3PointsProperty" type="draw:CircleBy3PointsPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <element name="ellipseProperty" type="draw:EllipsePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="ArcPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:arc"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="arcProperty" type="draw:ArcPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="ArcBandPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:arcBand"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="arcBandProperty" type="draw:ArcBandPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="CircularArcBy3PointsPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Curve"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="circularArcBy3PointsProperty" type="draw:CircularArcBy3PointsPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="CircularArcByBulgePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Curve"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="circularArcByBulgeProperty" type="draw:CircularArcByBulgePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="CircularArcByCenterPointPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Curve"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="circularArcByCenterPointProperty" type="draw:CircularArcByCenterPointPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="CompositeCurvePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="gml:Curve"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="compositeCurveProperty" type="draw:CompositeCurvePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="CompositeRingPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:compositeRing"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="compositeRingProperty" type="draw:CompositeRingPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="GeoBufferPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:geoBuffer"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="geoBufferProperty" type="draw:GeoBufferPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="Buffer3DPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:buffer3D"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="buffer3DProperty" type="draw:Buffer3DPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="VariableGeoBufferPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:variableGeoBuffer"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="variableGeoBufferProperty" type="draw:VariableGeoBufferPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="BoundsPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:bounds"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="extrudedProperty" type="draw:ExtrudedPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="ExtrudedPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:extruded"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="boundsProperty" type="draw:BoundsPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="DomePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:dome"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="domeProperty" type="draw:DomePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="SpherePropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:sphere"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="sphereProperty" type="draw:SpherePropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="MeridianPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:meridian"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="meridianProperty" type="draw:MeridianPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="ParallelPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:parallel"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="parallelProperty" type="draw:ParallelPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="NorthArrowPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:northArrow"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="northArrowProperty" type="draw:NorthArrowPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="TextPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:text"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <element name="textProperty" type="draw:TextPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+
+  <complexType name="GroupType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="member" type="draw:MemberType" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="draw:featureProperty" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="group" type="draw:GroupType" substitutionGroup="gml:AbstractFeature"/>
+
+  <simpleType name="character">
+    <restriction base="string">
+      <length value="1"/>
+    </restriction>
+  </simpleType>
+
+  <complexType name="ComplexPolygonPropertyType">
+    <complexContent>
+      <restriction base="gml:GeometryPropertyType">
+        <sequence>
+          <element ref="draw:complexPolygon"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <element name="complexPolygonProperty" type="draw:ComplexPolygonPropertyType" substitutionGroup="draw:geometryProperty"/>
+
+  <complexType name="ComplexPolygonType">
+    <complexContent>
+      <extension base="gml:AbstractGeometricPrimitiveType">
+        <sequence>
+          <element ref="gml:LinearRing" maxOccurs="unbounded" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="complexPolygon" type="draw:ComplexPolygonType" substitutionGroup="gml:AbstractGeometricPrimitive"/>
+
+  <!-- Featured properties -->
+
+  <element name="featureProperty" type="anyType"/>
+  <element name="boolean" type="boolean" substitutionGroup="draw:featureProperty"/>
+  <element name="character" type="draw:character" substitutionGroup="draw:featureProperty"/>
+  <element name="byte" type="byte" substitutionGroup="draw:featureProperty"/>
+  <element name="short" type="short" substitutionGroup="draw:featureProperty"/>
+  <element name="integer" type="int" substitutionGroup="draw:featureProperty"/>
+  <element name="long" type="long" substitutionGroup="draw:featureProperty"/>
+  <element name="float" type="float" substitutionGroup="draw:featureProperty"/>
+  <element name="double" type="double" substitutionGroup="draw:featureProperty"/>
+  <element name="string" type="string" substitutionGroup="draw:featureProperty"/>
+
+
+</schema>

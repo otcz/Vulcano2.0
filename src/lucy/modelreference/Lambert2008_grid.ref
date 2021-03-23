@@ -1,0 +1,17 @@
+ILcdModelReference.class=com.luciad.reference.TLcdGridReference
+TLcdGridReference.scale=1.0
+TLcdGridReference.falseNorthing=665262.0
+TLcdGridReference.falseEasting=649328.0
+TLcdGridReference.unitOfMeasure=1.0
+TLcdGridReference.rotation=0.0
+
+TLcdGridReference.name=ETRS89 / Belgian Lambert 2008
+
+TLcdGridReference.projection.ILcdProjection.class=com.luciad.projection.TLcdLambertConformal
+TLcdGridReference.projection.TLcdLambertConformal.originLat=50.797815
+TLcdGridReference.projection.TLcdLambertConformal.originLon=4.3592158333333333333
+TLcdGridReference.projection.TLcdLambertConformal.firstParallel=49.833333333333333333
+TLcdGridReference.projection.TLcdLambertConformal.secondParallel=51.166666666666666666666
+
+TLcdGridReference.geodeticDatum.ILcdGeodeticDatumFactory.class=com.luciad.geodesy.TLcdJPLGeodeticDatumFactory
+TLcdGridReference.geodeticDatum.TLcdJPLGeodeticDatumFactory.geodeticDatumName=ETRS89_to_WGS84_(1)  Europe

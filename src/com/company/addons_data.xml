@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addonConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:noNamespaceSchemaLocation="addons.xsd">
+  <!--
+    Add-ons for data formats that can be opened on both GXY and Lightspeed maps.
+    -->
+  <addons>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Default Formats</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyDefaultDecodersAddOn</class>
+      <configFile>lucy/decoders/default_decoders.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Oracle Locator Format</name>
+      <class>com.luciad.lucy.addons.oracle.locator.TLcyOracleLocatorDecoderAddOn</class>
+      <configFile>lucy/oracle/locator/oraclelocatordecoderaddon.cfg</configFile>
+      <luciadMapOptions>OracleSpatial</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Oracle Georaster Format</name>
+      <class>com.luciad.lucy.addons.oracle.georaster.TLcyOracleGeoRasterDecoderAddOn</class>
+      <configFile>lucy/oracle/georaster/oraclegeorasterdecoderaddon.cfg</configFile>
+      <luciadMapOptions>OracleSpatial</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>ECW Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyECWDecoderAddOn</class>
+      <configFile>lucy/decoders/ecwdecoderaddon.cfg</configFile>
+      <luciadMapOptions>ECW</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>MrSid Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyMrSidDecoderAddOn</class>
+      <configFile>lucy/decoders/mrsiddecoderaddon.cfg</configFile>
+      <luciadMapOptions>MrSid</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>JPIP Format</name>
+      <class>com.luciad.lucy.addons.jpip.TLcyJPIPDecoderAddOn</class>
+      <configFile>lucy/jpip/TLcyJPIPDecoderAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>JPEG2000 Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyJPEG2000DecoderAddOn</class>
+      <configFile>lucy/decoders/jpeg2000decoderaddon.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>USRP Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyUSRPDecoderAddOn</class>
+      <configFile>lucy/decoders/usrpdecoderaddon.cfg</configFile>
+      <luciadMapOptions>USRP</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>POL Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyPOLDecoderAddOn</class>
+      <configFile>lucy/decoders/poldecoderaddon.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>DWG Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyDWGDecoderAddOn</class>
+      <configFile>lucy/decoders/dwg.cfg</configFile>
+      <luciadMapOptions>Dwg</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>DGN Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyDGNDecoderAddOn</class>
+      <configFile>lucy/decoders/dgndecoderaddon.cfg</configFile>
+      <luciadMapOptions>Dgn</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Swiss DHM Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcySwissDHMMatrixDecoderAddOn</class>
+      <configFile>lucy/decoders/swissdhmdecoderaddon.cfg</configFile>
+      <luciadMapOptions>SwissDHM</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>DIMAP Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyDIMAPDecoderAddOn</class>
+      <configFile>lucy/decoders/dimapdecoderaddon.cfg</configFile>
+      <luciadMapOptions>DIMAP</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>GeoSPOT Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyGeoSPOTDecoderAddOn</class>
+      <configFile>lucy/decoders/geospotdecoderaddon.cfg</configFile>
+      <luciadMapOptions>GeoSPOT</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>BCI Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyBCIDecoderAddOn</class>
+      <configFile>lucy/decoders/bcidecoderaddon.cfg</configFile>
+      <luciadMapOptions>BCI</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>NITF Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyNITFDecoderAddOn</class>
+      <configFile>lucy/decoders/nitfdecoderaddon.cfg</configFile>
+      <luciadMapOptions>NITF</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Ecdis Format</name>
+      <class>com.luciad.lucy.addons.s57.TLcyS57DecoderAddOn</class>
+      <configFile>lucy/s57/TLcyS57DecoderAddOn.cfg</configFile>
+      <luciadMapOptions>Ecdis</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Ecdis Realtime AddOn</name>
+      <class>com.luciad.lucy.addons.s57.realtime.TLcyS57RealtimeAddOn</class>
+      <configFile>lucy/s57/realtime/TLcyS57RealtimeAddOn.cfg</configFile>
+      <luciadMapOptions>Ecdis</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Ecdis S63 Format</name>
+      <class>com.luciad.lucy.addons.s63.TLcyS63FormatAddOn</class>
+      <configFile>lucy/s63/TLcyS63FormatAddOn.cfg</configFile>
+      <luciadMapOptions>Ecdis,S63</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Ecdis Lightspeed Format</name>
+      <class>com.luciad.lucy.addons.s57.lightspeed.TLcyLspS57FormatAddOn</class>
+      <configFile>lucy/s57/lightspeed/TLcyLspS57FormatAddOn.cfg</configFile>
+      <luciadMapOptions>Ecdis,Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>ASDI Format</name>
+      <class>com.luciad.lucy.addons.asdi.TLcyASDIDecoderAddOn</class>
+      <configFile>lucy/asdi/asdidecoderaddon.cfg</configFile>
+      <luciadMapOptions>ASDI,Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>ASTERIX Format</name>
+      <class>com.luciad.lucy.addons.asterix.TLcyASTERIXDecoderAddOn</class>
+      <configFile>lucy/asterix/asterixdecoderaddon.cfg</configFile>
+      <luciadMapOptions>ASTERIX,Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>ARINC Format</name>
+      <class>com.luciad.lucy.addons.arinc.TLcyARINCAddOn</class>
+      <configFile>lucy/arinc/arincAddOn.cfg</configFile>
+      <luciadMapOptions>ARINC</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>AIXM Format</name>
+      <class>com.luciad.lucy.addons.aixm.TLcyAIXMAddOn</class>
+      <configFile>lucy/aixm/aixmAddOn.cfg</configFile>
+      <luciadMapOptions>AIXM</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>DAFIF Format</name>
+      <class>com.luciad.lucy.addons.dafif2.TLcyDAFIFFormatAddOn</class>
+      <configFile>lucy/dafif2/TLcyDAFIFFormatAddOn.cfg</configFile>
+      <luciadMapOptions>DAFIF</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>AIXM5 Format</name>
+      <class>com.luciad.lucy.addons.aixm5.TLcyAIXM5AddOn</class>
+      <configFile>lucy/aixm5/TLcyAIXM5AddOn.cfg</configFile>
+      <luciadMapOptions>AIXM</luciadMapOptions>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyAIXM5AddOn is also required -->
+      <priority>data_producer</priority>
+      <name>AIXM5 Realtime AddOn</name>
+      <class>com.luciad.lucy.addons.aixm5.realtime.TLcyAIXM5RealtimeAddOn</class>
+      <luciadMapOptions>AIXM,Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>AIXM5.1 Format</name>
+      <class>com.luciad.lucy.addons.aixm51.TLcyAIXM51AddOn</class>
+      <configFile>lucy/aixm51/TLcyAIXM51AddOn.cfg</configFile>
+      <luciadMapOptions>AIXM</luciadMapOptions>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyAIXM51AddOn is also required -->
+      <priority>data_producer</priority>
+      <name>AIXM5.1 Realtime AddOn</name>
+      <class>com.luciad.lucy.addons.aixm51.realtime.TLcyAIXM51RealtimeAddOn</class>
+      <luciadMapOptions>AIXM,Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>KML 2.2 Format</name>
+      <class>com.luciad.lucy.addons.kml22.TLcyKML22AddOn</class>
+      <configFile>lucy/kml22/TLcyKML22AddOn.cfg</configFile>
+      <luciadMapOptions>KML</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>KML 2.2 Previewer AddOn</name>
+      <class>com.luciad.lucy.addons.kml22.realtime.TLcyKML22RealtimeAddOn</class>
+      <luciadMapOptions>KML,Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>KML 2.2 Lightspeed AddOn</name>
+      <class>com.luciad.lucy.addons.kml22.lightspeed.TLcyLspKML22FormatAddOn</class>
+      <configFile>lucy/kml22/lightspeed/TLcyLspKML22FormatAddOn.cfg</configFile>
+      <luciadMapOptions>KML, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>GRIB Format</name>
+      <class>com.luciad.lucy.addons.decoders.TLcyGRIBDecoderAddOn</class>
+      <configFile>lucy/decoders/gribdecoderaddon.cfg</configFile>
+      <luciadMapOptions>GRIB</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>NVG Format</name>
+      <class>com.luciad.lucy.addons.nvg.TLcyNVGFormatAddOn</class>
+      <configFile>lucy/nvg/TLcyNVGFormatAddOn.cfg</configFile>
+      <luciadMapOptions>NVG</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed NVG Format</name>
+      <class>com.luciad.lucy.addons.nvg.lightspeed.TLcyLspNVGFormatAddOn</class>
+      <configFile>lucy/nvg/lightspeed/TLcyLspNVGFormatAddOn.cfg</configFile>
+      <luciadMapOptions>NVG, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>NVG Realtime Format</name>
+      <class>com.luciad.lucy.addons.nvg.realtime.TLcyNVGRealtimeAddOn</class>
+      <configFile>lucy/nvg/realtime/TLcyNVGRealtimeAddOn.cfg</configFile>
+      <luciadMapOptions>NVG, Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>NetCDF Format</name>
+      <class>com.luciad.lucy.addons.netcdf.TLcyNetCDFFormatAddOn</class>
+      <configFile>lucy/netcdf/TLcyNetCDFFormatAddOn.cfg</configFile>
+      <luciadMapOptions>NetCDF</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>NetCDF Realtime Format</name>
+      <class>com.luciad.lucy.addons.netcdf.realtime.TLcyNetCDFRealtimeAddOn</class>
+      <configFile>lucy/netcdf/realtime/TLcyNetCDFRealtimeAddOn.cfg</configFile>
+      <luciadMapOptions>NetCDF, Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed NetCDF Format</name>
+      <class>com.luciad.lucy.addons.netcdf.lightspeed.TLcyLspNetCDFFormatAddOn</class>
+      <configFile>lucy/netcdf/lightspeed/TLcyLspNetCDFFormatAddOn.cfg</configFile>
+      <luciadMapOptions>NetCDF, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>OpenFlight Format</name>
+      <class>com.luciad.lucy.addons.openflight.TLcyOpenFlightDecoderAddOn</class>
+      <configFile>lucy/openflight/openflightdecoderaddon.cfg</configFile>
+      <luciadMapOptions>3D</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>OBJ Format</name>
+      <class>com.luciad.lucy.addons.obj.TLcyOBJDecoderAddOn</class>
+      <configFile>lucy/obj/objdecoderaddon.cfg</configFile>
+      <luciadMapOptions>3D</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed OBJ Format</name>
+      <class>com.luciad.lucy.addons.obj.lightspeed.TLcyLspOBJFormatAddOn</class>
+      <configFile>lucy/obj/lightspeed/TLcyLspOBJFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed fallback format</name>
+      <class>com.luciad.lucy.addons.lightspeedadapter.gxy.TLcyLspFallbackFormatAddOn</class>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed fallback OpenGL format</name>
+      <class>com.luciad.lucy.addons.lightspeedadapter.opengl.TLcyLspGLFallbackFormatAddOn</class>
+      <luciadMapOptions>3D, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyFormatBarAddOn is also required -->
+      <priority>data_producer</priority>
+      <name>Drawing</name>
+      <class>com.luciad.lucy.addons.drawing.TLcyDrawingAddOn</class>
+      <configFile>lucy/drawing/TLcyDrawingAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyDrawingAddOn is also required -->
+      <priority>data_producer</priority>
+      <name>Lightspeed Drawing format</name>
+      <class>com.luciad.lucy.addons.drawing.lightspeed.TLcyLspDrawingAddOn</class>
+      <configFile>lucy/drawing/lightspeed/TLcyLspDrawingAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyFormatBarAddOn is also required -->
+      <priority>data_producer</priority>
+      <name>MilStd 2525b</name>
+      <class>com.luciad.lucy.addons.milstd2525b.TLcyMS2525bAddOn</class>
+      <configFile>lucy/milstd2525b/ms2525baddon.cfg</configFile>
+      <luciadMapOptions>MS2525b</luciadMapOptions>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyFormatBarAddOn and TLcyMS2525bAddOn are also required -->
+      <priority>data_producer</priority>
+      <name>Lightspeed MilStd 2525b</name>
+      <class>com.luciad.lucy.addons.milstd2525b.lightspeed.TLcyLspMS2525bAddOn</class>
+      <configFile>lucy/milstd2525b/lightspeed/TLcyLspMS2525bAddOn.cfg</configFile>
+      <luciadMapOptions>MS2525b, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyFormatBarAddOn is also required -->
+      <priority>data_producer</priority>
+      <name>APP6A</name>
+      <class>com.luciad.lucy.addons.app6a.TLcyAPP6AAddOn</class>
+      <configFile>lucy/app6a/app6aaddon.cfg</configFile>
+      <luciadMapOptions>MS2525b</luciadMapOptions>
+    </addon>
+    <addon>
+      <!-- When loading this add-on, TLcyFormatBarAddOn and TLcyAPP6AAddOn are also required -->
+      <priority>data_producer</priority>
+      <name>Lightspeed APP6A</name>
+      <class>com.luciad.lucy.addons.app6a.lightspeed.TLcyLspAPP6AAddOn</class>
+      <configFile>lucy/app6a/lightspeed/TLcyLspAPP6AAddOn.cfg</configFile>
+      <luciadMapOptions>MS2525b, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <!--
+        When loading this add-on, TLcyFormatBarAddOn and
+        TLcyPreviewAddOn are also required
+      -->
+      <priority>data_producer</priority>
+      <name>PIM Track</name>
+      <class>com.luciad.lucy.addons.pim.TLcyPIMTrackAddOn</class>
+      <configFile>lucy/pim/pim_addon.cfg</configFile>
+      <luciadMapOptions>Realtime, MS2525b</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>WMS Client</name>
+      <class>com.luciad.lucy.addons.wmsclient.TLcyWMSClientAddOn</class>
+      <configFile>lucy/wmsclient/wmsclient_addon.cfg</configFile>
+      <luciadMapOptions>WMSclient</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>early</priority>
+      <name>WMS Ecdis Client</name>
+      <class>com.luciad.lucy.addons.wmsclient.ecdis.TLcyWMSEcdisAddOn</class>
+      <configFile>lucy/wmsclient/ecdis/TLcyWMSEcdisAddOn.cfg</configFile>
+      <luciadMapOptions>WMSclient, Ecdis</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>WMTS Client</name>
+      <class>com.luciad.lucy.addons.ogc.wmtsclient.TLcyWMTSClientAddOn</class>
+      <configFile>lucy/wmts/TLcyWMTSClientAddOn.cfg</configFile>
+      <luciadMapOptions>WMSclient</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed WMTS Client</name>
+      <class>com.luciad.lucy.addons.ogc.wmtsclient.lightspeed.TLcyLspWMTSClientAddOn</class>
+      <configFile>lucy/wmts/lightspeed/TLcyLspWMTSClientAddOn.cfg</configFile>
+      <luciadMapOptions>WMSClient, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed WMS Client</name>
+      <class>com.luciad.lucy.addons.wmsclient.lightspeed.TLcyLspWMSClientAddOn</class>
+      <configFile>lucy/wmsclient/lightspeed/TLcyLspWMSClientAddOn.cfg</configFile>
+      <luciadMapOptions>WMSclient, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Earth</name>
+      <class>com.luciad.lucy.addons.earth.TLcyEarthAddOn</class>
+      <configFile>lucy/earth/earth_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Earth format</name>
+      <class>com.luciad.lucy.addons.earth.lightspeed.TLcyLspEarthFormatAddOn</class>
+      <configFile>lucy/earth/lightspeed/TLcyLspEarthFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>early</priority>
+      <name>Fusion Core</name>
+      <class>com.luciad.lucy.addons.fusion.TLcyFusionCoreAddOn</class>
+      <configFile>lucy/fusion/TLcyFusionCoreAddOn.cfg</configFile>
+      <luciadMapOptions>FusionClient</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Fusion Client</name>
+      <class>com.luciad.lucy.addons.fusion.client.TLcyFusionClientAddOn</class>
+      <configFile>lucy/fusionclient/TLcyFusionClientAddOn.cfg</configFile>
+      <luciadMapOptions>FusionClient</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Fusion Raster Format</name>
+      <class>com.luciad.lucy.addons.fusion.format.raster.TLcyFusionRasterFormatAddOn</class>
+      <configFile>lucy/fusionclient/TLcyFusionRasterFormatAddOn.cfg</configFile>
+      <luciadMapOptions>FusionClient</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Fusion Raster Format</name>
+      <class>com.luciad.lucy.addons.fusion.format.raster.lightspeed.TLcyLspFusionRasterFormatAddOn</class>
+      <configFile>lucy/fusionclient/lightspeed/TLcyLspFusionRasterFormatAddOn.cfg</configFile>
+      <luciadMapOptions>FusionClient, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Fusion Vector Format</name>
+      <class>com.luciad.lucy.addons.fusion.format.vector.TLcyFusionVectorFormatAddOn</class>
+      <configFile>lucy/fusionclient/TLcyFusionVectorFormatAddOn.cfg</configFile>
+      <luciadMapOptions>FusionClient</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Fusion Vector format</name>
+      <class>com.luciad.lucy.addons.fusion.format.vector.lightspeed.TLcyLspFusionVectorFormatAddOn</class>
+      <configFile>lucy/fusionclient/lightspeed/TLcyLspFusionVectorFormatAddOn.cfg</configFile>
+      <luciadMapOptions>FusionClient, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>ArcSDE Format</name>
+      <class>com.luciad.lucy.addons.arcsde.TLcyArcSDEDecoderAddOn</class>
+      <configFile>lucy/arcsde/TLcyArcSDEDecoderAddOn.cfg</configFile>
+      <luciadMapOptions>ArcSDE</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Bing Maps</name>
+      <class>com.luciad.lucy.addons.bingmaps.TLcyBingMapsAddOn</class>
+      <configFile>lucy/bingmaps/TLcyBingMapsAddOn.cfg</configFile>
+      <luciadMapOptions>BingMaps</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Bing Maps</name>
+      <class>com.luciad.lucy.addons.bingmaps.lightspeed.TLcyLspBingMapsFormatAddOn</class>
+      <configFile>lucy/bingmaps/lightspeed/TLcyLspBingMapsFormatAddOn.cfg</configFile>
+      <luciadMapOptions>BingMaps, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>LVDB Format</name>
+      <class>com.luciad.lucy.addons.lvdb.TLcyLVDBAddOn</class>
+      <configFile>lucy/lvdb/TLcyLVDBAddOn.cfg</configFile>
+      <luciadMapOptions>SQLite</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Military LVDB Format</name>
+      <class>com.luciad.lucy.addons.lvdb.military.TLcyLVDBMilitaryAddOn</class>
+      <luciadMapOptions>SQLite,MS2525b</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>LRDB Format</name>
+      <class>com.luciad.lucy.addons.lrdb.TLcyLRDBAddOn</class>
+      <configFile>lucy/lrdb/TLcyLRDBAddOn.cfg</configFile>
+      <luciadMapOptions>SQLite</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>GeoPackage Format</name>
+      <class>com.luciad.lucy.addons.geopackage.TLcyGeoPackageAddOn</class>
+      <configFile>lucy/geopackage/TLcyGeoPackageAddOn.cfg</configFile>
+      <luciadMapOptions>SQLite</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed GeoPackage Format</name>
+      <class>com.luciad.lucy.addons.geopackage.lightspeed.TLcyLspGeoPackageFormatAddOn</class>
+      <configFile>lucy/geopackage/lightspeed/TLcyLspGeoPackageFormatAddOn.cfg</configFile>
+      <luciadMapOptions>SQLite, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>SQLite Spatialite Format</name>
+      <class>com.luciad.lucy.addons.spatialite.TLcySpatiaLiteDecoderAddOn</class>
+      <configFile>lucy/spatialite/TLcySpatiaLiteDecoderAddOn.cfg</configFile>
+      <luciadMapOptions>SQLite</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed AIXM5.0 format</name>
+      <class>com.luciad.lucy.addons.aixm5.lightspeed.TLcyLspAIXM5FormatAddOn</class>
+      <configFile>lucy/aixm5/lightspeed/TLcyLspAIXM5FormatAddOn.cfg</configFile>
+      <luciadMapOptions>AIXM, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed AIXM5.1 format</name>
+      <class>com.luciad.lucy.addons.aixm51.lightspeed.TLcyLspAIXM51FormatAddOn</class>
+      <configFile>lucy/aixm51/lightspeed/TLcyLspAIXM51FormatAddOn.cfg</configFile>
+      <luciadMapOptions>AIXM, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed SHP format</name>
+      <class>com.luciad.lucy.addons.shp.lightspeed.TLcyLspSHPFormatAddOn</class>
+      <configFile>lucy/shp/lightspeed/TLcyLspSHPFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed GML format</name>
+      <class>com.luciad.lucy.addons.gml.lightspeed.TLcyLspGMLFormatAddOn</class>
+      <configFile>lucy/gml/lightspeed/TLcyLspGMLFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Oracle Locator/Spatial format</name>
+      <class>com.luciad.lucy.addons.oracle.locator.lightspeed.TLcyLspOracleLocatorFormatAddOn</class>
+      <configFile>lucy/oracle/locator/lightspeed/TLcyLspOracleLocatorFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed, OracleSpatial</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ArcSDE Raster format</name>
+      <class>com.luciad.lucy.addons.arcsde.lightspeed.raster.TLcyLspArcSDERasterFormatAddOn</class>
+      <configFile>lucy/arcsde/lightspeed/raster/TLcyLspArcSDERasterFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed, ArcSDE</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ArcSDE Vector format</name>
+      <class>com.luciad.lucy.addons.arcsde.lightspeed.vector.TLcyLspArcSDEVectorFormatAddOn</class>
+      <configFile>lucy/arcsde/lightspeed/vector/TLcyLspArcSDEVectorFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed, ArcSDE</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Spatialite format</name>
+      <class>com.luciad.lucy.addons.spatialite.lightspeed.TLcyLspSpatiaLiteFormatAddOn</class>
+      <configFile>lucy/spatialite/lightspeed/TLcyLspSpatiaLiteFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed,SQLite</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed MIF format</name>
+      <class>com.luciad.lucy.addons.mif.lightspeed.TLcyLspMIFFormatAddOn</class>
+      <configFile>lucy/mif/lightspeed/TLcyLspMIFFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed DTED format</name>
+      <class>com.luciad.lucy.addons.dted.lightspeed.TLcyLspDTEDFormatAddOn</class>
+      <configFile>lucy/dted/lightspeed/TLcyLspDTEDFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed DMED format</name>
+      <class>com.luciad.lucy.addons.dmed.lightspeed.TLcyLspDMEDFormatAddOn</class>
+      <configFile>lucy/dmed/lightspeed/TLcyLspDMEDFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed RST format</name>
+      <class>com.luciad.lucy.addons.rst.lightspeed.TLcyLspRSTFormatAddOn</class>
+      <configFile>lucy/rst/lightspeed/TLcyLspRSTFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed MrSID format</name>
+      <class>com.luciad.lucy.addons.mrsid.lightspeed.TLcyLspMrSidFormatAddOn</class>
+      <configFile>lucy/mrsid/lightspeed/TLcyLspMrSidFormatAddOn.cfg</configFile>
+      <luciadMapOptions>MrSid, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ECW format</name>
+      <class>com.luciad.lucy.addons.ecw.lightspeed.TLcyLspECWFormatAddOn</class>
+      <configFile>lucy/ecw/lightspeed/TLcyLspECWFormatAddOn.cfg</configFile>
+      <luciadMapOptions>ECW, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed JPIP format</name>
+      <class>com.luciad.lucy.addons.jpip.lightspeed.TLcyLspJPIPFormatAddOn</class>
+      <configFile>lucy/jpip/lightspeed/TLcyLspJPIPFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed JPEG2000 format</name>
+      <class>com.luciad.lucy.addons.jpeg2000.lightspeed.TLcyLspJPEG2000FormatAddOn</class>
+      <configFile>lucy/jpeg2000/lightspeed/TLcyLspJPEG2000FormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Oracle GeoRaster format</name>
+      <class>com.luciad.lucy.addons.oracle.georaster.lightspeed.TLcyLspOracleGeoRasterFormatAddOn</class>
+      <configFile>lucy/oracle/georaster/lightspeed/TLcyLspOracleGeoRasterFormatAddOn.cfg</configFile>
+      <luciadMapOptions>OracleSpatial, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed JAI format</name>
+      <class>com.luciad.lucy.addons.jai.lightspeed.TLcyLspJAIFormatAddOn</class>
+      <configFile>lucy/jai/lightspeed/TLcyLspJAIFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed GeoTIFF format</name>
+      <class>com.luciad.lucy.addons.geotiff.lightspeed.TLcyLspGeoTIFFFormatAddOn</class>
+      <configFile>lucy/geotiff/lightspeed/TLcyLspGeoTIFFFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed CADRG format</name>
+      <class>com.luciad.lucy.addons.cadrg.lightspeed.TLcyLspCADRGFormatAddOn</class>
+      <configFile>lucy/cadrg/lightspeed/TLcyLspCADRGFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ECRG Format</name>
+      <class>com.luciad.lucy.addons.ecrg.lightspeed.TLcyLspECRGFormatAddOn</class>
+      <configFile>lucy/ecrg/lightspeed/TLcyLspECRGFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed, NITF</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>ECRG Format</name>
+      <class>com.luciad.lucy.addons.ecrg.TLcyECRGFormatAddOn</class>
+      <configFile>lucy/ecrg/TLcyECRGFormatAddOn.cfg</configFile>
+      <luciadMapOptions>NITF</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed DIMAP format</name>
+      <class>com.luciad.lucy.addons.dimap.lightspeed.TLcyLspDIMAPFormatAddOn</class>
+      <configFile>lucy/dimap/lightspeed/TLcyLspDIMAPFormatAddOn.cfg</configFile>
+      <luciadMapOptions>DIMAP, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>GeoJson Format</name>
+      <class>com.luciad.lucy.addons.geojson.TLcyGeoJsonAddOn</class>
+      <configFile>lucy/geojson/TLcyGeoJsonAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed GeoJson format</name>
+      <class>com.luciad.lucy.addons.geojson.lightspeed.TLcyLspGeoJsonFormatAddOn</class>
+      <configFile>lucy/geojson/lightspeed/TLcyLspGeoJsonFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed GeospatialPDF format</name>
+      <class>com.luciad.lucy.addons.geospatialpdf.lightspeed.TLcyLspGeospatialPDFFormatAddOn</class>
+      <configFile>lucy/geospatialpdf/lightspeed/TLcyLspGeospatialPDFFormatAddOn.cfg</configFile>
+      <luciadMapOptions>geospatialPDF, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed GeoSPOT format</name>
+      <class>com.luciad.lucy.addons.geospot.lightspeed.TLcyLspGeoSPOTFormatAddOn</class>
+      <configFile>lucy/geospot/lightspeed/TLcyLspGeoSPOTFormatAddOn.cfg</configFile>
+      <luciadMapOptions>GeoSPOT, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed BCI format</name>
+      <class>com.luciad.lucy.addons.bci.lightspeed.TLcyLspBCIFormatAddOn</class>
+      <configFile>lucy/bci/lightspeed/TLcyLspBCIFormatAddOn.cfg</configFile>
+      <luciadMapOptions>BCI, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ASDI Format</name>
+      <class>com.luciad.lucy.addons.asdi.lightspeed.TLcyLspASDIFormatAddOn</class>
+      <configFile>lucy/asdi/lightspeed/TLcyLspASDIFormatAddOn.cfg</configFile>
+      <luciadMapOptions>ASDI, Lightspeed, Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ASTERIX Format</name>
+      <class>com.luciad.lucy.addons.asterix.lightspeed.TLcyLspASTERIXFormatAddOn</class>
+      <configFile>lucy/asterix/lightspeed/TLcyLspASTERIXFormatAddOn.cfg</configFile>
+      <luciadMapOptions>ASTERIX, Lightspeed, Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed DEM format</name>
+      <class>com.luciad.lucy.addons.dem.lightspeed.TLcyLspDEMFormatAddOn</class>
+      <configFile>lucy/dem/lightspeed/TLcyLspDEMFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ETOPO format</name>
+      <class>com.luciad.lucy.addons.etopo.lightspeed.TLcyLspETOPOFormatAddOn</class>
+      <configFile>lucy/etopo/lightspeed/TLcyLspETOPOFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed SwissDHMMatrix format</name>
+      <class>com.luciad.lucy.addons.swissdhmmatrix.lightspeed.TLcyLspSwissDHMMatrixFormatAddOn</class>
+      <configFile>lucy/swissdhmmatrix/lightspeed/TLcyLspSwissDHMMatrixFormatAddOn.cfg</configFile>
+      <luciadMapOptions>SwissDHM, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed BIL format</name>
+      <class>com.luciad.lucy.addons.bil.lightspeed.TLcyLspBILFormatAddOn</class>
+      <configFile>lucy/bil/lightspeed/TLcyLspBILFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed USRP format</name>
+      <class>com.luciad.lucy.addons.usrp.lightspeed.TLcyLspUSRPFormatAddOn</class>
+      <configFile>lucy/usrp/lightspeed/TLcyLspUSRPFormatAddOn.cfg</configFile>
+      <luciadMapOptions>USRP, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed OpenFlight format</name>
+      <class>com.luciad.lucy.addons.openflight.lightspeed.TLcyLspOpenFlightFormatAddOn</class>
+      <configFile>lucy/openflight/lightspeed/TLcyLspOpenFlightFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Microsoft SQL Server</name>
+      <class>com.luciad.lucy.addons.mssql.TLcyMSSQLDecoderAddOn</class>
+      <configFile>lucy/mssql/TLcyMSSQLDecoderAddOn.cfg</configFile>
+      <luciadMapOptions>MSSQL</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Microsoft SQL Server</name>
+      <class>com.luciad.lucy.addons.mssql.lightspeed.TLcyLspMSSQLFormatAddOn</class>
+      <configFile>lucy/mssql/lightspeed/TLcyLspMSSQLFormatAddOn.cfg</configFile>
+      <luciadMapOptions>MSSQL, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed GRIB format</name>
+      <class>com.luciad.lucy.addons.grib.lightspeed.TLcyLspGRIBFormatAddOn</class>
+      <configFile>lucy/grib/lightspeed/TLcyLspGRIBFormatAddOn.cfg</configFile>
+      <luciadMapOptions>GRIB, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Grid</name>
+      <class>com.luciad.lucy.addons.grid.lightspeed.TLcyLspGridAddOn</class>
+      <configFile>lucy/grid/lightspeed/TLcyLspGridAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed MGRS Grid</name>
+      <class>com.luciad.lucy.addons.grid.mgrs.lightspeed.TLcyLspMGRSGridAddOn</class>
+      <configFile>lucy/grid/mgrs/lightspeed/TLcyLspMGRSGridAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed Georef Grid</name>
+      <class>com.luciad.lucy.addons.grid.georef.lightspeed.TLcyLspGeorefGridAddOn</class>
+      <configFile>lucy/grid/georef/lightspeed/TLcyLspGeorefGridAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>ESRI ArcInfo ASCII Grid Format</name>
+      <class>com.luciad.lucy.addons.arcinfoasciigrid.TLcyArcInfoASCIIGridFormatAddOn</class>
+      <configFile>lucy/arcinfoasciigrid/TLcyArcInfoASCIIGridFormatAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ESRI ArcInfo ASCII Grid Format</name>
+      <class>com.luciad.lucy.addons.arcinfoasciigrid.lightspeed.TLcyLspArcInfoASCIIGridFormatAddOn</class>
+      <configFile>lucy/arcinfoasciigrid/lightspeed/TLcyLspArcInfoASCIIGridFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Geospatial PDF Format</name>
+      <class>com.luciad.lucy.addons.geospatialpdf.TLcyGeospatialPDFAddOn</class>
+      <configFile>lucy/geospatialpdf/TLcyGeospatialPDFAddOn.cfg</configFile>
+      <luciadMapOptions>GeospatialPDF</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>LAS Format</name>
+      <class>com.luciad.lucy.addons.las.TLcyLASAddOn</class>
+      <configFile>lucy/las/TLcyLASAddOn.cfg</configFile>
+      <luciadMapOptions>LIDAR, Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed LAS Format</name>
+      <class>com.luciad.lucy.addons.las.lightspeed.TLcyLspLASFormatAddOn</class>
+      <configFile>lucy/las/lightspeed/TLcyLspLASFormatAddOn.cfg</configFile>
+      <luciadMapOptions>LIDAR, Realtime, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed ARINC Format</name>
+      <class>com.luciad.lucy.addons.arinc.lightspeed.TLcyLspARINCFormatAddOn</class>
+      <configFile>lucy/arinc/lightspeed/TLcyLspARINCFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed, ARINC</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed AIXM 3/4 Format</name>
+      <class>com.luciad.lucy.addons.aixm.lightspeed.TLcyLspAIXMFormatAddOn</class>
+      <configFile>lucy/aixm/lightspeed/TLcyLspAIXMFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed, AIXM</luciadMapOptions>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Lightspeed DAFIF Format</name>
+      <class>com.luciad.lucy.addons.dafif2.lightspeed.TLcyLspDAFIFFormatAddOn</class>
+      <configFile>lucy/dafif2/lightspeed/TLcyLspDAFIFFormatAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed, DAFIF</luciadMapOptions>
+    </addon>
+  </addons>
+</addonConfiguration>

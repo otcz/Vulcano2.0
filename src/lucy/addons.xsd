@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="addonConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="addons" type="Addons"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Addons">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="include">
+          <xs:annotation>
+            <xs:documentation>
+              <p>Other addons files can be included using this tag. The addons listed in the specified file will
+                be inserted at this point in the addons file.</p>
+              <p>The filenames specified in this element should be relative to the current working directory or
+                to the classpath</p>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="addon">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="priority" type="PriorityType" minOccurs="0"/>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="class" type="xs:string"/>
+              <xs:element name="configFile" type="xs:string" minOccurs="0"/>
+              <xs:element name="luciadMapOptions" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="PriorityType">
+    <xs:annotation>
+      <xs:documentation>
+        <p>The priority of the addons determine the order in which they are plugged into Lucy.
+          Addons with a low priority number are plugged earlier into Lucy.</p>
+
+        <p>The priority should be an integer, or one of the following strings:</p>
+        <ul>
+          <li>early: corresponds to integer value 0. Use this value if your addon needs
+          to be plugged in before most other addons. For instance, the TLcyPersistentPreferencesAddOn uses
+          this priority, as the other addons may need the preferences when they are plugged in.</li>
+
+          <li>data_producer (value 5.000): Use this value if, for instance, your addon registers decoders for data
+            formats. For instance, implementations of ALcyFormatAddOn should use this priority.</li>
+
+          <li>data_consumer (value 9.000): Use this value if your addon needs to decode data files. For instance,
+          when your addon uses TLcyDataFormatManager#handleDataSources, use this priority.</li>
+
+          <li>default (value 10.000): default priority. Use this if your addon does not have any special order
+          requirements.</li>
+
+          <li>late (value 100.000): use this value if your addon needs to be loaded after all other addons. For 
+          instance, the TLcyWorkspaceAddOn uses this priority as it needs to restore the state of all other addons
+          when Lucy starts up.</li>
+        </ul>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="xs:integer">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="early"/>
+          <xs:enumeration value="data_producer"/>
+          <xs:enumeration value="data_consumer"/>
+          <xs:enumeration value="default"/>
+          <xs:enumeration value="late"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+</xs:schema>

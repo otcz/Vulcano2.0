@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addonConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:noNamespaceSchemaLocation="addons.xsd">
+  <!--
+    Add-ons that can be used in both a GXY or Lightspeed based Lucy application.
+    -->
+  <addons>
+    <include>com/company/addons_data.xml</include>
+    <addon>
+      <!--
+        The priority is 'early' because other add-ons might need
+        the preferences to properly initialize
+      -->
+      <priority>early</priority>
+      <name>Preferences</name>
+      <class>com.luciad.lucy.addons.preferences.TLcyPersistentPreferencesAddOn</class>
+      <configFile>lucy/preferences/preferences_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>early</priority>
+      <name>Look and Feel</name>
+      <class>com.luciad.lucy.addons.lookandfeel.TLcyLookAndFeelAddOn</class>
+      <configFile>lucy/lookandfeel/lookandfeel_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>early</priority>
+      <name/>
+      <!-- No name, to avoid that it shows up in the UI -->
+      <class>com.luciad.lucy.addons.debug.TLcyDebugAddOn</class>
+      <configFile>lucy/debug/TLcyDebugAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <!--
+        Network Connection add-on should be loaded early to ensure
+        the settings are active before any HTTP connection is attempted
+      -->
+      <priority>early</priority>
+      <name>Network Connection</name>
+      <class>com.luciad.lucy.addons.networkconnection.TLcyNetworkConnectionAddOn</class>
+      <configFile>lucy/networkconnection/TLcyNetworkConnectionAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Dimensional Filter AddOn</name>
+      <class>com.luciad.lucy.addons.dimensionalfilter.TLcyDimensionalFilterAddOn</class>
+      <configFile>lucy/dimensionalfilter/TLcyDimensionalFilterAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>About Box</name>
+      <class>com.luciad.lucy.addons.about.TLcyAboutBoxAddon</class>
+      <configFile>lucy/about/about_box_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Help</name>
+      <class>com.luciad.lucy.addons.help.TLcyHelpAddOn</class>
+      <configFile>lucy/help/TLcyHelpAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>data_producer</priority>
+      <name>Geo References</name>
+      <class>com.luciad.lucy.addons.modelreference.TLcyModelReferenceAddOn</class>
+      <configFile>lucy/modelreference/modelreference_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Hyperlink</name>
+      <class>com.luciad.lucy.addons.hyperlink.TLcyHyperlinkAddOn</class>
+    </addon>
+    <addon>
+      <name>Aircraft Performance Settings</name>
+      <class>com.luciad.lucy.addons.aps.TLcyAPSAddOn</class>
+      <configFile>lucy/aps/apsAddOn.cfg</configFile>
+      <luciadMapOptions>AIS</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Magnetic North Calculation</name>
+      <class>com.luciad.lucy.addons.magneticnorth.TLcyMagneticNorthAddOn</class>
+      <configFile>lucy/magneticnorth/magneticnorth_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Layer Control</name>
+      <class>com.luciad.lucy.addons.layercontrol.TLcyLayerControlAddOn</class>
+      <configFile>lucy/layercontrol/TLcyLayerControlAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Edit Units</name>
+      <class>com.luciad.lucy.addons.map.TLcyMapEditUnitAddOn</class>
+      <configFile>lucy/map/map_units.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Object Properties Comparison</name>
+      <class>com.luciad.lucy.addons.comparison.TLcyObjectPropertiesComparisonAddOn</class>
+      <configFile>lucy/comparison/TLcyObjectPropertiesComparisonAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Selection Editor</name>
+      <class>com.luciad.lucy.addons.selectioneditor.TLcySelectionEditorAddOn</class>
+      <configFile>lucy/selectioneditor/selectioneditor.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Grid Coordinate</name>
+      <class>com.luciad.lucy.addons.gridcoordinate.TLcyGridCoordinateAddOn</class>
+      <configFile>lucy/gridcoordinate/gridcoordinate_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Format Bar</name>
+      <class>com.luciad.lucy.addons.formatbar.TLcyFormatBarAddOn</class>
+      <configFile>lucy/formatbar/TLcyFormatBarAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Model Customizer</name>
+      <class>com.luciad.lucy.addons.modelcustomizer.TLcyModelCustomizerAddOn</class>
+      <configFile>lucy/modelcustomizer/TLcyModelCustomizerAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Tote</name>
+      <class>com.luciad.lucy.addons.tote.TLcyToteAddOn</class>
+      <configFile>lucy/tote/tote_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Tote Lightspeed</name>
+      <class>com.luciad.lucy.addons.tote.lightspeed.TLcyLspToteAddOn</class>
+      <configFile>lucy/tote/lsp/TLcyLspToteAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Tree Table View</name>
+      <class>com.luciad.lucy.addons.treetable.TLcyTreeTableViewAddOn</class>
+      <configFile>lucy/treetable/TLcyTreeTableViewAddOn.cfg</configFile>
+    </addon>
+    <!--
+      When loading this add-on, the TLcyPreviewAddOn is also required. This
+      add-on should be loaded before the TLcyPreviewAddOn
+    -->
+    <addon>
+      <name>Lightspeed Previewer</name>
+      <class>com.luciad.lucy.addons.previewer.lightspeed.TLcyLspPreviewAddOn</class>
+      <configFile>lucy/previewer/lightspeed/TLcyLspPreviewAddOn.cfg</configFile>
+      <luciadMapOptions>Realtime, Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Previewer</name>
+      <class>com.luciad.lucy.addons.previewer.TLcyPreviewAddOn</class>
+      <configFile>lucy/previewer/previewer.cfg</configFile>
+      <luciadMapOptions>Realtime</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Vertical View</name>
+      <class>com.luciad.lucy.addons.vertical.TLcyVerticalViewAddOn</class>
+      <configFile>lucy/vertical/verticalview_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <priority>early</priority>
+      <name>Lightspeed Style Repository</name>
+      <class>com.luciad.lucy.addons.stylerepository.lightspeed.TLcyLspStyleRepositoryAddOn</class>
+      <configFile>lucy/stylerepository/lightspeed/TLcyLspStyleRepositoryAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+
+    <addon>
+      <name>Lightspeed Grid Coordinate</name>
+      <class>com.luciad.lucy.addons.gridcoordinate.lightspeed.TLcyLspGridCoordinateAddOn</class>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Lightspeed Printing</name>
+      <class>com.luciad.lucy.addons.print.lightspeed.TLcyLspPrintAddOn</class>
+      <configFile>lucy/print/lightspeed/TLcyLspPrintAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Undo</name>
+      <class>com.luciad.lucy.addons.undo.TLcyUndoAddOn</class>
+      <configFile>lucy/undo/undo_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Copy Paste</name>
+      <class>com.luciad.lucy.addons.datatransfer.TLcyCopyPasteAddOn</class>
+      <configFile>lucy/datatransfer/copy_paste_addon.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Generic map</name>
+      <class>com.luciad.lucy.addons.genericmap.TLcyGenericMapAddOn</class>
+      <configFile>lucy/genericmap/TLcyGenericMapAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Connection</name>
+      <class>com.luciad.lucy.addons.connection.TLcyConnectionAddOn</class>
+      <configFile>lucy/connection/TLcyConnectionAddOn.cfg</configFile>
+    </addon>
+    <addon>
+      <name>Lightspeed Layer Customizer</name>
+      <class>com.luciad.lucy.addons.layercustomizer.lightspeed.TLcyLspLayerCustomizerAddOn</class>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Lightspeed Camera Linking</name>
+      <class>com.luciad.lucy.addons.cameralinking.lightspeed.TLcyLspCameraLinkAddOn</class>
+      <configFile>lucy/cameralinking/lightspeed/TLcyLspCameraLinkAddOn.cfg</configFile>
+      <luciadMapOptions>Lightspeed</luciadMapOptions>
+    </addon>
+    <addon>
+      <name>Recent Files</name>
+      <class>com.luciad.lucy.addons.recentfiles.TLcyRecentFilesAddOn</class>
+      <configFile>lucy/recentfiles/TLcyRecentFilesAddOn.cfg</configFile>
+    </addon>
+  </addons>
+</addonConfiguration>
