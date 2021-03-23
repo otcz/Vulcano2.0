@@ -1,0 +1,82 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+      <title>Data Repository Sample</title>
+      <meta name="abstract" content="This sample demonstrates how to determine which files can be opened by Lucy as well as the actual opening of those files." />
+   </head>
+   <body>
+      <h3>Explanation</h3>
+      <p>
+         This sample demonstrates how to determine which files can be opened by Lucy as well as the actual
+         opening of those files.
+         
+      </p>
+      <p>Lucy uses two concepts for opening a file:</p>
+      <ul>
+         
+         <li>
+            <code>ILcdModelDecoder</code>
+            instances are used to convert a source to an<code>ILcdModel</code>. When
+            the data needs to be visualized, the model is converted to a layer which can be added to a view. This
+            is the same mechanism as available in the core LuciadLightspeed product.
+            
+         </li>
+         
+         <li>
+            <code>ALcyDataSourceHandler</code>
+            instances are used to open all other data which do not fit
+            in the concept of an<code>ILcdModelDecoder</code>. An example is data originating from a server like a WMS
+            server.
+            Typically this requires that a connection is set up to the server to see which data is available.
+            Then the data is selected, and that data stream can then be visualized on the client side.
+            
+         </li>
+         
+      </ul>
+      <p>
+         Each of the format add-ons registers its model decoders and/or data source handlers to the Lucy
+         back-end (see
+         <code>TLcyCompositeModelDecoder#addModelDecoder</code>
+         and<code>TLcyCompositeDataSourceHandler#addDataSourceHandler</code>).
+         Registering such an instance requires to register a matching<code>ALcyFileTypeDescriptor</code>.
+         This descriptor allows to quickly filter which files are accepted by the model decoder or data source handler
+         through its
+         <code>includes</code>
+         method.
+         
+      </p>
+      <p>
+         This sample illustrates how to use those registered
+         <code>ALcyFileTypeDescriptor</code>
+         instances
+         to determine which files in a certain directory can be opened by Lucy. The configuration file
+         allows to specify this directory and search depth. For each of the files in those directories
+         a menu-item will be added. When the menu item is clicked, the data is loaded on the map.
+         
+      </p>
+      <p>
+         Loading of data in Lucy is the responsibility of the<code>TLcyDataFormatManager</code>. This
+         class provides a
+         <code>handleDataSources</code>
+         method which will load the specified data.
+         
+      </p>
+      <p>
+         Notice that opening some files may result in an error. For example a CADGR file and a Dafif file
+         both have the extension .toc . Lucy indicates, based on the extension of the file, it can handle the
+         file when at least one of the addons responsible for these file types is loaded. So when trying to open a
+         Dafif file when this addon is not loaded, an error will be produced since the CADGR decoder does not
+         know how to decode a Dafif file.
+         
+      </p>
+      <h3>Instructions</h3>
+      <p>
+         Use the menu items under the 'Data' menu item to load data onto the currently active GXY map. The data will be
+         loaded on
+         a background thread when a menu item is clicked. Loading the data on a background thread makes
+         sure the Lucy UI remains responsive during the loading of the data.
+         
+      </p>
+   </body>
+</html>
