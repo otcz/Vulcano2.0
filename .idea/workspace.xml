@@ -7,10 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
+      <change afterPath="$PROJECT_DIR$/Vulcano2.0.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vulcano2.0.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/VulcanoCAFUE_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/VulcanoCAFUE_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lightspeed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lightspeed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/milstd2525b/ms2525baddon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/milstd2525b/ms2525baddon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/app6a/app6aaddon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/app6a/app6aaddon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/milstd2525b/ms2525baddon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/milstd2525b/ms2525baddon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/license/development.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dll/spatialite.dll" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -53,6 +58,7 @@
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.company.DataRepositorySampleMain" />
       <module name="VulcanoCAFUE" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

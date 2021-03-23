@@ -1,105 +1,105 @@
 Manifest-Version: 1.0
 Main-Class: com.company.DataRepositorySampleMain
-Class-Path: deployment.jar batik-anim-1.7.jar batik-awt-util-1.7.jar bat
- ik-bridge-1.7.jar batik-codec-1.7.jar batik-css-1.7.jar batik-dom-1.7.j
- ar batik-ext-1.7.jar batik-extension-1.7.jar batik-gui-util-1.7.jar bat
- ik-gvt-1.7.jar batik-parser-1.7.jar batik-script-1.7.jar batik-svg-dom-
- 1.7.jar batik-svggen-1.7.jar batik-swing-1.7.jar batik-transcoder-1.7.j
- ar batik-util-1.7.jar batik-xml-1.7.jar binding-2.0.6.jar clibwrapper_j
- iio-1.2+13-lcd.jar common-1.8.0.jar commons-codec-1.6.jar commons-compr
- ess-1.5.jar commons-lang-2.4.jar commons-logging-1.1.1.jar cors-filter-
- 1.3.2.jar db2jcc-3.64.jar forms-1.8.0.jar geodetic-3.00JC1.jar glu-tess
- -1.0+3-lcd.jar gluegen-rt-2.1.5.jar gstreamer-java-1.5.jar httpclient-4
- .2.3.jar httpclient-cache-4.2.3.jar httpcore-4.2.2.jar icepdf-core-5.1.
- 1+7-luciad.jar ifxjdbc-3.00JC1.jar ifxjdbcx-3.00JC1.jar jackson-core-as
- l-1.9.10.jar jackson-mapper-asl-1.9.10.jar jai_codec-1.1.4+1-lcd.jar ja
- i_core-1.1.4+1-lcd.jar jai_imageio-1.2+13-lcd.jar Jama-1.0.2.jar jaxen-
- 1.1.6.jar jdom-1.1.3.jar jdom2-2.0.5.jar jetty-continuation-8.1.15.v201
- 40411.jar jetty-deploy-8.1.15.v20140411.jar jetty-http-8.1.15.v20140411
- .jar jetty-io-8.1.15.v20140411.jar jetty-jmx-8.1.15.v20140411.jar jetty
- -security-8.1.15.v20140411.jar jetty-server-8.1.15.v20140411.jar jetty-
- servlet-8.1.15.v20140411.jar jetty-util-8.1.15.v20140411.jar jetty-weba
- pp-8.1.15.v20140411.jar jetty-xml-8.1.15.v20140411.jar jgen-2.2.jar jid
- e-common-2.10.6.jar jide-dock-2.10.6.jar jna-3.2.4.jar jocl-2.1.5.jar j
- oda-time-2.4.jar jogl-all-2.1.5.jar jts-1.8.jar lcd_3d.jar lcd_ais.jar 
- lcd_aixm.jar lcd_aixm5.jar lcd_annotations.jar lcd_arinc.jar lcd_asdi.j
- ar lcd_asterix.jar lcd_bci.jar lcd_bingmaps.jar lcd_bingmaps_3d.jar lcd
- _collada.jar lcd_dafif.jar lcd_db2.jar lcd_dgn.jar lcd_dimap.jar lcd_dw
- g.jar lcd_earth.jar lcd_earth_opengl.jar lcd_ecdis.jar lcd_ecdis_s63.ja
- r lcd_ecw.jar lcd_filter.jar lcd_filter_spatial.jar lcd_fusion_client.j
- ar lcd_gdf.jar lcd_geometry.jar lcd_geospatialpdf.jar lcd_geospot.jar l
- cd_gml3.jar lcd_grib.jar lcd_informix.jar lcd_informix_spatial.jar lcd_
- jpeg2000_decoder.jar lcd_jpeg2000_encoder.jar lcd_jts_extension.jar lcd
- _kml.jar lcd_lidar.jar lcd_lightspeed.jar lcd_lucy.jar lcd_metadata.jar
-  lcd_mil_sym.jar lcd_mrsid.jar lcd_mssql.jar lcd_netcdf.jar lcd_network
- .jar lcd_nitf.jar lcd_nvg.jar lcd_opengl_binding.jar lcd_opengl_binding
- _jogl2.jar lcd_oracle.jar lcd_oracle_georaster.jar lcd_ows.jar lcd_post
- gresql.jar lcd_realtime.jar lcd_saphana.jar lcd_sld.jar lcd_sqlite_geop
- ackage.jar lcd_swissdhm.jar lcd_tea.jar lcd_usrp.jar lcd_vpf.jar lcd_wc
- s_client.jar lcd_wcs_common.jar lcd_wcs_server.jar lcd_wfs_client.jar l
- cd_wfs_common.jar lcd_wfs_server.jar lcd_wms_client.jar lcd_wms_client_
- 3d.jar lcd_wms_client_earth.jar lcd_wms_common.jar lcd_wms_server.jar l
- cd_wmts_client.jar lcd_wmts_common.jar lcd_wxs_server.jar lcd_xml.jar l
- og4j-1.2.15.jar luciadlightspeed.jar mlibwrapper_jai-1.1.4+1-lcd.jar ng
- dbc-1.00.68.jar ojdbc6-11.2.0.1.0.jar postgresql-jdbc4-9.0-801.jar rela
- xngDatatype-1.0.jar sdoapi-11.2.0.1.0.jar servletapi-3.0.jar sqlitej-3.
- 8.6+2.jar sqljdbc4-4.0.2206.100.jar stax-utils-20070216.jar stax2-api-3
- .0.3.jar swingx-all-1.6.5-1.jar swingx-beaninfo-1.6.5-1.jar vectormath-
- 1.2-1.14.jar woodstox-core-4.0.9.jar xalan-2.6.0.jar xml-apis-ext-1.3.0
- 4.jar xsom-20110809.jar itext.jar itextpdf-5.4.0.jar itext.jar itextpdf
- -5.4.0.jar activation-1.1.1.jar commons-codec-1.13.jar commons-collecti
- ons4-4.4.jar commons-compress-1.19.jar commons-logging-1.2.jar commons-
- math3-3.6.1.jar dom4j-1.6.jar jaxb-api-2.3.1.jar jaxb-core-2.3.0.1.jar 
- jaxb-impl-2.3.2.jar jlayer-1.0.1.jar junit-4.12.jar log4j-1.2.17.jar po
- i-3.7-20101029.jar poi-4.1.1.jar poi-examples-4.1.1.jar poi-excelant-4.
- 1.1.jar poi-ooxml-3.7-20101029.jar poi-ooxml-4.1.1.jar poi-ooxml-schema
- s-3.7-20101029.jar poi-ooxml-schemas-4.1.1.jar poi-scratchpad-3.7-20101
- 029.jar poi-scratchpad-4.1.1.jar xmlbeans-2.3.0.jar lcd_3d.jar jts-1.8.
- jar lcd_ais.jar lcd_bci.jar lcd_db2.jar lcd_dgn.jar lcd_dwg.jar lcd_ecw
- .jar lcd_gdf.jar lcd_kml.jar lcd_nvg.jar lcd_ows.jar lcd_sld.jar lcd_te
- a.jar lcd_vpf.jar lcd_xml.jar jgen-2.2.jar lcd_aixm.jar lcd_asdi.jar lc
- d_gml3.jar lcd_grib.jar lcd_lucy.jar lcd_nitf.jar lcd_usrp.jar jna-3.2.
- 4.jar lcd_aixm5.jar lcd_arinc.jar lcd_dafif.jar lcd_dimap.jar lcd_earth
- .jar lcd_ecdis.jar lcd_lidar.jar lcd_mrsid.jar lcd_mssql.jar Jama-1.0.2
- .jar jdom-1.1.3.jar jocl-2.1.5.jar lcd_filter.jar lcd_netcdf.jar lcd_or
- acle.jar db2jcc-3.64.jar forms-1.8.0.jar jaxen-1.1.6.jar jdom2-2.0.5.ja
- r lcd_asterix.jar lcd_collada.jar lcd_geospot.jar lcd_mil_sym.jar lcd_n
- etwork.jar lcd_saphana.jar xalan-2.6.0.jar common-1.8.0.jar lcd_bingmap
- s.jar lcd_dgn_util.jar lcd_geometry.jar lcd_informix.jar lcd_metadata.j
- ar lcd_realtime.jar lcd_swissdhm.jar log4j-1.2.15.jar batik-css-1.7.jar
-  batik-dom-1.7.jar batik-ext-1.7.jar batik-gvt-1.7.jar batik-xml-1.7.ja
- r binding-2.0.6.jar joda-time-2.4.jar lcd_ecdis_s63.jar ngdbc-1.00.68.j
- ar xsom-20110809.jar batik-anim-1.7.jar batik-util-1.7.jar httpcore-4.2
- .2.jar jogl-all-2.1.5.jar lcd_lightspeed.jar lcd_postgresql.jar lcd_wcs
- _client.jar lcd_wcs_common.jar lcd_wcs_server.jar lcd_wfs_client.jar lc
- d_wfs_common.jar lcd_wfs_server.jar lcd_wms_client.jar lcd_wms_common.j
- ar lcd_wms_server.jar lcd_wxs_server.jar servletapi-3.0.jar batik-codec
- -1.7.jar batik-swing-1.7.jar ifxjdbc-3.00JC1.jar lcd_annotations.jar lc
- d_bingmaps_3d.jar lcd_wmts_client.jar lcd_wmts_common.jar sqlitej-3.8.6
- +2.jar stax2-api-3.0.3.jar batik-bridge-1.7.jar batik-parser-1.7.jar ba
- tik-script-1.7.jar batik-svggen-1.7.jar commons-lang-2.4.jar geodetic-3
- .00JC1.jar gluegen-rt-2.1.5.jar httpclient-4.2.3.jar ifxjdbcx-3.00JC1.j
- ar jide-dock-2.10.6.jar lcd_earth_opengl.jar luciadlightspeed.jar batik
- -svg-dom-1.7.jar commons-codec-1.6.jar cors-filter-1.3.2.jar lcd_fusion
- _client.jar lcd_geospatialpdf.jar lcd_jts_extension.jar lcd_wms_client_
- 3d.jar ojdbc6-11.2.0.1.0.jar sdoapi-11.2.0.1.0.jar batik-awt-util-1.7.j
- ar batik-gui-util-1.7.jar glu-tess-1.0+3-lcd.jar gstreamer-java-1.5.jar
-  jide-common-2.10.6.jar lcd_epsg_resources.jar lcd_filter_spatial.jar l
- cd_opengl_binding.jar swingx-all-1.6.5-1.jar batik-extension-1.7.jar re
- laxngDatatype-1.0.jar stax-utils-20070216.jar vectormath-1.2-1.14.jar w
- oodstox-core-4.0.9.jar xml-apis-ext-1.3.04.jar batik-transcoder-1.7.jar
-  commons-compress-1.5.jar jai_core-1.1.4+1-lcd.jar lcd_informix_spatial
- .jar lcd_jpeg2000_decoder.jar lcd_jpeg2000_encoder.jar lcd_oracle_geora
- ster.jar lcd_wms_client_earth.jar commons-logging-1.1.1.jar jai_codec-1
- .1.4+1-lcd.jar lcd_sqlite_geopackage.jar sqljdbc4-4.0.2206.100.jar http
- client-cache-4.2.3.jar jai_imageio-1.2+13-lcd.jar jackson-core-asl-1.9.
- 10.jar swingx-beaninfo-1.6.5-1.jar lcd_opengl_binding_jogl2.jar postgre
- sql-jdbc4-9.0-801.jar jackson-mapper-asl-1.9.10.jar jetty-io-8.1.15.v20
- 140411.jar icepdf-core-5.1.1+7-luciad.jar jetty-jmx-8.1.15.v20140411.ja
- r jetty-xml-8.1.15.v20140411.jar clibwrapper_jiio-1.2+13-lcd.jar jetty-
- http-8.1.15.v20140411.jar jetty-util-8.1.15.v20140411.jar mlibwrapper_j
- ai-1.1.4+1-lcd.jar jetty-deploy-8.1.15.v20140411.jar jetty-server-8.1.1
- 5.v20140411.jar jetty-webapp-8.1.15.v20140411.jar jetty-servlet-8.1.15.
- v20140411.jar jetty-security-8.1.15.v20140411.jar jetty-continuation-8.
- 1.15.v20140411.jar
+Class-Path: deployment.jar itext.jar itextpdf-5.4.0.jar activation-1.1.1
+ .jar commons-codec-1.13.jar commons-collections4-4.4.jar commons-compre
+ ss-1.19.jar commons-logging-1.2.jar commons-math3-3.6.1.jar dom4j-1.6.j
+ ar jaxb-api-2.3.1.jar jaxb-core-2.3.0.1.jar jaxb-impl-2.3.2.jar jlayer-
+ 1.0.1.jar junit-4.12.jar log4j-1.2.17.jar poi-3.7-20101029.jar poi-4.1.
+ 1.jar poi-examples-4.1.1.jar poi-excelant-4.1.1.jar poi-ooxml-3.7-20101
+ 029.jar poi-ooxml-4.1.1.jar poi-ooxml-schemas-3.7-20101029.jar poi-ooxm
+ l-schemas-4.1.1.jar poi-scratchpad-3.7-20101029.jar poi-scratchpad-4.1.
+ 1.jar xmlbeans-2.3.0.jar deployment.jar lcd_3d.jar jts-1.8.jar lcd_ais.
+ jar lcd_bci.jar lcd_db2.jar lcd_dgn.jar lcd_dwg.jar lcd_ecw.jar lcd_gdf
+ .jar lcd_kml.jar lcd_nvg.jar lcd_ows.jar lcd_sld.jar lcd_tea.jar lcd_vp
+ f.jar lcd_xml.jar jgen-2.2.jar lcd_aixm.jar lcd_asdi.jar lcd_gml3.jar l
+ cd_grib.jar lcd_lucy.jar lcd_nitf.jar lcd_usrp.jar jna-3.2.4.jar lcd_ai
+ xm5.jar lcd_arinc.jar lcd_dafif.jar lcd_dimap.jar lcd_earth.jar lcd_ecd
+ is.jar lcd_lidar.jar lcd_mrsid.jar lcd_mssql.jar Jama-1.0.2.jar jdom-1.
+ 1.3.jar jocl-2.1.5.jar lcd_filter.jar lcd_netcdf.jar lcd_oracle.jar db2
+ jcc-3.64.jar forms-1.8.0.jar jaxen-1.1.6.jar jdom2-2.0.5.jar lcd_asteri
+ x.jar lcd_collada.jar lcd_geospot.jar lcd_mil_sym.jar lcd_network.jar l
+ cd_saphana.jar xalan-2.6.0.jar common-1.8.0.jar lcd_bingmaps.jar lcd_dg
+ n_util.jar lcd_geometry.jar lcd_informix.jar lcd_metadata.jar lcd_realt
+ ime.jar lcd_swissdhm.jar log4j-1.2.15.jar batik-css-1.7.jar batik-dom-1
+ .7.jar batik-ext-1.7.jar batik-gvt-1.7.jar batik-xml-1.7.jar binding-2.
+ 0.6.jar joda-time-2.4.jar lcd_ecdis_s63.jar ngdbc-1.00.68.jar xsom-2011
+ 0809.jar batik-anim-1.7.jar batik-util-1.7.jar httpcore-4.2.2.jar jogl-
+ all-2.1.5.jar lcd_lightspeed.jar lcd_postgresql.jar lcd_wcs_client.jar 
+ lcd_wcs_common.jar lcd_wcs_server.jar lcd_wfs_client.jar lcd_wfs_common
+ .jar lcd_wfs_server.jar lcd_wms_client.jar lcd_wms_common.jar lcd_wms_s
+ erver.jar lcd_wxs_server.jar servletapi-3.0.jar batik-codec-1.7.jar bat
+ ik-swing-1.7.jar ifxjdbc-3.00JC1.jar lcd_annotations.jar lcd_bingmaps_3
+ d.jar lcd_wmts_client.jar lcd_wmts_common.jar sqlitej-3.8.6+2.jar stax2
+ -api-3.0.3.jar batik-bridge-1.7.jar batik-parser-1.7.jar batik-script-1
+ .7.jar batik-svggen-1.7.jar commons-lang-2.4.jar geodetic-3.00JC1.jar g
+ luegen-rt-2.1.5.jar httpclient-4.2.3.jar ifxjdbcx-3.00JC1.jar jide-dock
+ -2.10.6.jar lcd_earth_opengl.jar luciadlightspeed.jar batik-svg-dom-1.7
+ .jar commons-codec-1.6.jar cors-filter-1.3.2.jar lcd_fusion_client.jar 
+ lcd_geospatialpdf.jar lcd_jts_extension.jar lcd_wms_client_3d.jar ojdbc
+ 6-11.2.0.1.0.jar sdoapi-11.2.0.1.0.jar batik-awt-util-1.7.jar batik-gui
+ -util-1.7.jar glu-tess-1.0+3-lcd.jar gstreamer-java-1.5.jar jide-common
+ -2.10.6.jar lcd_epsg_resources.jar lcd_filter_spatial.jar lcd_opengl_bi
+ nding.jar swingx-all-1.6.5-1.jar batik-extension-1.7.jar relaxngDatatyp
+ e-1.0.jar stax-utils-20070216.jar vectormath-1.2-1.14.jar woodstox-core
+ -4.0.9.jar xml-apis-ext-1.3.04.jar batik-transcoder-1.7.jar commons-com
+ press-1.5.jar jai_core-1.1.4+1-lcd.jar lcd_informix_spatial.jar lcd_jpe
+ g2000_decoder.jar lcd_jpeg2000_encoder.jar lcd_oracle_georaster.jar lcd
+ _wms_client_earth.jar commons-logging-1.1.1.jar jai_codec-1.1.4+1-lcd.j
+ ar lcd_sqlite_geopackage.jar sqljdbc4-4.0.2206.100.jar httpclient-cache
+ -4.2.3.jar jai_imageio-1.2+13-lcd.jar jackson-core-asl-1.9.10.jar swing
+ x-beaninfo-1.6.5-1.jar lcd_opengl_binding_jogl2.jar postgresql-jdbc4-9.
+ 0-801.jar jackson-mapper-asl-1.9.10.jar jetty-io-8.1.15.v20140411.jar i
+ cepdf-core-5.1.1+7-luciad.jar jetty-jmx-8.1.15.v20140411.jar jetty-xml-
+ 8.1.15.v20140411.jar clibwrapper_jiio-1.2+13-lcd.jar jetty-http-8.1.15.
+ v20140411.jar jetty-util-8.1.15.v20140411.jar mlibwrapper_jai-1.1.4+1-l
+ cd.jar jetty-deploy-8.1.15.v20140411.jar jetty-server-8.1.15.v20140411.
+ jar jetty-webapp-8.1.15.v20140411.jar jetty-servlet-8.1.15.v20140411.ja
+ r jetty-security-8.1.15.v20140411.jar jetty-continuation-8.1.15.v201404
+ 11.jar batik-anim-1.7.jar batik-awt-util-1.7.jar batik-bridge-1.7.jar b
+ atik-codec-1.7.jar batik-css-1.7.jar batik-dom-1.7.jar batik-ext-1.7.ja
+ r batik-extension-1.7.jar batik-gui-util-1.7.jar batik-gvt-1.7.jar bati
+ k-parser-1.7.jar batik-script-1.7.jar batik-svg-dom-1.7.jar batik-svgge
+ n-1.7.jar batik-swing-1.7.jar batik-transcoder-1.7.jar batik-util-1.7.j
+ ar batik-xml-1.7.jar binding-2.0.6.jar clibwrapper_jiio-1.2+13-lcd.jar 
+ common-1.8.0.jar commons-codec-1.6.jar commons-compress-1.5.jar commons
+ -lang-2.4.jar commons-logging-1.1.1.jar cors-filter-1.3.2.jar db2jcc-3.
+ 64.jar forms-1.8.0.jar geodetic-3.00JC1.jar glu-tess-1.0+3-lcd.jar glue
+ gen-rt-2.1.5.jar gstreamer-java-1.5.jar httpclient-4.2.3.jar httpclient
+ -cache-4.2.3.jar httpcore-4.2.2.jar icepdf-core-5.1.1+7-luciad.jar ifxj
+ dbc-3.00JC1.jar ifxjdbcx-3.00JC1.jar jackson-core-asl-1.9.10.jar jackso
+ n-mapper-asl-1.9.10.jar jai_codec-1.1.4+1-lcd.jar jai_core-1.1.4+1-lcd.
+ jar jai_imageio-1.2+13-lcd.jar Jama-1.0.2.jar jaxen-1.1.6.jar jdom-1.1.
+ 3.jar jdom2-2.0.5.jar jetty-continuation-8.1.15.v20140411.jar jetty-dep
+ loy-8.1.15.v20140411.jar jetty-http-8.1.15.v20140411.jar jetty-io-8.1.1
+ 5.v20140411.jar jetty-jmx-8.1.15.v20140411.jar jetty-security-8.1.15.v2
+ 0140411.jar jetty-server-8.1.15.v20140411.jar jetty-servlet-8.1.15.v201
+ 40411.jar jetty-util-8.1.15.v20140411.jar jetty-webapp-8.1.15.v20140411
+ .jar jetty-xml-8.1.15.v20140411.jar jgen-2.2.jar jide-common-2.10.6.jar
+  jide-dock-2.10.6.jar jna-3.2.4.jar jocl-2.1.5.jar joda-time-2.4.jar jo
+ gl-all-2.1.5.jar jts-1.8.jar lcd_3d.jar lcd_ais.jar lcd_aixm.jar lcd_ai
+ xm5.jar lcd_annotations.jar lcd_arinc.jar lcd_asdi.jar lcd_asterix.jar 
+ lcd_bci.jar lcd_bingmaps.jar lcd_bingmaps_3d.jar lcd_collada.jar lcd_da
+ fif.jar lcd_db2.jar lcd_dgn.jar lcd_dimap.jar lcd_dwg.jar lcd_earth.jar
+  lcd_earth_opengl.jar lcd_ecdis.jar lcd_ecdis_s63.jar lcd_ecw.jar lcd_f
+ ilter.jar lcd_filter_spatial.jar lcd_fusion_client.jar lcd_gdf.jar lcd_
+ geometry.jar lcd_geospatialpdf.jar lcd_geospot.jar lcd_gml3.jar lcd_gri
+ b.jar lcd_informix.jar lcd_informix_spatial.jar lcd_jpeg2000_decoder.ja
+ r lcd_jpeg2000_encoder.jar lcd_jts_extension.jar lcd_kml.jar lcd_lidar.
+ jar lcd_lightspeed.jar lcd_lucy.jar lcd_metadata.jar lcd_mil_sym.jar lc
+ d_mrsid.jar lcd_mssql.jar lcd_netcdf.jar lcd_network.jar lcd_nitf.jar l
+ cd_nvg.jar lcd_opengl_binding.jar lcd_opengl_binding_jogl2.jar lcd_orac
+ le.jar lcd_oracle_georaster.jar lcd_ows.jar lcd_postgresql.jar lcd_real
+ time.jar lcd_saphana.jar lcd_sld.jar lcd_sqlite_geopackage.jar lcd_swis
+ sdhm.jar lcd_tea.jar lcd_usrp.jar lcd_vpf.jar lcd_wcs_client.jar lcd_wc
+ s_common.jar lcd_wcs_server.jar lcd_wfs_client.jar lcd_wfs_common.jar l
+ cd_wfs_server.jar lcd_wms_client.jar lcd_wms_client_3d.jar lcd_wms_clie
+ nt_earth.jar lcd_wms_common.jar lcd_wms_server.jar lcd_wmts_client.jar 
+ lcd_wmts_common.jar lcd_wxs_server.jar lcd_xml.jar log4j-1.2.15.jar luc
+ iadlightspeed.jar mlibwrapper_jai-1.1.4+1-lcd.jar ngdbc-1.00.68.jar ojd
+ bc6-11.2.0.1.0.jar postgresql-jdbc4-9.0-801.jar relaxngDatatype-1.0.jar
+  sdoapi-11.2.0.1.0.jar servletapi-3.0.jar sqlitej-3.8.6+2.jar sqljdbc4-
+ 4.0.2206.100.jar stax-utils-20070216.jar stax2-api-3.0.3.jar swingx-all
+ -1.6.5-1.jar swingx-beaninfo-1.6.5-1.jar vectormath-1.2-1.14.jar woodst
+ ox-core-4.0.9.jar xalan-2.6.0.jar xml-apis-ext-1.3.04.jar xsom-20110809
+ .jar itext.jar itextpdf-5.4.0.jar
 

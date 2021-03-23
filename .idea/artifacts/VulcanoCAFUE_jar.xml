@@ -6,9 +6,9 @@
         <element id="module-output" name="VulcanoCAFUE" />
       </element>
       <element id="library" level="project" name="deployment" />
-      <element id="library" level="project" name="batik-anim-1.7" />
-      <element id="library" level="project" name="lightspeed" />
       <element id="library" level="project" name="dll" />
+      <element id="library" level="project" name="lightspeed" />
+      <element id="library" level="project" name="batik-anim-1.7" />
     </root>
   </artifact>
 </component>
