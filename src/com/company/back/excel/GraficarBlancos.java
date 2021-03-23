@@ -17,7 +17,6 @@ import java.util.List;
 
 import static com.company.ShowReadMeAddOn.getiLcyLucyEnv;
 
-
 public class GraficarBlancos {
     private ArrayList objects;
     private TLcdEditableMS2525bObject[] editableMS2525bObjects;

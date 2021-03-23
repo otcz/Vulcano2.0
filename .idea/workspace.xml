@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
+      <change beforePath="$PROJECT_DIR$/src/com/company/back/GeneratePDFFileIText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/GeneratePDFFileIText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/back/LineaVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/LineaVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/back/ListadoBlancos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/ListadoBlancos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/back/ListadoObservadoresAdelantado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/ListadoObservadoresAdelantado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/back/VentanaToolTip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/VentanaToolTip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/back/excel/GraficarBlancos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/excel/GraficarBlancos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
