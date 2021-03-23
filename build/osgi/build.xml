@@ -1,0 +1,35 @@
+<project name="osgi_installer" default="release" basedir=".">
+
+  <property name="target" location="target"/>
+
+  <target name="clean">
+    <delete dir="${target}"/>
+  </target>
+
+  <target name="init">
+    <mkdir dir="${target}"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <mkdir dir="${target}/classes"/>
+    <javac destdir="${target}/classes"
+           includeantruntime="yes"
+           debug="true"
+           target="1.7"
+           source="1.7">
+      <src path="src"/>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="${target}/installer.jar">
+      <fileset dir="${target}/classes"/>
+      <fileset dir="resources"/>
+      <manifest>
+        <attribute name="Main-Class" value="com.luciad.osgi.installer.OsgiInstaller"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="release" depends="clean,jar"/>
+</project>

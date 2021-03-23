@@ -1,0 +1,4 @@
+Bundle-Version: 2017.1.08
+Export-Package: samples.*
+Import-Package: !*
+Fragment-Host: com.luciad.osgi

@@ -1,0 +1,2561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:artifact="antlib:org.apache.maven.artifact.ant" xmlns:if="ant:if"
+         xmlns:unless="ant:unless"
+         name="deploy-luciad"
+         default="deploy">
+
+  <description>
+    This Ant project will upload the Lightspeed libraries to a Maven repository.
+    At least Ant 1.9.1 is required.
+    The Maven antlib must be available to Ant (either in Ant's lib directory, the CLASSPATH environment variable or supplied via -lib).
+
+    Unless set via the command line, the script will ask for the repository URL, username and password.
+    HTTP and file protocols are supported by default. For other protocols, see http://maven.apache.org/wagon/
+  </description>
+
+  <!-- import Ant-Contrib -->
+  <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+  <!-- This script should be placed in build/maven -->
+  <property name="poms.dir" value="pom"/>
+  <property name="libs.dir" value="../../lib"/>
+  <property name="config.dir" value="../../config"/>
+
+  <target name="setup">
+      <makeurl file="${user.home}/.m2/repository" property="m2.repository.url"/>
+      <input addproperty="repository.url" message="Repository URL: "
+             defaultvalue="${m2.repository.url}"/>
+      <condition property="repository.islocal">
+         <matches string="${repository.url}" pattern="^file:.*$"/>
+      </condition>
+      <input unless:set="repository.islocal" addproperty="repository.username"
+             message="Repository username: "/>
+      <input unless:set="repository.islocal" addproperty="repository.password"
+             message="Repository password: ">
+         <handler type="secure"/>
+      </input>
+      <artifact:remoteRepository id="remote.repository" url="${repository.url}">
+         <authentication username="${repository.username}" password="${repository.password}"/>
+      </artifact:remoteRepository>
+  </target>
+
+  <macrodef name="deploy-artifact">
+      <attribute name="pom.file"/>
+      <attribute name="jar.file" default=""/>
+      <element name="attachments" optional="true"/>
+      <sequential>
+         <artifact:pom id="@{pom.file}" file="${poms.dir}/@{pom.file}"/>
+         <trycatch property="@{pom.file}.error">
+            <try>
+               <artifact:deploy unless:blank="@{jar.file}" file="@{jar.file}">
+                  <remoteRepository refid="remote.repository"/>
+                  <pom refid="@{pom.file}"/>
+                  <attachments/>
+               </artifact:deploy>
+               <!-- if there's no jar available, upload the POM itself -->
+          <artifact:deploy if:blank="@{jar.file}" file="${poms.dir}/@{pom.file}">
+                  <remoteRepository refid="remote.repository"/>
+                  <pom refid="@{pom.file}"/>
+                  <attachments/>
+               </artifact:deploy>
+               <property name="@{pom.file}.deployed" value="true"/>
+            </try>
+
+            <catch>
+               <echo message="Failed to deploy @{pom.file}"/>
+            </catch>
+         </trycatch>
+      </sequential>
+  </macrodef>
+
+  <target name="libs:available" depends="setup">
+      <condition property="lcd_wms_client_earth_opengl.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wms_client_earth_opengl.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_lucy_symbology.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_lucy_symbology.jar"/>
+         </and>
+      </condition>
+      <condition property="slf4j-jdk14.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/slf4j-jdk14-1.7.25.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wms_server.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wms_server.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-svggen.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-svggen-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="ehcache.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/ehcache-3.2.0.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wfs_server.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wfs_server.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_lucy_graph.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_lucy_graph.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_gdf.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_gdf.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_network.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_network.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_saphana.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_saphana.jar"/>
+         </and>
+      </condition>
+      <condition property="ngdbc.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/ngdbc-1.00.68.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_informix_spatial.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_informix_spatial.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_db2.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_db2.jar"/>
+         </and>
+      </condition>
+      <condition property="db2jcc.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/db2jcc-3.64.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_csw_client.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_csw_client.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_lucy.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_lucy.jar"/>
+         </and>
+      </condition>
+      <condition property="jide-plaf.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jide-plaf-3.6.13.jar"/>
+         </and>
+      </condition>
+      <condition property="jide-dock.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jide-dock-3.6.13.jar"/>
+         </and>
+      </condition>
+      <condition property="jide-common.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jide-common-3.6.13.jar"/>
+         </and>
+      </condition>
+      <condition property="swingx-beaninfo.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/swingx-beaninfo-1.6.5-1.jar"/>
+         </and>
+      </condition>
+      <condition property="swingx-all.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/swingx-all-1.6.5-1.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_oculus.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_oculus.jar"/>
+            <available file="${libs.dir}/lcd_oculus-native.win32.jar"/>
+            <available file="${libs.dir}/lcd_oculus-native.win64.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_gee.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_gee.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_geospatialpdf.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_geospatialpdf.jar"/>
+         </and>
+      </condition>
+      <condition property="icepdf-core.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/icepdf-core-5.1.1.lcd-7.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_bingmaps_3d.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_bingmaps_3d.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wcs_client.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wcs_client.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wcs_server.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wcs_server.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wxs_server.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wxs_server.jar"/>
+         </and>
+      </condition>
+      <condition property="cors-filter.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/cors-filter-1.3.2.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wcs_common.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wcs_common.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wfs_client.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wfs_client.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wfs_common.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wfs_common.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wmts_client.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wmts_client.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wmts_common.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wmts_common.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wms_client.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wms_client.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_wms_common.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_wms_common.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_tea.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_tea.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_mssql.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_mssql.jar"/>
+         </and>
+      </condition>
+      <condition property="sqljdbc4.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/sqljdbc4-4.0.2206.100.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_postgresql.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_postgresql.jar"/>
+         </and>
+      </condition>
+      <condition property="postgresql.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/postgresql-42.0.0.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_oracle_georaster.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_oracle_georaster.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_oracle.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_oracle.jar"/>
+         </and>
+      </condition>
+      <condition property="ojdbc6.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/ojdbc6-11.2.0.1.0.jar"/>
+         </and>
+      </condition>
+      <condition property="sdoapi.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/sdoapi-11.2.0.1.0.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_nvg.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_nvg.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_netcdf.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_netcdf.jar"/>
+         </and>
+      </condition>
+      <condition property="slf4j-api.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/slf4j-api-1.7.25.jar"/>
+         </and>
+      </condition>
+      <condition property="joda-time.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/joda-time-2.4.jar"/>
+         </and>
+      </condition>
+      <condition property="jdom2.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jdom2-2.0.5.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_ms2525b.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_ms2525b.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_informix.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_informix.jar"/>
+         </and>
+      </condition>
+      <condition property="ifxjdbcx.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/ifxjdbcx-3.00JC1.jar"/>
+         </and>
+      </condition>
+      <condition property="ifxjdbc.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/ifxjdbc-3.00JC1.jar"/>
+         </and>
+      </condition>
+      <condition property="geodetic.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/geodetic-3.00JC1.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_grib.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_grib.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_ecdis_s63.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_ecdis_s63.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_dwg.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_dwg.jar"/>
+            <available file="${libs.dir}/lcd_dwg-native.win32.jar"/>
+            <available file="${libs.dir}/lcd_dwg-native.macos_64.jar"/>
+            <available file="${libs.dir}/lcd_dwg-native.linux.jar"/>
+            <available file="${libs.dir}/lcd_dwg-native.linux64.jar"/>
+            <available file="${libs.dir}/lcd_dwg-native.win64.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_usrp.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_usrp.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_swissdhm.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_swissdhm.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_nitf.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_nitf.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_sqlite.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_sqlite.jar"/>
+         </and>
+      </condition>
+      <condition property="libgpkg.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.linux.jar"/>
+            <available file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.win64.jar"/>
+            <available file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.macos_64.jar"/>
+            <available file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.win32.jar"/>
+            <available file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.linux64.jar"/>
+         </and>
+      </condition>
+      <condition property="spatialite.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/spatialite-4.3.0.lcd-6-native.win32.jar"/>
+            <available file="${libs.dir}/spatialite-4.3.0.lcd-6-native.linux.jar"/>
+            <available file="${libs.dir}/spatialite-4.3.0.lcd-6-native.linux64.jar"/>
+            <available file="${libs.dir}/spatialite-4.3.0.lcd-6-native.macos_64.jar"/>
+            <available file="${libs.dir}/spatialite-4.3.0.lcd-6-native.win64.jar"/>
+         </and>
+      </condition>
+      <condition property="sqlitej.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/sqlitej-3.12.0.lcd-6.jar"/>
+            <available file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.macos_64.jar"/>
+            <available file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.linux64.jar"/>
+            <available file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.linux.jar"/>
+            <available file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.win64.jar"/>
+            <available file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.win32.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_gdal.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_gdal.jar"/>
+         </and>
+      </condition>
+      <condition property="libgdal.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/libgdal-2.0.0.lcd-5.jar"/>
+            <available file="${libs.dir}/libgdal-2.0.0.lcd-5-native.win64.jar"/>
+            <available file="${libs.dir}/libgdal-2.0.0.lcd-5-native.linux.jar"/>
+            <available file="${libs.dir}/libgdal-2.0.0.lcd-5-native.linux64.jar"/>
+            <available file="${libs.dir}/libgdal-2.0.0.lcd-5-native.macos_64.jar"/>
+            <available file="${libs.dir}/libgdal-2.0.0.lcd-5-native.win32.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_mrsid.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_mrsid.jar"/>
+         </and>
+      </condition>
+      <condition property="mrsid.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/mrsid-1.0.lcd-2-native.linux64.jar"/>
+            <available file="${libs.dir}/mrsid-1.0.lcd-2-native.macos_64.jar"/>
+            <available file="${libs.dir}/mrsid-1.0.lcd-2-native.win64.jar"/>
+            <available file="${libs.dir}/mrsid-1.0.lcd-2-native.win32.jar"/>
+            <available file="${libs.dir}/mrsid-1.0.lcd-2-native.linux.jar"/>
+         </and>
+      </condition>
+      <condition property="ltidsdk.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/ltidsdk-9.5.1.4427-native.macos_64.jar"/>
+            <available file="${libs.dir}/ltidsdk-9.5.1.4427-native.win32.jar"/>
+            <available file="${libs.dir}/ltidsdk-9.5.1.4427-native.win64.jar"/>
+            <available file="${libs.dir}/ltidsdk-9.5.1.4427-native.linux.jar"/>
+            <available file="${libs.dir}/ltidsdk-9.5.1.4427-native.linux64.jar"/>
+         </and>
+      </condition>
+      <condition property="geos.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/geos-3.5.0.lcd-3-native.linux64.jar"/>
+            <available file="${libs.dir}/geos-3.5.0.lcd-3-native.win32.jar"/>
+            <available file="${libs.dir}/geos-3.5.0.lcd-3-native.macos_64.jar"/>
+            <available file="${libs.dir}/geos-3.5.0.lcd-3-native.linux.jar"/>
+            <available file="${libs.dir}/geos-3.5.0.lcd-3-native.win64.jar"/>
+         </and>
+      </condition>
+      <condition property="tbb.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/tbb-2.0-native.win64.jar"/>
+            <available file="${libs.dir}/tbb-2.0-native.linux.jar"/>
+            <available file="${libs.dir}/tbb-2.0-native.macos_64.jar"/>
+            <available file="${libs.dir}/tbb-2.0-native.win32.jar"/>
+            <available file="${libs.dir}/tbb-2.0-native.linux64.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_bci.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_bci.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_jpeg2000_encoder.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_jpeg2000_encoder.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_geospot.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_geospot.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_dimap.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_dimap.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_ecw.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_ecw.jar"/>
+            <available file="${libs.dir}/lcd_ecw-native.win64.jar"/>
+            <available file="${libs.dir}/lcd_ecw-native.linux.jar"/>
+            <available file="${libs.dir}/lcd_ecw-native.linux64.jar"/>
+            <available file="${libs.dir}/lcd_ecw-native.macos_64.jar"/>
+            <available file="${libs.dir}/lcd_ecw-native.win32.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_dgn.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_dgn.jar"/>
+            <available file="${libs.dir}/lcd_dgn-native.win32.jar"/>
+            <available file="${libs.dir}/lcd_dgn-native.macos_64.jar"/>
+            <available file="${libs.dir}/lcd_dgn-native.win64.jar"/>
+            <available file="${libs.dir}/lcd_dgn-native.linux.jar"/>
+            <available file="${libs.dir}/lcd_dgn-native.linux64.jar"/>
+         </and>
+      </condition>
+      <condition property="servletapi.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/servletapi-3.1.0.jar"/>
+         </and>
+      </condition>
+      <condition property="bentley_dgn_stub.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/bentley_dgn_stub-1.0.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_asterix.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_asterix.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_asdi.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_asdi.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_realtime.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_realtime.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_arcsde.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_arcsde.jar"/>
+         </and>
+      </condition>
+      <condition property="jsde_sdk.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jsde_sdk-9.4.jar"/>
+         </and>
+      </condition>
+      <condition property="jpe_sdk.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jpe_sdk-9.4.jar"/>
+         </and>
+      </condition>
+      <condition property="com.ibm.icu.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/com.ibm.icu-3.6.1.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_aixm5.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_aixm5.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_aixm.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_aixm.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_dafif.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_dafif.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_arinc.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_arinc.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_ais.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_ais.jar"/>
+         </and>
+      </condition>
+      <condition property="binding.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/binding-2.0.6.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_lidar.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_lidar.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_kml.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_kml.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_simulator.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_simulator.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_jpeg2000_decoder.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_jpeg2000_decoder.jar"/>
+            <available file="${libs.dir}/lcd_jpeg2000_decoder-native.linux.jar"/>
+            <available file="${libs.dir}/lcd_jpeg2000_decoder-native.linux64.jar"/>
+            <available file="${libs.dir}/lcd_jpeg2000_decoder-native.win32.jar"/>
+            <available file="${libs.dir}/lcd_jpeg2000_decoder-native.macos_64.jar"/>
+            <available file="${libs.dir}/lcd_jpeg2000_decoder-native.win64.jar"/>
+         </and>
+      </condition>
+      <condition property="crt.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/crt-12.0-native.win64.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_fusion_client.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_fusion_client.jar"/>
+         </and>
+      </condition>
+      <condition property="PngEncoder.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/PngEncoder-2.0.2.jar"/>
+         </and>
+      </condition>
+      <condition property="commons-lang3.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/commons-lang3-3.4.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_earth_opengl.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_earth_opengl.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_3d.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_3d.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_filter_spatial.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_filter_spatial.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_ecdis.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_ecdis.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_vpf.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_vpf.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_geometry.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_geometry.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_bingmaps.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_bingmaps.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_lightspeed.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_lightspeed.jar"/>
+         </and>
+      </condition>
+      <condition property="glu-tess.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/glu-tess-1.0.lcd-3.jar"/>
+         </and>
+      </condition>
+      <condition property="jocl.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jocl-2.3.2.lcd-2.jar"/>
+            <available file="${libs.dir}/jocl-2.3.2.lcd-2-natives-linux-amd64.jar"/>
+            <available file="${libs.dir}/jocl-2.3.2.lcd-2-natives-windows-amd64.jar"/>
+            <available file="${libs.dir}/jocl-2.3.2.lcd-2-natives-windows-i586.jar"/>
+            <available file="${libs.dir}/jocl-2.3.2.lcd-2-natives-macosx-universal.jar"/>
+            <available file="${libs.dir}/jocl-2.3.2.lcd-2-natives-linux-i586.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_collada.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_collada.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_sld.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_sld.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_metadata.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_metadata.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_filter.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_filter.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_ows.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_ows.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_gml3.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_gml3.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_xml.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_xml.jar"/>
+         </and>
+      </condition>
+      <condition property="woodstox-core.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/woodstox-core-5.0.3.jar"/>
+         </and>
+      </condition>
+      <condition property="stax2-api.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/stax2-api-3.1.4.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_earth.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_earth.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_core.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_core.jar"/>
+            <available file="${libs.dir}/lcd_core-native.macos_64.jar"/>
+            <available file="${libs.dir}/lcd_core-native.win32.jar"/>
+            <available file="${libs.dir}/lcd_core-native.linux64.jar"/>
+            <available file="${libs.dir}/lcd_core-native.win64.jar"/>
+            <available file="${libs.dir}/lcd_core-native.linux.jar"/>
+         </and>
+      </condition>
+      <condition property="mcstub.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/mcstub-0.1.lcd-1.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-swing.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-swing-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-gui-util.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-gui-util-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-bridge.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-bridge-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-script.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-script-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-gvt.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-gvt-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-anim.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-anim-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-svg-dom.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-svg-dom-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-parser.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-parser-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-dom.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-dom-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="xalan.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/xalan-2.7.2.jar"/>
+         </and>
+      </condition>
+      <condition property="serializer.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/serializer-2.7.2.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-xml.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-xml-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-ext.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-ext-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-css.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-css-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="xml-apis-ext.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/xml-apis-ext-1.3.04.jar"/>
+         </and>
+      </condition>
+      <condition property="xmlgraphics-commons.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/xmlgraphics-commons-2.2.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-awt-util.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-awt-util-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-util.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-util-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-i18n.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-i18n-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="batik-constants.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/batik-constants-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="forms.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/forms-1.8.0.jar"/>
+         </and>
+      </condition>
+      <condition property="common.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/common-1.8.0.jar"/>
+         </and>
+      </condition>
+      <condition property="vectormath.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/vectormath-1.2-1.14.jar"/>
+         </and>
+      </condition>
+      <condition property="Jama.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/Jama-1.0.2.jar"/>
+         </and>
+      </condition>
+      <condition property="jackson-databind.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jackson-databind-2.8.7.jar"/>
+         </and>
+      </condition>
+      <condition property="jackson-core.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jackson-core-2.8.7.jar"/>
+         </and>
+      </condition>
+      <condition property="jackson-annotations.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jackson-annotations-2.8.4.jar"/>
+         </and>
+      </condition>
+      <condition property="jdom.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jdom-1.1.3.jar"/>
+         </and>
+      </condition>
+      <condition property="jaxen.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jaxen-1.1.6.jar"/>
+         </and>
+      </condition>
+      <condition property="httpmime.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/httpmime-4.5.2.jar"/>
+         </and>
+      </condition>
+      <condition property="httpclient-cache.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/httpclient-cache-4.5.2.jar"/>
+         </and>
+      </condition>
+      <condition property="httpclient.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/httpclient-4.5.2.jar"/>
+         </and>
+      </condition>
+      <condition property="commons-codec.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/commons-codec-1.9.jar"/>
+         </and>
+      </condition>
+      <condition property="commons-logging.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/commons-logging-1.2.jar"/>
+         </and>
+      </condition>
+      <condition property="httpcore.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/httpcore-4.4.4.jar"/>
+         </and>
+      </condition>
+      <condition property="commons-compress.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/commons-compress-1.5.jar"/>
+         </and>
+      </condition>
+      <condition property="clibwrapper_jiio.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/clibwrapper_jiio-1.2.lcd-17.jar"/>
+         </and>
+      </condition>
+      <condition property="jai_imageio.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jai_imageio-1.2.lcd-17.jar"/>
+            <available file="${libs.dir}/jai_imageio-1.2.lcd-17-native.win32.jar"/>
+            <available file="${libs.dir}/jai_imageio-1.2.lcd-17-native.linux64.jar"/>
+            <available file="${libs.dir}/jai_imageio-1.2.lcd-17-native.linux.jar"/>
+         </and>
+      </condition>
+      <condition property="jai.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jai-1.1.4.lcd-7-native.win32.jar"/>
+            <available file="${libs.dir}/jai-1.1.4.lcd-7-native.linux.jar"/>
+            <available file="${libs.dir}/jai-1.1.4.lcd-7-native.linux64.jar"/>
+         </and>
+      </condition>
+      <condition property="jai_codec.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jai_codec-1.1.4.lcd-7.jar"/>
+         </and>
+      </condition>
+      <condition property="mlibwrapper_jai.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/mlibwrapper_jai-1.1.4.lcd-7.jar"/>
+         </and>
+      </condition>
+      <condition property="jai_core.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jai_core-1.1.4.lcd-7.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_epsg_resources.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_epsg_resources.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_geoid_resources.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_geoid_resources.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_jts_extension.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_jts_extension.jar"/>
+         </and>
+      </condition>
+      <condition property="jts-core.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jts-core-1.14.0.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_annotations.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_annotations.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_opengl_binding_jogl2.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_opengl_binding_jogl2.jar"/>
+         </and>
+      </condition>
+      <condition property="jogl-all.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/jogl-all-2.3.2.lcd-2.jar"/>
+            <available file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-linux-i586.jar"/>
+            <available file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-linux-amd64.jar"/>
+            <available file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-macosx-universal.jar"/>
+            <available file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-windows-i586.jar"/>
+            <available file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-windows-amd64.jar"/>
+         </and>
+      </condition>
+      <condition property="gluegen-rt.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/gluegen-rt-2.3.2.jar"/>
+            <available file="${libs.dir}/gluegen-rt-2.3.2-natives-linux-amd64.jar"/>
+            <available file="${libs.dir}/gluegen-rt-2.3.2-natives-linux-i586.jar"/>
+            <available file="${libs.dir}/gluegen-rt-2.3.2-natives-windows-amd64.jar"/>
+            <available file="${libs.dir}/gluegen-rt-2.3.2-natives-macosx-universal.jar"/>
+            <available file="${libs.dir}/gluegen-rt-2.3.2-natives-windows-i586.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_opengl_binding.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_opengl_binding.jar"/>
+            <available file="${libs.dir}/lcd_opengl_binding-native.win64.jar"/>
+            <available file="${libs.dir}/lcd_opengl_binding-native.win32.jar"/>
+         </and>
+      </condition>
+      <condition property="lcd_nut.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/lcd_nut.jar"/>
+         </and>
+      </condition>
+      <condition property="xsom.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/xsom-20110809.jar"/>
+         </and>
+      </condition>
+      <condition property="relaxngDatatype.pom.xml.available">
+         <and>
+            <available file="${libs.dir}/relaxngDatatype-1.0.jar"/>
+         </and>
+      </condition>
+      <condition property="LuciadLightspeed.pom.xml.available">
+         <and>
+            <isset property="lcd_csw_client.pom.xml.available"/>
+            <isset property="lcd_lucy.pom.xml.available"/>
+            <isset property="lcd_oculus.pom.xml.available"/>
+            <isset property="lcd_wcs_client.pom.xml.available"/>
+            <isset property="lcd_wcs_common.pom.xml.available"/>
+            <isset property="lcd_wfs_client.pom.xml.available"/>
+            <isset property="lcd_wfs_common.pom.xml.available"/>
+            <isset property="lcd_wmts_client.pom.xml.available"/>
+            <isset property="lcd_wmts_common.pom.xml.available"/>
+            <isset property="lcd_wms_client.pom.xml.available"/>
+            <isset property="lcd_wms_common.pom.xml.available"/>
+            <isset property="lcd_sqlite.pom.xml.available"/>
+            <isset property="lcd_lidar.pom.xml.available"/>
+            <isset property="lcd_kml.pom.xml.available"/>
+            <isset property="lcd_simulator.pom.xml.available"/>
+            <isset property="lcd_jpeg2000_decoder.pom.xml.available"/>
+            <isset property="lcd_fusion_client.pom.xml.available"/>
+            <isset property="lcd_bingmaps.pom.xml.available"/>
+            <isset property="lcd_lightspeed.pom.xml.available"/>
+            <isset property="lcd_collada.pom.xml.available"/>
+            <isset property="lcd_sld.pom.xml.available"/>
+            <isset property="lcd_metadata.pom.xml.available"/>
+            <isset property="lcd_filter.pom.xml.available"/>
+            <isset property="lcd_ows.pom.xml.available"/>
+            <isset property="lcd_gml3.pom.xml.available"/>
+            <isset property="lcd_xml.pom.xml.available"/>
+            <isset property="lcd_earth.pom.xml.available"/>
+            <isset property="lcd_core.pom.xml.available"/>
+            <isset property="lcd_epsg_resources.pom.xml.available"/>
+            <isset property="lcd_geoid_resources.pom.xml.available"/>
+            <isset property="lcd_jts_extension.pom.xml.available"/>
+            <isset property="lcd_annotations.pom.xml.available"/>
+            <isset property="lcd_opengl_binding_jogl2.pom.xml.available"/>
+            <isset property="lcd_opengl_binding.pom.xml.available"/>
+            <isset property="lcd_nut.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Advanced_GIS_Engine.pom.xml.available">
+         <and>
+            <isset property="lcd_filter_spatial.pom.xml.available"/>
+            <isset property="lcd_geometry.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Advanced_Raster_Connectors.pom.xml.available">
+         <and>
+            <isset property="lcd_geospatialpdf.pom.xml.available"/>
+            <isset property="lcd_swissdhm.pom.xml.available"/>
+            <isset property="lcd_gdal.pom.xml.available"/>
+            <isset property="lcd_mrsid.pom.xml.available"/>
+            <isset property="lcd_jpeg2000_encoder.pom.xml.available"/>
+            <isset property="lcd_geospot.pom.xml.available"/>
+            <isset property="lcd_dimap.pom.xml.available"/>
+            <isset property="lcd_ecw.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Real-time_Engine.pom.xml.available">
+         <and>
+            <isset property="lcd_realtime.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="ArcSDE.pom.xml.available">
+         <and>
+            <isset property="lcd_arcsde.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="CAD_Connectors.pom.xml.available">
+         <and>
+            <isset property="lcd_dwg.pom.xml.available"/>
+            <isset property="lcd_dgn.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Database_Connectors.pom.xml.available">
+         <and>
+            <isset property="lcd_saphana.pom.xml.available"/>
+            <isset property="lcd_informix_spatial.pom.xml.available"/>
+            <isset property="lcd_db2.pom.xml.available"/>
+            <isset property="lcd_mssql.pom.xml.available"/>
+            <isset property="lcd_postgresql.pom.xml.available"/>
+            <isset property="lcd_oracle_georaster.pom.xml.available"/>
+            <isset property="lcd_oracle.pom.xml.available"/>
+            <isset property="lcd_informix.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Google_Earth_Enterprise.pom.xml.available">
+         <and>
+            <isset property="lcd_gee.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Graph_and_Routing_Engine.pom.xml.available">
+         <and>
+            <isset property="lcd_lucy_graph.pom.xml.available"/>
+            <isset property="lcd_gdf.pom.xml.available"/>
+            <isset property="lcd_network.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="OGC_Server.pom.xml.available">
+         <and>
+            <isset property="lcd_wms_server.pom.xml.available"/>
+            <isset property="lcd_wfs_server.pom.xml.available"/>
+            <isset property="lcd_wcs_server.pom.xml.available"/>
+            <isset property="lcd_wxs_server.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Terrain_Analysis_Engine.pom.xml.available">
+         <and>
+            <isset property="lcd_tea.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Weather_Environment_Standards.pom.xml.available">
+         <and>
+            <isset property="lcd_netcdf.pom.xml.available"/>
+            <isset property="lcd_grib.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Aviation_Standards.pom.xml.available">
+         <and>
+            <isset property="lcd_aixm5.pom.xml.available"/>
+            <isset property="lcd_aixm.pom.xml.available"/>
+            <isset property="lcd_dafif.pom.xml.available"/>
+            <isset property="lcd_arinc.pom.xml.available"/>
+            <isset property="lcd_ais.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Defense_Standards.pom.xml.available">
+         <and>
+            <isset property="lcd_usrp.pom.xml.available"/>
+            <isset property="lcd_nitf.pom.xml.available"/>
+            <isset property="lcd_bci.pom.xml.available"/>
+            <isset property="lcd_vpf.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Maritime_Standards.pom.xml.available">
+         <and>
+            <isset property="lcd_ecdis.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Radar_Connectors.pom.xml.available">
+         <and>
+            <isset property="lcd_asterix.pom.xml.available"/>
+            <isset property="lcd_asdi.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="S-63.pom.xml.available">
+         <and>
+            <isset property="lcd_ecdis_s63.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="Defense_Symbology.pom.xml.available">
+         <and>
+            <isset property="lcd_lucy_symbology.pom.xml.available"/>
+            <isset property="lcd_nvg.pom.xml.available"/>
+            <isset property="lcd_ms2525b.pom.xml.available"/>
+         </and>
+      </condition>
+      <condition property="3D.pom.xml.available">
+         <and>
+            <isset property="lcd_wms_client_earth_opengl.pom.xml.available"/>
+            <isset property="lcd_bingmaps_3d.pom.xml.available"/>
+            <isset property="lcd_earth_opengl.pom.xml.available"/>
+            <isset property="lcd_3d.pom.xml.available"/>
+         </and>
+      </condition>
+   </target>
+
+  <target name="libs:deploy:core" depends="setup, libs:available"
+           description="Deploy Luciad core libraries">
+      <deploy-artifact if:set="lcd_wms_client_earth_opengl.pom.xml.available"
+                       pom.file="lcd_wms_client_earth_opengl.pom.xml"
+                       jar.file="${libs.dir}/lcd_wms_client_earth_opengl.jar"/>
+      <deploy-artifact if:set="lcd_lucy_symbology.pom.xml.available"
+                       pom.file="lcd_lucy_symbology.pom.xml"
+                       jar.file="${libs.dir}/lcd_lucy_symbology.jar"/>
+      <deploy-artifact if:set="lcd_wms_server.pom.xml.available" pom.file="lcd_wms_server.pom.xml"
+                       jar.file="${libs.dir}/lcd_wms_server.jar"/>
+      <deploy-artifact if:set="lcd_wfs_server.pom.xml.available" pom.file="lcd_wfs_server.pom.xml"
+                       jar.file="${libs.dir}/lcd_wfs_server.jar"/>
+      <deploy-artifact if:set="lcd_lucy_graph.pom.xml.available" pom.file="lcd_lucy_graph.pom.xml"
+                       jar.file="${libs.dir}/lcd_lucy_graph.jar"/>
+      <deploy-artifact if:set="lcd_gdf.pom.xml.available" pom.file="lcd_gdf.pom.xml"
+                       jar.file="${libs.dir}/lcd_gdf.jar"/>
+      <deploy-artifact if:set="lcd_network.pom.xml.available" pom.file="lcd_network.pom.xml"
+                       jar.file="${libs.dir}/lcd_network.jar"/>
+      <deploy-artifact if:set="lcd_saphana.pom.xml.available" pom.file="lcd_saphana.pom.xml"
+                       jar.file="${libs.dir}/lcd_saphana.jar"/>
+      <deploy-artifact if:set="lcd_informix_spatial.pom.xml.available"
+                       pom.file="lcd_informix_spatial.pom.xml"
+                       jar.file="${libs.dir}/lcd_informix_spatial.jar"/>
+      <deploy-artifact if:set="lcd_db2.pom.xml.available" pom.file="lcd_db2.pom.xml"
+                       jar.file="${libs.dir}/lcd_db2.jar"/>
+      <deploy-artifact if:set="lcd_csw_client.pom.xml.available" pom.file="lcd_csw_client.pom.xml"
+                       jar.file="${libs.dir}/lcd_csw_client.jar"/>
+      <deploy-artifact if:set="lcd_lucy.pom.xml.available" pom.file="lcd_lucy.pom.xml"
+                       jar.file="${libs.dir}/lcd_lucy.jar"/>
+      <deploy-artifact if:set="lcd_oculus.pom.xml.available" pom.file="lcd_oculus.pom.xml"
+                       jar.file="${libs.dir}/lcd_oculus.jar">
+         <attachments>
+            <attach file="${libs.dir}/lcd_oculus-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/lcd_oculus-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="lcd_gee.pom.xml.available" pom.file="lcd_gee.pom.xml"
+                       jar.file="${libs.dir}/lcd_gee.jar"/>
+      <deploy-artifact if:set="lcd_geospatialpdf.pom.xml.available"
+                       pom.file="lcd_geospatialpdf.pom.xml"
+                       jar.file="${libs.dir}/lcd_geospatialpdf.jar"/>
+      <deploy-artifact if:set="lcd_bingmaps_3d.pom.xml.available" pom.file="lcd_bingmaps_3d.pom.xml"
+                       jar.file="${libs.dir}/lcd_bingmaps_3d.jar"/>
+      <deploy-artifact if:set="lcd_wcs_client.pom.xml.available" pom.file="lcd_wcs_client.pom.xml"
+                       jar.file="${libs.dir}/lcd_wcs_client.jar"/>
+      <deploy-artifact if:set="lcd_wcs_server.pom.xml.available" pom.file="lcd_wcs_server.pom.xml"
+                       jar.file="${libs.dir}/lcd_wcs_server.jar"/>
+      <deploy-artifact if:set="lcd_wxs_server.pom.xml.available" pom.file="lcd_wxs_server.pom.xml"
+                       jar.file="${libs.dir}/lcd_wxs_server.jar"/>
+      <deploy-artifact if:set="lcd_wcs_common.pom.xml.available" pom.file="lcd_wcs_common.pom.xml"
+                       jar.file="${libs.dir}/lcd_wcs_common.jar"/>
+      <deploy-artifact if:set="lcd_wfs_client.pom.xml.available" pom.file="lcd_wfs_client.pom.xml"
+                       jar.file="${libs.dir}/lcd_wfs_client.jar"/>
+      <deploy-artifact if:set="lcd_wfs_common.pom.xml.available" pom.file="lcd_wfs_common.pom.xml"
+                       jar.file="${libs.dir}/lcd_wfs_common.jar"/>
+      <deploy-artifact if:set="lcd_wmts_client.pom.xml.available" pom.file="lcd_wmts_client.pom.xml"
+                       jar.file="${libs.dir}/lcd_wmts_client.jar"/>
+      <deploy-artifact if:set="lcd_wmts_common.pom.xml.available" pom.file="lcd_wmts_common.pom.xml"
+                       jar.file="${libs.dir}/lcd_wmts_common.jar"/>
+      <deploy-artifact if:set="lcd_wms_client.pom.xml.available" pom.file="lcd_wms_client.pom.xml"
+                       jar.file="${libs.dir}/lcd_wms_client.jar"/>
+      <deploy-artifact if:set="lcd_wms_common.pom.xml.available" pom.file="lcd_wms_common.pom.xml"
+                       jar.file="${libs.dir}/lcd_wms_common.jar"/>
+      <deploy-artifact if:set="lcd_tea.pom.xml.available" pom.file="lcd_tea.pom.xml"
+                       jar.file="${libs.dir}/lcd_tea.jar"/>
+      <deploy-artifact if:set="lcd_mssql.pom.xml.available" pom.file="lcd_mssql.pom.xml"
+                       jar.file="${libs.dir}/lcd_mssql.jar"/>
+      <deploy-artifact if:set="lcd_postgresql.pom.xml.available" pom.file="lcd_postgresql.pom.xml"
+                       jar.file="${libs.dir}/lcd_postgresql.jar"/>
+      <deploy-artifact if:set="lcd_oracle_georaster.pom.xml.available"
+                       pom.file="lcd_oracle_georaster.pom.xml"
+                       jar.file="${libs.dir}/lcd_oracle_georaster.jar"/>
+      <deploy-artifact if:set="lcd_oracle.pom.xml.available" pom.file="lcd_oracle.pom.xml"
+                       jar.file="${libs.dir}/lcd_oracle.jar"/>
+      <deploy-artifact if:set="lcd_nvg.pom.xml.available" pom.file="lcd_nvg.pom.xml"
+                       jar.file="${libs.dir}/lcd_nvg.jar"/>
+      <deploy-artifact if:set="lcd_netcdf.pom.xml.available" pom.file="lcd_netcdf.pom.xml"
+                       jar.file="${libs.dir}/lcd_netcdf.jar"/>
+      <deploy-artifact if:set="lcd_ms2525b.pom.xml.available" pom.file="lcd_ms2525b.pom.xml"
+                       jar.file="${libs.dir}/lcd_ms2525b.jar"/>
+      <deploy-artifact if:set="lcd_informix.pom.xml.available" pom.file="lcd_informix.pom.xml"
+                       jar.file="${libs.dir}/lcd_informix.jar"/>
+      <deploy-artifact if:set="lcd_grib.pom.xml.available" pom.file="lcd_grib.pom.xml"
+                       jar.file="${libs.dir}/lcd_grib.jar"/>
+      <deploy-artifact if:set="lcd_ecdis_s63.pom.xml.available" pom.file="lcd_ecdis_s63.pom.xml"
+                       jar.file="${libs.dir}/lcd_ecdis_s63.jar"/>
+      <deploy-artifact if:set="lcd_dwg.pom.xml.available" pom.file="lcd_dwg.pom.xml"
+                       jar.file="${libs.dir}/lcd_dwg.jar">
+         <attachments>
+            <attach file="${libs.dir}/lcd_dwg-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/lcd_dwg-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/lcd_dwg-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/lcd_dwg-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/lcd_dwg-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="lcd_usrp.pom.xml.available" pom.file="lcd_usrp.pom.xml"
+                       jar.file="${libs.dir}/lcd_usrp.jar"/>
+      <deploy-artifact if:set="lcd_swissdhm.pom.xml.available" pom.file="lcd_swissdhm.pom.xml"
+                       jar.file="${libs.dir}/lcd_swissdhm.jar"/>
+      <deploy-artifact if:set="lcd_nitf.pom.xml.available" pom.file="lcd_nitf.pom.xml"
+                       jar.file="${libs.dir}/lcd_nitf.jar"/>
+      <deploy-artifact if:set="lcd_sqlite.pom.xml.available" pom.file="lcd_sqlite.pom.xml"
+                       jar.file="${libs.dir}/lcd_sqlite.jar"/>
+      <deploy-artifact if:set="lcd_gdal.pom.xml.available" pom.file="lcd_gdal.pom.xml"
+                       jar.file="${libs.dir}/lcd_gdal.jar"/>
+      <deploy-artifact if:set="lcd_mrsid.pom.xml.available" pom.file="lcd_mrsid.pom.xml"
+                       jar.file="${libs.dir}/lcd_mrsid.jar"/>
+      <deploy-artifact if:set="lcd_bci.pom.xml.available" pom.file="lcd_bci.pom.xml"
+                       jar.file="${libs.dir}/lcd_bci.jar"/>
+      <deploy-artifact if:set="lcd_jpeg2000_encoder.pom.xml.available"
+                       pom.file="lcd_jpeg2000_encoder.pom.xml"
+                       jar.file="${libs.dir}/lcd_jpeg2000_encoder.jar"/>
+      <deploy-artifact if:set="lcd_geospot.pom.xml.available" pom.file="lcd_geospot.pom.xml"
+                       jar.file="${libs.dir}/lcd_geospot.jar"/>
+      <deploy-artifact if:set="lcd_dimap.pom.xml.available" pom.file="lcd_dimap.pom.xml"
+                       jar.file="${libs.dir}/lcd_dimap.jar"/>
+      <deploy-artifact if:set="lcd_ecw.pom.xml.available" pom.file="lcd_ecw.pom.xml"
+                       jar.file="${libs.dir}/lcd_ecw.jar">
+         <attachments>
+            <attach file="${libs.dir}/lcd_ecw-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/lcd_ecw-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/lcd_ecw-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/lcd_ecw-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/lcd_ecw-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="lcd_dgn.pom.xml.available" pom.file="lcd_dgn.pom.xml"
+                       jar.file="${libs.dir}/lcd_dgn.jar">
+         <attachments>
+            <attach file="${libs.dir}/lcd_dgn-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/lcd_dgn-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/lcd_dgn-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/lcd_dgn-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/lcd_dgn-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="lcd_asterix.pom.xml.available" pom.file="lcd_asterix.pom.xml"
+                       jar.file="${libs.dir}/lcd_asterix.jar"/>
+      <deploy-artifact if:set="lcd_asdi.pom.xml.available" pom.file="lcd_asdi.pom.xml"
+                       jar.file="${libs.dir}/lcd_asdi.jar"/>
+      <deploy-artifact if:set="lcd_realtime.pom.xml.available" pom.file="lcd_realtime.pom.xml"
+                       jar.file="${libs.dir}/lcd_realtime.jar"/>
+      <deploy-artifact if:set="lcd_arcsde.pom.xml.available" pom.file="lcd_arcsde.pom.xml"
+                       jar.file="${libs.dir}/lcd_arcsde.jar"/>
+      <deploy-artifact if:set="lcd_aixm5.pom.xml.available" pom.file="lcd_aixm5.pom.xml"
+                       jar.file="${libs.dir}/lcd_aixm5.jar"/>
+      <deploy-artifact if:set="lcd_aixm.pom.xml.available" pom.file="lcd_aixm.pom.xml"
+                       jar.file="${libs.dir}/lcd_aixm.jar"/>
+      <deploy-artifact if:set="lcd_dafif.pom.xml.available" pom.file="lcd_dafif.pom.xml"
+                       jar.file="${libs.dir}/lcd_dafif.jar"/>
+      <deploy-artifact if:set="lcd_arinc.pom.xml.available" pom.file="lcd_arinc.pom.xml"
+                       jar.file="${libs.dir}/lcd_arinc.jar"/>
+      <deploy-artifact if:set="lcd_ais.pom.xml.available" pom.file="lcd_ais.pom.xml"
+                       jar.file="${libs.dir}/lcd_ais.jar"/>
+      <deploy-artifact if:set="lcd_lidar.pom.xml.available" pom.file="lcd_lidar.pom.xml"
+                       jar.file="${libs.dir}/lcd_lidar.jar"/>
+      <deploy-artifact if:set="lcd_kml.pom.xml.available" pom.file="lcd_kml.pom.xml"
+                       jar.file="${libs.dir}/lcd_kml.jar"/>
+      <deploy-artifact if:set="lcd_simulator.pom.xml.available" pom.file="lcd_simulator.pom.xml"
+                       jar.file="${libs.dir}/lcd_simulator.jar"/>
+      <deploy-artifact if:set="lcd_jpeg2000_decoder.pom.xml.available"
+                       pom.file="lcd_jpeg2000_decoder.pom.xml"
+                       jar.file="${libs.dir}/lcd_jpeg2000_decoder.jar">
+         <attachments>
+            <attach file="${libs.dir}/lcd_jpeg2000_decoder-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/lcd_jpeg2000_decoder-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/lcd_jpeg2000_decoder-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/lcd_jpeg2000_decoder-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/lcd_jpeg2000_decoder-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="lcd_fusion_client.pom.xml.available"
+                       pom.file="lcd_fusion_client.pom.xml"
+                       jar.file="${libs.dir}/lcd_fusion_client.jar"/>
+      <deploy-artifact if:set="lcd_earth_opengl.pom.xml.available" pom.file="lcd_earth_opengl.pom.xml"
+                       jar.file="${libs.dir}/lcd_earth_opengl.jar"/>
+      <deploy-artifact if:set="lcd_3d.pom.xml.available" pom.file="lcd_3d.pom.xml"
+                       jar.file="${libs.dir}/lcd_3d.jar"/>
+      <deploy-artifact if:set="lcd_filter_spatial.pom.xml.available"
+                       pom.file="lcd_filter_spatial.pom.xml"
+                       jar.file="${libs.dir}/lcd_filter_spatial.jar"/>
+      <deploy-artifact if:set="lcd_ecdis.pom.xml.available" pom.file="lcd_ecdis.pom.xml"
+                       jar.file="${libs.dir}/lcd_ecdis.jar"/>
+      <deploy-artifact if:set="lcd_vpf.pom.xml.available" pom.file="lcd_vpf.pom.xml"
+                       jar.file="${libs.dir}/lcd_vpf.jar"/>
+      <deploy-artifact if:set="lcd_geometry.pom.xml.available" pom.file="lcd_geometry.pom.xml"
+                       jar.file="${libs.dir}/lcd_geometry.jar"/>
+      <deploy-artifact if:set="lcd_bingmaps.pom.xml.available" pom.file="lcd_bingmaps.pom.xml"
+                       jar.file="${libs.dir}/lcd_bingmaps.jar"/>
+      <deploy-artifact if:set="lcd_lightspeed.pom.xml.available" pom.file="lcd_lightspeed.pom.xml"
+                       jar.file="${libs.dir}/lcd_lightspeed.jar"/>
+      <deploy-artifact if:set="lcd_collada.pom.xml.available" pom.file="lcd_collada.pom.xml"
+                       jar.file="${libs.dir}/lcd_collada.jar"/>
+      <deploy-artifact if:set="lcd_sld.pom.xml.available" pom.file="lcd_sld.pom.xml"
+                       jar.file="${libs.dir}/lcd_sld.jar"/>
+      <deploy-artifact if:set="lcd_metadata.pom.xml.available" pom.file="lcd_metadata.pom.xml"
+                       jar.file="${libs.dir}/lcd_metadata.jar"/>
+      <deploy-artifact if:set="lcd_filter.pom.xml.available" pom.file="lcd_filter.pom.xml"
+                       jar.file="${libs.dir}/lcd_filter.jar"/>
+      <deploy-artifact if:set="lcd_ows.pom.xml.available" pom.file="lcd_ows.pom.xml"
+                       jar.file="${libs.dir}/lcd_ows.jar"/>
+      <deploy-artifact if:set="lcd_gml3.pom.xml.available" pom.file="lcd_gml3.pom.xml"
+                       jar.file="${libs.dir}/lcd_gml3.jar"/>
+      <deploy-artifact if:set="lcd_xml.pom.xml.available" pom.file="lcd_xml.pom.xml"
+                       jar.file="${libs.dir}/lcd_xml.jar"/>
+      <deploy-artifact if:set="lcd_earth.pom.xml.available" pom.file="lcd_earth.pom.xml"
+                       jar.file="${libs.dir}/lcd_earth.jar"/>
+      <deploy-artifact if:set="lcd_core.pom.xml.available" pom.file="lcd_core.pom.xml"
+                       jar.file="${libs.dir}/lcd_core.jar">
+         <attachments>
+            <attach file="${libs.dir}/lcd_core-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/lcd_core-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/lcd_core-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/lcd_core-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/lcd_core-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="lcd_epsg_resources.pom.xml.available"
+                       pom.file="lcd_epsg_resources.pom.xml"
+                       jar.file="${libs.dir}/lcd_epsg_resources.jar"/>
+      <deploy-artifact if:set="lcd_geoid_resources.pom.xml.available"
+                       pom.file="lcd_geoid_resources.pom.xml"
+                       jar.file="${libs.dir}/lcd_geoid_resources.jar"/>
+      <deploy-artifact if:set="lcd_jts_extension.pom.xml.available"
+                       pom.file="lcd_jts_extension.pom.xml"
+                       jar.file="${libs.dir}/lcd_jts_extension.jar"/>
+      <deploy-artifact if:set="lcd_annotations.pom.xml.available" pom.file="lcd_annotations.pom.xml"
+                       jar.file="${libs.dir}/lcd_annotations.jar"/>
+      <deploy-artifact if:set="lcd_opengl_binding_jogl2.pom.xml.available"
+                       pom.file="lcd_opengl_binding_jogl2.pom.xml"
+                       jar.file="${libs.dir}/lcd_opengl_binding_jogl2.jar"/>
+      <deploy-artifact if:set="lcd_opengl_binding.pom.xml.available"
+                       pom.file="lcd_opengl_binding.pom.xml"
+                       jar.file="${libs.dir}/lcd_opengl_binding.jar">
+         <attachments>
+            <attach file="${libs.dir}/lcd_opengl_binding-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/lcd_opengl_binding-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="lcd_nut.pom.xml.available" pom.file="lcd_nut.pom.xml"
+                       jar.file="${libs.dir}/lcd_nut.jar"/>
+      <deploy-artifact if:set="LuciadLightspeed.pom.xml.available" pom.file="LuciadLightspeed.pom.xml"/>
+      <deploy-artifact if:set="Advanced_GIS_Engine.pom.xml.available"
+                       pom.file="Advanced_GIS_Engine.pom.xml"/>
+      <deploy-artifact if:set="Advanced_Raster_Connectors.pom.xml.available"
+                       pom.file="Advanced_Raster_Connectors.pom.xml"/>
+      <deploy-artifact if:set="Real-time_Engine.pom.xml.available" pom.file="Real-time_Engine.pom.xml"/>
+      <deploy-artifact if:set="ArcSDE.pom.xml.available" pom.file="ArcSDE.pom.xml"/>
+      <deploy-artifact if:set="CAD_Connectors.pom.xml.available" pom.file="CAD_Connectors.pom.xml"/>
+      <deploy-artifact if:set="Database_Connectors.pom.xml.available"
+                       pom.file="Database_Connectors.pom.xml"/>
+      <deploy-artifact if:set="Google_Earth_Enterprise.pom.xml.available"
+                       pom.file="Google_Earth_Enterprise.pom.xml"/>
+      <deploy-artifact if:set="Graph_and_Routing_Engine.pom.xml.available"
+                       pom.file="Graph_and_Routing_Engine.pom.xml"/>
+      <deploy-artifact if:set="OGC_Server.pom.xml.available" pom.file="OGC_Server.pom.xml"/>
+      <deploy-artifact if:set="Terrain_Analysis_Engine.pom.xml.available"
+                       pom.file="Terrain_Analysis_Engine.pom.xml"/>
+      <deploy-artifact if:set="Weather_Environment_Standards.pom.xml.available"
+                       pom.file="Weather_Environment_Standards.pom.xml"/>
+      <deploy-artifact if:set="Aviation_Standards.pom.xml.available"
+                       pom.file="Aviation_Standards.pom.xml"/>
+      <deploy-artifact if:set="Defense_Standards.pom.xml.available"
+                       pom.file="Defense_Standards.pom.xml"/>
+      <deploy-artifact if:set="Maritime_Standards.pom.xml.available"
+                       pom.file="Maritime_Standards.pom.xml"/>
+      <deploy-artifact if:set="Radar_Connectors.pom.xml.available" pom.file="Radar_Connectors.pom.xml"/>
+      <deploy-artifact if:set="S-63.pom.xml.available" pom.file="S-63.pom.xml"/>
+      <deploy-artifact if:set="Defense_Symbology.pom.xml.available"
+                       pom.file="Defense_Symbology.pom.xml"/>
+      <deploy-artifact if:set="3D.pom.xml.available" pom.file="3D.pom.xml"/>
+      <deploy-artifact if:set="Lightspeed_Demo_Internal.pom.xml.available"
+                       pom.file="Lightspeed_Demo_Internal.pom.xml"/>
+      <deploy-artifact if:set="LuciadLightspeed_LM.pom.xml.available"
+                       pom.file="LuciadLightspeed_LM.pom.xml"/>
+   </target>
+
+  <target name="libs:deploy:luciad" depends="setup, libs:available"
+           description="Deploy Luciad-custom builds of third-party libraries">
+      <deploy-artifact if:set="icepdf-core.pom.xml.available" pom.file="icepdf-core.pom.xml"
+                       jar.file="${libs.dir}/icepdf-core-5.1.1.lcd-7.jar"/>
+      <deploy-artifact if:set="libgpkg.pom.xml.available" pom.file="libgpkg.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/libgpkg-0.9.18.lcd-5-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="spatialite.pom.xml.available" pom.file="spatialite.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/spatialite-4.3.0.lcd-6-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/spatialite-4.3.0.lcd-6-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/spatialite-4.3.0.lcd-6-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/spatialite-4.3.0.lcd-6-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/spatialite-4.3.0.lcd-6-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="sqlitej.pom.xml.available" pom.file="sqlitej.pom.xml"
+                       jar.file="${libs.dir}/sqlitej-3.12.0.lcd-6.jar">
+         <attachments>
+            <attach file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/sqlitej-3.12.0.lcd-6-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="mrsid.pom.xml.available" pom.file="mrsid.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/mrsid-1.0.lcd-2-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/mrsid-1.0.lcd-2-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/mrsid-1.0.lcd-2-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/mrsid-1.0.lcd-2-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/mrsid-1.0.lcd-2-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="ltidsdk.pom.xml.available" pom.file="ltidsdk.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/ltidsdk-9.5.1.4427-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/ltidsdk-9.5.1.4427-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/ltidsdk-9.5.1.4427-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/ltidsdk-9.5.1.4427-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/ltidsdk-9.5.1.4427-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="geos.pom.xml.available" pom.file="geos.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/geos-3.5.0.lcd-3-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/geos-3.5.0.lcd-3-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/geos-3.5.0.lcd-3-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/geos-3.5.0.lcd-3-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/geos-3.5.0.lcd-3-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="tbb.pom.xml.available" pom.file="tbb.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/tbb-2.0-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/tbb-2.0-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/tbb-2.0-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/tbb-2.0-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/tbb-2.0-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="bentley_dgn_stub.pom.xml.available" pom.file="bentley_dgn_stub.pom.xml"
+                       jar.file="${libs.dir}/bentley_dgn_stub-1.0.jar"/>
+      <deploy-artifact if:set="jsde_sdk.pom.xml.available" pom.file="jsde_sdk.pom.xml"
+                       jar.file="${libs.dir}/jsde_sdk-9.4.jar"/>
+      <deploy-artifact if:set="jpe_sdk.pom.xml.available" pom.file="jpe_sdk.pom.xml"
+                       jar.file="${libs.dir}/jpe_sdk-9.4.jar"/>
+      <deploy-artifact if:set="com.ibm.icu.pom.xml.available" pom.file="com.ibm.icu.pom.xml"
+                       jar.file="${libs.dir}/com.ibm.icu-3.6.1.jar"/>
+      <deploy-artifact if:set="crt.pom.xml.available" pom.file="crt.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/crt-12.0-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="PngEncoder.pom.xml.available" pom.file="PngEncoder.pom.xml"
+                       jar.file="${libs.dir}/PngEncoder-2.0.2.jar"/>
+      <deploy-artifact if:set="glu-tess.pom.xml.available" pom.file="glu-tess.pom.xml"
+                       jar.file="${libs.dir}/glu-tess-1.0.lcd-3.jar"/>
+      <deploy-artifact if:set="jocl.pom.xml.available" pom.file="jocl.pom.xml"
+                       jar.file="${libs.dir}/jocl-2.3.2.lcd-2.jar">
+         <attachments>
+            <attach file="${libs.dir}/jocl-2.3.2.lcd-2-natives-linux-amd64.jar" type="jar"
+                    classifier="natives-linux-amd64"/>
+            <attach file="${libs.dir}/jocl-2.3.2.lcd-2-natives-windows-amd64.jar" type="jar"
+                    classifier="natives-windows-amd64"/>
+            <attach file="${libs.dir}/jocl-2.3.2.lcd-2-natives-windows-i586.jar" type="jar"
+                    classifier="natives-windows-i586"/>
+            <attach file="${libs.dir}/jocl-2.3.2.lcd-2-natives-macosx-universal.jar" type="jar"
+                    classifier="natives-macosx-universal"/>
+            <attach file="${libs.dir}/jocl-2.3.2.lcd-2-natives-linux-i586.jar" type="jar"
+                    classifier="natives-linux-i586"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="mcstub.pom.xml.available" pom.file="mcstub.pom.xml"
+                       jar.file="${libs.dir}/mcstub-0.1.lcd-1.jar"/>
+      <deploy-artifact if:set="clibwrapper_jiio.pom.xml.available" pom.file="clibwrapper_jiio.pom.xml"
+                       jar.file="${libs.dir}/clibwrapper_jiio-1.2.lcd-17.jar"/>
+      <deploy-artifact if:set="jai_imageio.pom.xml.available" pom.file="jai_imageio.pom.xml"
+                       jar.file="${libs.dir}/jai_imageio-1.2.lcd-17.jar">
+         <attachments>
+            <attach file="${libs.dir}/jai_imageio-1.2.lcd-17-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/jai_imageio-1.2.lcd-17-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/jai_imageio-1.2.lcd-17-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="jai.pom.xml.available" pom.file="jai.pom.xml">
+         <attachments>
+            <attach file="${libs.dir}/jai-1.1.4.lcd-7-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+            <attach file="${libs.dir}/jai-1.1.4.lcd-7-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/jai-1.1.4.lcd-7-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="jai_codec.pom.xml.available" pom.file="jai_codec.pom.xml"
+                       jar.file="${libs.dir}/jai_codec-1.1.4.lcd-7.jar"/>
+      <deploy-artifact if:set="mlibwrapper_jai.pom.xml.available" pom.file="mlibwrapper_jai.pom.xml"
+                       jar.file="${libs.dir}/mlibwrapper_jai-1.1.4.lcd-7.jar"/>
+      <deploy-artifact if:set="jai_core.pom.xml.available" pom.file="jai_core.pom.xml"
+                       jar.file="${libs.dir}/jai_core-1.1.4.lcd-7.jar"/>
+      <deploy-artifact if:set="jogl-all.pom.xml.available" pom.file="jogl-all.pom.xml"
+                       jar.file="${libs.dir}/jogl-all-2.3.2.lcd-2.jar">
+         <attachments>
+            <attach file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-linux-i586.jar" type="jar"
+                    classifier="natives-linux-i586"/>
+            <attach file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-linux-amd64.jar" type="jar"
+                    classifier="natives-linux-amd64"/>
+            <attach file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-macosx-universal.jar" type="jar"
+                    classifier="natives-macosx-universal"/>
+            <attach file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-windows-i586.jar" type="jar"
+                    classifier="natives-windows-i586"/>
+            <attach file="${libs.dir}/jogl-all-2.3.2.lcd-2-natives-windows-amd64.jar" type="jar"
+                    classifier="natives-windows-amd64"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="gluegen-rt.pom.xml.available" pom.file="gluegen-rt.pom.xml"
+                       jar.file="${libs.dir}/gluegen-rt-2.3.2.jar">
+         <attachments>
+            <attach file="${libs.dir}/gluegen-rt-2.3.2-natives-linux-amd64.jar" type="jar"
+                    classifier="natives-linux-amd64"/>
+            <attach file="${libs.dir}/gluegen-rt-2.3.2-natives-linux-i586.jar" type="jar"
+                    classifier="natives-linux-i586"/>
+            <attach file="${libs.dir}/gluegen-rt-2.3.2-natives-windows-amd64.jar" type="jar"
+                    classifier="natives-windows-amd64"/>
+            <attach file="${libs.dir}/gluegen-rt-2.3.2-natives-macosx-universal.jar" type="jar"
+                    classifier="natives-macosx-universal"/>
+            <attach file="${libs.dir}/gluegen-rt-2.3.2-natives-windows-i586.jar" type="jar"
+                    classifier="natives-windows-i586"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="relaxngDatatype.pom.xml.available" pom.file="relaxngDatatype.pom.xml"
+                       jar.file="${libs.dir}/relaxngDatatype-1.0.jar"/>
+   </target>
+
+  <target name="libs:deploy:public" depends="setup, libs:available"
+           unless="skip.public.libs"
+           description="Deploy publicly available third-party libraries">
+      <deploy-artifact if:set="slf4j-jdk14.pom.xml.available" pom.file="slf4j-jdk14.pom.xml"
+                       jar.file="${libs.dir}/slf4j-jdk14-1.7.25.jar"/>
+      <deploy-artifact if:set="batik-svggen.pom.xml.available" pom.file="batik-svggen.pom.xml"
+                       jar.file="${libs.dir}/batik-svggen-1.9.jar"/>
+      <deploy-artifact if:set="ehcache.pom.xml.available" pom.file="ehcache.pom.xml"
+                       jar.file="${libs.dir}/ehcache-3.2.0.jar"/>
+      <deploy-artifact if:set="ngdbc.pom.xml.available" pom.file="ngdbc.pom.xml"
+                       jar.file="${libs.dir}/ngdbc-1.00.68.jar"/>
+      <deploy-artifact if:set="db2jcc.pom.xml.available" pom.file="db2jcc.pom.xml"
+                       jar.file="${libs.dir}/db2jcc-3.64.jar"/>
+      <deploy-artifact if:set="jide-plaf.pom.xml.available" pom.file="jide-plaf.pom.xml"
+                       jar.file="${libs.dir}/jide-plaf-3.6.13.jar"/>
+      <deploy-artifact if:set="jide-dock.pom.xml.available" pom.file="jide-dock.pom.xml"
+                       jar.file="${libs.dir}/jide-dock-3.6.13.jar"/>
+      <deploy-artifact if:set="jide-common.pom.xml.available" pom.file="jide-common.pom.xml"
+                       jar.file="${libs.dir}/jide-common-3.6.13.jar"/>
+      <deploy-artifact if:set="swingx-beaninfo.pom.xml.available" pom.file="swingx-beaninfo.pom.xml"
+                       jar.file="${libs.dir}/swingx-beaninfo-1.6.5-1.jar"/>
+      <deploy-artifact if:set="swingx-all.pom.xml.available" pom.file="swingx-all.pom.xml"
+                       jar.file="${libs.dir}/swingx-all-1.6.5-1.jar"/>
+      <deploy-artifact if:set="cors-filter.pom.xml.available" pom.file="cors-filter.pom.xml"
+                       jar.file="${libs.dir}/cors-filter-1.3.2.jar"/>
+      <deploy-artifact if:set="sqljdbc4.pom.xml.available" pom.file="sqljdbc4.pom.xml"
+                       jar.file="${libs.dir}/sqljdbc4-4.0.2206.100.jar"/>
+      <deploy-artifact if:set="postgresql.pom.xml.available" pom.file="postgresql.pom.xml"
+                       jar.file="${libs.dir}/postgresql-42.0.0.jar"/>
+      <deploy-artifact if:set="ojdbc6.pom.xml.available" pom.file="ojdbc6.pom.xml"
+                       jar.file="${libs.dir}/ojdbc6-11.2.0.1.0.jar"/>
+      <deploy-artifact if:set="sdoapi.pom.xml.available" pom.file="sdoapi.pom.xml"
+                       jar.file="${libs.dir}/sdoapi-11.2.0.1.0.jar"/>
+      <deploy-artifact if:set="slf4j-api.pom.xml.available" pom.file="slf4j-api.pom.xml"
+                       jar.file="${libs.dir}/slf4j-api-1.7.25.jar"/>
+      <deploy-artifact if:set="joda-time.pom.xml.available" pom.file="joda-time.pom.xml"
+                       jar.file="${libs.dir}/joda-time-2.4.jar"/>
+      <deploy-artifact if:set="jdom2.pom.xml.available" pom.file="jdom2.pom.xml"
+                       jar.file="${libs.dir}/jdom2-2.0.5.jar"/>
+      <deploy-artifact if:set="ifxjdbcx.pom.xml.available" pom.file="ifxjdbcx.pom.xml"
+                       jar.file="${libs.dir}/ifxjdbcx-3.00JC1.jar"/>
+      <deploy-artifact if:set="ifxjdbc.pom.xml.available" pom.file="ifxjdbc.pom.xml"
+                       jar.file="${libs.dir}/ifxjdbc-3.00JC1.jar"/>
+      <deploy-artifact if:set="geodetic.pom.xml.available" pom.file="geodetic.pom.xml"
+                       jar.file="${libs.dir}/geodetic-3.00JC1.jar"/>
+      <deploy-artifact if:set="libgdal.pom.xml.available" pom.file="libgdal.pom.xml"
+                       jar.file="${libs.dir}/libgdal-2.0.0.lcd-5.jar">
+         <attachments>
+            <attach file="${libs.dir}/libgdal-2.0.0.lcd-5-native.win64.jar" type="jar"
+                    classifier="native.win64"/>
+            <attach file="${libs.dir}/libgdal-2.0.0.lcd-5-native.linux.jar" type="jar"
+                    classifier="native.linux"/>
+            <attach file="${libs.dir}/libgdal-2.0.0.lcd-5-native.linux64.jar" type="jar"
+                    classifier="native.linux64"/>
+            <attach file="${libs.dir}/libgdal-2.0.0.lcd-5-native.macos_64.jar" type="jar"
+                    classifier="native.macos_64"/>
+            <attach file="${libs.dir}/libgdal-2.0.0.lcd-5-native.win32.jar" type="jar"
+                    classifier="native.win32"/>
+         </attachments>
+      </deploy-artifact>
+      <deploy-artifact if:set="servletapi.pom.xml.available" pom.file="servletapi.pom.xml"
+                       jar.file="${libs.dir}/servletapi-3.1.0.jar"/>
+      <deploy-artifact if:set="binding.pom.xml.available" pom.file="binding.pom.xml"
+                       jar.file="${libs.dir}/binding-2.0.6.jar"/>
+      <deploy-artifact if:set="commons-lang3.pom.xml.available" pom.file="commons-lang3.pom.xml"
+                       jar.file="${libs.dir}/commons-lang3-3.4.jar"/>
+      <deploy-artifact if:set="woodstox-core.pom.xml.available" pom.file="woodstox-core.pom.xml"
+                       jar.file="${libs.dir}/woodstox-core-5.0.3.jar"/>
+      <deploy-artifact if:set="stax2-api.pom.xml.available" pom.file="stax2-api.pom.xml"
+                       jar.file="${libs.dir}/stax2-api-3.1.4.jar"/>
+      <deploy-artifact if:set="batik-swing.pom.xml.available" pom.file="batik-swing.pom.xml"
+                       jar.file="${libs.dir}/batik-swing-1.9.jar"/>
+      <deploy-artifact if:set="batik-gui-util.pom.xml.available" pom.file="batik-gui-util.pom.xml"
+                       jar.file="${libs.dir}/batik-gui-util-1.9.jar"/>
+      <deploy-artifact if:set="batik-bridge.pom.xml.available" pom.file="batik-bridge.pom.xml"
+                       jar.file="${libs.dir}/batik-bridge-1.9.jar"/>
+      <deploy-artifact if:set="batik-script.pom.xml.available" pom.file="batik-script.pom.xml"
+                       jar.file="${libs.dir}/batik-script-1.9.jar"/>
+      <deploy-artifact if:set="batik-gvt.pom.xml.available" pom.file="batik-gvt.pom.xml"
+                       jar.file="${libs.dir}/batik-gvt-1.9.jar"/>
+      <deploy-artifact if:set="batik-anim.pom.xml.available" pom.file="batik-anim.pom.xml"
+                       jar.file="${libs.dir}/batik-anim-1.9.jar"/>
+      <deploy-artifact if:set="batik-svg-dom.pom.xml.available" pom.file="batik-svg-dom.pom.xml"
+                       jar.file="${libs.dir}/batik-svg-dom-1.9.jar"/>
+      <deploy-artifact if:set="batik-parser.pom.xml.available" pom.file="batik-parser.pom.xml"
+                       jar.file="${libs.dir}/batik-parser-1.9.jar"/>
+      <deploy-artifact if:set="batik-dom.pom.xml.available" pom.file="batik-dom.pom.xml"
+                       jar.file="${libs.dir}/batik-dom-1.9.jar"/>
+      <deploy-artifact if:set="xalan.pom.xml.available" pom.file="xalan.pom.xml"
+                       jar.file="${libs.dir}/xalan-2.7.2.jar"/>
+      <deploy-artifact if:set="serializer.pom.xml.available" pom.file="serializer.pom.xml"
+                       jar.file="${libs.dir}/serializer-2.7.2.jar"/>
+      <deploy-artifact if:set="batik-xml.pom.xml.available" pom.file="batik-xml.pom.xml"
+                       jar.file="${libs.dir}/batik-xml-1.9.jar"/>
+      <deploy-artifact if:set="batik-ext.pom.xml.available" pom.file="batik-ext.pom.xml"
+                       jar.file="${libs.dir}/batik-ext-1.9.jar"/>
+      <deploy-artifact if:set="batik-css.pom.xml.available" pom.file="batik-css.pom.xml"
+                       jar.file="${libs.dir}/batik-css-1.9.jar"/>
+      <deploy-artifact if:set="xml-apis-ext.pom.xml.available" pom.file="xml-apis-ext.pom.xml"
+                       jar.file="${libs.dir}/xml-apis-ext-1.3.04.jar"/>
+      <deploy-artifact if:set="xmlgraphics-commons.pom.xml.available"
+                       pom.file="xmlgraphics-commons.pom.xml"
+                       jar.file="${libs.dir}/xmlgraphics-commons-2.2.jar"/>
+      <deploy-artifact if:set="batik-awt-util.pom.xml.available" pom.file="batik-awt-util.pom.xml"
+                       jar.file="${libs.dir}/batik-awt-util-1.9.jar"/>
+      <deploy-artifact if:set="batik-util.pom.xml.available" pom.file="batik-util.pom.xml"
+                       jar.file="${libs.dir}/batik-util-1.9.jar"/>
+      <deploy-artifact if:set="batik-i18n.pom.xml.available" pom.file="batik-i18n.pom.xml"
+                       jar.file="${libs.dir}/batik-i18n-1.9.jar"/>
+      <deploy-artifact if:set="batik-constants.pom.xml.available" pom.file="batik-constants.pom.xml"
+                       jar.file="${libs.dir}/batik-constants-1.9.jar"/>
+      <deploy-artifact if:set="forms.pom.xml.available" pom.file="forms.pom.xml"
+                       jar.file="${libs.dir}/forms-1.8.0.jar"/>
+      <deploy-artifact if:set="common.pom.xml.available" pom.file="common.pom.xml"
+                       jar.file="${libs.dir}/common-1.8.0.jar"/>
+      <deploy-artifact if:set="vectormath.pom.xml.available" pom.file="vectormath.pom.xml"
+                       jar.file="${libs.dir}/vectormath-1.2-1.14.jar"/>
+      <deploy-artifact if:set="Jama.pom.xml.available" pom.file="Jama.pom.xml"
+                       jar.file="${libs.dir}/Jama-1.0.2.jar"/>
+      <deploy-artifact if:set="jackson-databind.pom.xml.available" pom.file="jackson-databind.pom.xml"
+                       jar.file="${libs.dir}/jackson-databind-2.8.7.jar"/>
+      <deploy-artifact if:set="jackson-core.pom.xml.available" pom.file="jackson-core.pom.xml"
+                       jar.file="${libs.dir}/jackson-core-2.8.7.jar"/>
+      <deploy-artifact if:set="jackson-annotations.pom.xml.available"
+                       pom.file="jackson-annotations.pom.xml"
+                       jar.file="${libs.dir}/jackson-annotations-2.8.4.jar"/>
+      <deploy-artifact if:set="jdom.pom.xml.available" pom.file="jdom.pom.xml"
+                       jar.file="${libs.dir}/jdom-1.1.3.jar"/>
+      <deploy-artifact if:set="jaxen.pom.xml.available" pom.file="jaxen.pom.xml"
+                       jar.file="${libs.dir}/jaxen-1.1.6.jar"/>
+      <deploy-artifact if:set="httpmime.pom.xml.available" pom.file="httpmime.pom.xml"
+                       jar.file="${libs.dir}/httpmime-4.5.2.jar"/>
+      <deploy-artifact if:set="httpclient-cache.pom.xml.available" pom.file="httpclient-cache.pom.xml"
+                       jar.file="${libs.dir}/httpclient-cache-4.5.2.jar"/>
+      <deploy-artifact if:set="httpclient.pom.xml.available" pom.file="httpclient.pom.xml"
+                       jar.file="${libs.dir}/httpclient-4.5.2.jar"/>
+      <deploy-artifact if:set="commons-codec.pom.xml.available" pom.file="commons-codec.pom.xml"
+                       jar.file="${libs.dir}/commons-codec-1.9.jar"/>
+      <deploy-artifact if:set="commons-logging.pom.xml.available" pom.file="commons-logging.pom.xml"
+                       jar.file="${libs.dir}/commons-logging-1.2.jar"/>
+      <deploy-artifact if:set="httpcore.pom.xml.available" pom.file="httpcore.pom.xml"
+                       jar.file="${libs.dir}/httpcore-4.4.4.jar"/>
+      <deploy-artifact if:set="commons-compress.pom.xml.available" pom.file="commons-compress.pom.xml"
+                       jar.file="${libs.dir}/commons-compress-1.5.jar"/>
+      <deploy-artifact if:set="jts-core.pom.xml.available" pom.file="jts-core.pom.xml"
+                       jar.file="${libs.dir}/jts-core-1.14.0.jar"/>
+      <deploy-artifact if:set="xsom.pom.xml.available" pom.file="xsom.pom.xml"
+                       jar.file="${libs.dir}/xsom-20110809.jar"/>
+   </target>
+
+  <target name="libs:deploy"
+           depends="libs:deploy:core, libs:deploy:luciad, libs:deploy:public"
+           description="Deploy all libraries"/>
+
+  <target name="lucy_resources:deploy" depends="setup, libs:available"
+           if="lcd_lucy.pom.xml.available"
+           description="Package and deploy Lucy resources">
+      <tempfile property="lucy_resources.jar" prefix="lucy_resources" suffix=".jar"
+                deleteonexit="true"/>
+      <jar destfile="${lucy_resources.jar}">
+         <fileset dir="${config.dir}" excludes="vmoptions/**"/>
+      </jar>
+      <deploy-artifact pom.file="lcd_lucy_resources.pom.xml" jar.file="${lucy_resources.jar}"/>
+  </target>
+
+  <target name="deploy" depends="setup, libs:deploy, lucy_resources:deploy"
+           description="Deploy all libraries and resources in this release to your Maven repository">
+      <condition property="errors">
+         <or>
+            <isset property="lcd_wms_client_earth_opengl.pom.xml.error"/>
+            <isset property="lcd_lucy_symbology.pom.xml.error"/>
+            <isset property="slf4j-jdk14.pom.xml.error"/>
+            <isset property="lcd_wms_server.pom.xml.error"/>
+            <isset property="batik-svggen.pom.xml.error"/>
+            <isset property="ehcache.pom.xml.error"/>
+            <isset property="lcd_wfs_server.pom.xml.error"/>
+            <isset property="lcd_lucy_graph.pom.xml.error"/>
+            <isset property="lcd_gdf.pom.xml.error"/>
+            <isset property="lcd_network.pom.xml.error"/>
+            <isset property="lcd_saphana.pom.xml.error"/>
+            <isset property="ngdbc.pom.xml.error"/>
+            <isset property="lcd_informix_spatial.pom.xml.error"/>
+            <isset property="lcd_db2.pom.xml.error"/>
+            <isset property="db2jcc.pom.xml.error"/>
+            <isset property="lcd_csw_client.pom.xml.error"/>
+            <isset property="lcd_lucy.pom.xml.error"/>
+            <isset property="jide-plaf.pom.xml.error"/>
+            <isset property="jide-dock.pom.xml.error"/>
+            <isset property="jide-common.pom.xml.error"/>
+            <isset property="swingx-beaninfo.pom.xml.error"/>
+            <isset property="swingx-all.pom.xml.error"/>
+            <isset property="lcd_oculus.pom.xml.error"/>
+            <isset property="lcd_gee.pom.xml.error"/>
+            <isset property="lcd_geospatialpdf.pom.xml.error"/>
+            <isset property="icepdf-core.pom.xml.error"/>
+            <isset property="lcd_bingmaps_3d.pom.xml.error"/>
+            <isset property="lcd_wcs_client.pom.xml.error"/>
+            <isset property="lcd_wcs_server.pom.xml.error"/>
+            <isset property="lcd_wxs_server.pom.xml.error"/>
+            <isset property="cors-filter.pom.xml.error"/>
+            <isset property="lcd_wcs_common.pom.xml.error"/>
+            <isset property="lcd_wfs_client.pom.xml.error"/>
+            <isset property="lcd_wfs_common.pom.xml.error"/>
+            <isset property="lcd_wmts_client.pom.xml.error"/>
+            <isset property="lcd_wmts_common.pom.xml.error"/>
+            <isset property="lcd_wms_client.pom.xml.error"/>
+            <isset property="lcd_wms_common.pom.xml.error"/>
+            <isset property="lcd_tea.pom.xml.error"/>
+            <isset property="lcd_mssql.pom.xml.error"/>
+            <isset property="sqljdbc4.pom.xml.error"/>
+            <isset property="lcd_postgresql.pom.xml.error"/>
+            <isset property="postgresql.pom.xml.error"/>
+            <isset property="lcd_oracle_georaster.pom.xml.error"/>
+            <isset property="lcd_oracle.pom.xml.error"/>
+            <isset property="ojdbc6.pom.xml.error"/>
+            <isset property="sdoapi.pom.xml.error"/>
+            <isset property="lcd_nvg.pom.xml.error"/>
+            <isset property="lcd_netcdf.pom.xml.error"/>
+            <isset property="slf4j-api.pom.xml.error"/>
+            <isset property="joda-time.pom.xml.error"/>
+            <isset property="jdom2.pom.xml.error"/>
+            <isset property="lcd_ms2525b.pom.xml.error"/>
+            <isset property="lcd_informix.pom.xml.error"/>
+            <isset property="ifxjdbcx.pom.xml.error"/>
+            <isset property="ifxjdbc.pom.xml.error"/>
+            <isset property="geodetic.pom.xml.error"/>
+            <isset property="lcd_grib.pom.xml.error"/>
+            <isset property="lcd_ecdis_s63.pom.xml.error"/>
+            <isset property="lcd_dwg.pom.xml.error"/>
+            <isset property="lcd_usrp.pom.xml.error"/>
+            <isset property="lcd_swissdhm.pom.xml.error"/>
+            <isset property="lcd_nitf.pom.xml.error"/>
+            <isset property="lcd_sqlite.pom.xml.error"/>
+            <isset property="libgpkg.pom.xml.error"/>
+            <isset property="spatialite.pom.xml.error"/>
+            <isset property="sqlitej.pom.xml.error"/>
+            <isset property="lcd_gdal.pom.xml.error"/>
+            <isset property="libgdal.pom.xml.error"/>
+            <isset property="lcd_mrsid.pom.xml.error"/>
+            <isset property="mrsid.pom.xml.error"/>
+            <isset property="ltidsdk.pom.xml.error"/>
+            <isset property="geos.pom.xml.error"/>
+            <isset property="tbb.pom.xml.error"/>
+            <isset property="lcd_bci.pom.xml.error"/>
+            <isset property="lcd_jpeg2000_encoder.pom.xml.error"/>
+            <isset property="lcd_geospot.pom.xml.error"/>
+            <isset property="lcd_dimap.pom.xml.error"/>
+            <isset property="lcd_ecw.pom.xml.error"/>
+            <isset property="lcd_dgn.pom.xml.error"/>
+            <isset property="servletapi.pom.xml.error"/>
+            <isset property="bentley_dgn_stub.pom.xml.error"/>
+            <isset property="lcd_asterix.pom.xml.error"/>
+            <isset property="lcd_asdi.pom.xml.error"/>
+            <isset property="lcd_realtime.pom.xml.error"/>
+            <isset property="lcd_arcsde.pom.xml.error"/>
+            <isset property="jsde_sdk.pom.xml.error"/>
+            <isset property="jpe_sdk.pom.xml.error"/>
+            <isset property="com.ibm.icu.pom.xml.error"/>
+            <isset property="lcd_aixm5.pom.xml.error"/>
+            <isset property="lcd_aixm.pom.xml.error"/>
+            <isset property="lcd_dafif.pom.xml.error"/>
+            <isset property="lcd_arinc.pom.xml.error"/>
+            <isset property="lcd_ais.pom.xml.error"/>
+            <isset property="binding.pom.xml.error"/>
+            <isset property="lcd_lidar.pom.xml.error"/>
+            <isset property="lcd_kml.pom.xml.error"/>
+            <isset property="lcd_simulator.pom.xml.error"/>
+            <isset property="lcd_jpeg2000_decoder.pom.xml.error"/>
+            <isset property="crt.pom.xml.error"/>
+            <isset property="lcd_fusion_client.pom.xml.error"/>
+            <isset property="PngEncoder.pom.xml.error"/>
+            <isset property="commons-lang3.pom.xml.error"/>
+            <isset property="lcd_earth_opengl.pom.xml.error"/>
+            <isset property="lcd_3d.pom.xml.error"/>
+            <isset property="lcd_filter_spatial.pom.xml.error"/>
+            <isset property="lcd_ecdis.pom.xml.error"/>
+            <isset property="lcd_vpf.pom.xml.error"/>
+            <isset property="lcd_geometry.pom.xml.error"/>
+            <isset property="lcd_bingmaps.pom.xml.error"/>
+            <isset property="lcd_lightspeed.pom.xml.error"/>
+            <isset property="glu-tess.pom.xml.error"/>
+            <isset property="jocl.pom.xml.error"/>
+            <isset property="lcd_collada.pom.xml.error"/>
+            <isset property="lcd_sld.pom.xml.error"/>
+            <isset property="lcd_metadata.pom.xml.error"/>
+            <isset property="lcd_filter.pom.xml.error"/>
+            <isset property="lcd_ows.pom.xml.error"/>
+            <isset property="lcd_gml3.pom.xml.error"/>
+            <isset property="lcd_xml.pom.xml.error"/>
+            <isset property="woodstox-core.pom.xml.error"/>
+            <isset property="stax2-api.pom.xml.error"/>
+            <isset property="lcd_earth.pom.xml.error"/>
+            <isset property="lcd_core.pom.xml.error"/>
+            <isset property="mcstub.pom.xml.error"/>
+            <isset property="batik-swing.pom.xml.error"/>
+            <isset property="batik-gui-util.pom.xml.error"/>
+            <isset property="batik-bridge.pom.xml.error"/>
+            <isset property="batik-script.pom.xml.error"/>
+            <isset property="batik-gvt.pom.xml.error"/>
+            <isset property="batik-anim.pom.xml.error"/>
+            <isset property="batik-svg-dom.pom.xml.error"/>
+            <isset property="batik-parser.pom.xml.error"/>
+            <isset property="batik-dom.pom.xml.error"/>
+            <isset property="xalan.pom.xml.error"/>
+            <isset property="serializer.pom.xml.error"/>
+            <isset property="batik-xml.pom.xml.error"/>
+            <isset property="batik-ext.pom.xml.error"/>
+            <isset property="batik-css.pom.xml.error"/>
+            <isset property="xml-apis-ext.pom.xml.error"/>
+            <isset property="xmlgraphics-commons.pom.xml.error"/>
+            <isset property="batik-awt-util.pom.xml.error"/>
+            <isset property="batik-util.pom.xml.error"/>
+            <isset property="batik-i18n.pom.xml.error"/>
+            <isset property="batik-constants.pom.xml.error"/>
+            <isset property="forms.pom.xml.error"/>
+            <isset property="common.pom.xml.error"/>
+            <isset property="vectormath.pom.xml.error"/>
+            <isset property="Jama.pom.xml.error"/>
+            <isset property="jackson-databind.pom.xml.error"/>
+            <isset property="jackson-core.pom.xml.error"/>
+            <isset property="jackson-annotations.pom.xml.error"/>
+            <isset property="jdom.pom.xml.error"/>
+            <isset property="jaxen.pom.xml.error"/>
+            <isset property="httpmime.pom.xml.error"/>
+            <isset property="httpclient-cache.pom.xml.error"/>
+            <isset property="httpclient.pom.xml.error"/>
+            <isset property="commons-codec.pom.xml.error"/>
+            <isset property="commons-logging.pom.xml.error"/>
+            <isset property="httpcore.pom.xml.error"/>
+            <isset property="commons-compress.pom.xml.error"/>
+            <isset property="clibwrapper_jiio.pom.xml.error"/>
+            <isset property="jai_imageio.pom.xml.error"/>
+            <isset property="jai.pom.xml.error"/>
+            <isset property="jai_codec.pom.xml.error"/>
+            <isset property="mlibwrapper_jai.pom.xml.error"/>
+            <isset property="jai_core.pom.xml.error"/>
+            <isset property="lcd_epsg_resources.pom.xml.error"/>
+            <isset property="lcd_geoid_resources.pom.xml.error"/>
+            <isset property="lcd_jts_extension.pom.xml.error"/>
+            <isset property="jts-core.pom.xml.error"/>
+            <isset property="lcd_annotations.pom.xml.error"/>
+            <isset property="lcd_opengl_binding_jogl2.pom.xml.error"/>
+            <isset property="jogl-all.pom.xml.error"/>
+            <isset property="gluegen-rt.pom.xml.error"/>
+            <isset property="lcd_opengl_binding.pom.xml.error"/>
+            <isset property="lcd_nut.pom.xml.error"/>
+            <isset property="xsom.pom.xml.error"/>
+            <isset property="relaxngDatatype.pom.xml.error"/>
+            <isset property="LuciadLightspeed.pom.xml.error"/>
+            <isset property="Advanced_GIS_Engine.pom.xml.error"/>
+            <isset property="Advanced_Raster_Connectors.pom.xml.error"/>
+            <isset property="Real-time_Engine.pom.xml.error"/>
+            <isset property="ArcSDE.pom.xml.error"/>
+            <isset property="CAD_Connectors.pom.xml.error"/>
+            <isset property="Database_Connectors.pom.xml.error"/>
+            <isset property="Google_Earth_Enterprise.pom.xml.error"/>
+            <isset property="Graph_and_Routing_Engine.pom.xml.error"/>
+            <isset property="OGC_Server.pom.xml.error"/>
+            <isset property="Terrain_Analysis_Engine.pom.xml.error"/>
+            <isset property="Weather_Environment_Standards.pom.xml.error"/>
+            <isset property="Aviation_Standards.pom.xml.error"/>
+            <isset property="Defense_Standards.pom.xml.error"/>
+            <isset property="Maritime_Standards.pom.xml.error"/>
+            <isset property="Radar_Connectors.pom.xml.error"/>
+            <isset property="S-63.pom.xml.error"/>
+            <isset property="Defense_Symbology.pom.xml.error"/>
+            <isset property="3D.pom.xml.error"/>
+            <isset property="Lightspeed_Demo_Internal.pom.xml.error"/>
+            <isset property="LuciadLightspeed_LM.pom.xml.error"/>
+         </or>
+      </condition>
+      <echo message="===== The following POMs were successfully deployed ====="/>
+      <echo if:set="lcd_wms_client_earth_opengl.pom.xml.deployed"
+            message="lcd_wms_client_earth_opengl.pom.xml"/>
+      <echo if:set="lcd_lucy_symbology.pom.xml.deployed"
+            message="lcd_lucy_symbology.pom.xml"/>
+      <echo if:set="slf4j-jdk14.pom.xml.deployed" message="slf4j-jdk14.pom.xml"/>
+      <echo if:set="lcd_wms_server.pom.xml.deployed" message="lcd_wms_server.pom.xml"/>
+      <echo if:set="batik-svggen.pom.xml.deployed" message="batik-svggen.pom.xml"/>
+      <echo if:set="ehcache.pom.xml.deployed" message="ehcache.pom.xml"/>
+      <echo if:set="lcd_wfs_server.pom.xml.deployed" message="lcd_wfs_server.pom.xml"/>
+      <echo if:set="lcd_lucy_graph.pom.xml.deployed" message="lcd_lucy_graph.pom.xml"/>
+      <echo if:set="lcd_gdf.pom.xml.deployed" message="lcd_gdf.pom.xml"/>
+      <echo if:set="lcd_network.pom.xml.deployed" message="lcd_network.pom.xml"/>
+      <echo if:set="lcd_saphana.pom.xml.deployed" message="lcd_saphana.pom.xml"/>
+      <echo if:set="ngdbc.pom.xml.deployed" message="ngdbc.pom.xml"/>
+      <echo if:set="lcd_informix_spatial.pom.xml.deployed"
+            message="lcd_informix_spatial.pom.xml"/>
+      <echo if:set="lcd_db2.pom.xml.deployed" message="lcd_db2.pom.xml"/>
+      <echo if:set="db2jcc.pom.xml.deployed" message="db2jcc.pom.xml"/>
+      <echo if:set="lcd_csw_client.pom.xml.deployed" message="lcd_csw_client.pom.xml"/>
+      <echo if:set="lcd_lucy.pom.xml.deployed" message="lcd_lucy.pom.xml"/>
+      <echo if:set="jide-plaf.pom.xml.deployed" message="jide-plaf.pom.xml"/>
+      <echo if:set="jide-dock.pom.xml.deployed" message="jide-dock.pom.xml"/>
+      <echo if:set="jide-common.pom.xml.deployed" message="jide-common.pom.xml"/>
+      <echo if:set="swingx-beaninfo.pom.xml.deployed" message="swingx-beaninfo.pom.xml"/>
+      <echo if:set="swingx-all.pom.xml.deployed" message="swingx-all.pom.xml"/>
+      <echo if:set="lcd_oculus.pom.xml.deployed" message="lcd_oculus.pom.xml"/>
+      <echo if:set="lcd_gee.pom.xml.deployed" message="lcd_gee.pom.xml"/>
+      <echo if:set="lcd_geospatialpdf.pom.xml.deployed" message="lcd_geospatialpdf.pom.xml"/>
+      <echo if:set="icepdf-core.pom.xml.deployed" message="icepdf-core.pom.xml"/>
+      <echo if:set="lcd_bingmaps_3d.pom.xml.deployed" message="lcd_bingmaps_3d.pom.xml"/>
+      <echo if:set="lcd_wcs_client.pom.xml.deployed" message="lcd_wcs_client.pom.xml"/>
+      <echo if:set="lcd_wcs_server.pom.xml.deployed" message="lcd_wcs_server.pom.xml"/>
+      <echo if:set="lcd_wxs_server.pom.xml.deployed" message="lcd_wxs_server.pom.xml"/>
+      <echo if:set="cors-filter.pom.xml.deployed" message="cors-filter.pom.xml"/>
+      <echo if:set="lcd_wcs_common.pom.xml.deployed" message="lcd_wcs_common.pom.xml"/>
+      <echo if:set="lcd_wfs_client.pom.xml.deployed" message="lcd_wfs_client.pom.xml"/>
+      <echo if:set="lcd_wfs_common.pom.xml.deployed" message="lcd_wfs_common.pom.xml"/>
+      <echo if:set="lcd_wmts_client.pom.xml.deployed" message="lcd_wmts_client.pom.xml"/>
+      <echo if:set="lcd_wmts_common.pom.xml.deployed" message="lcd_wmts_common.pom.xml"/>
+      <echo if:set="lcd_wms_client.pom.xml.deployed" message="lcd_wms_client.pom.xml"/>
+      <echo if:set="lcd_wms_common.pom.xml.deployed" message="lcd_wms_common.pom.xml"/>
+      <echo if:set="lcd_tea.pom.xml.deployed" message="lcd_tea.pom.xml"/>
+      <echo if:set="lcd_mssql.pom.xml.deployed" message="lcd_mssql.pom.xml"/>
+      <echo if:set="sqljdbc4.pom.xml.deployed" message="sqljdbc4.pom.xml"/>
+      <echo if:set="lcd_postgresql.pom.xml.deployed" message="lcd_postgresql.pom.xml"/>
+      <echo if:set="postgresql.pom.xml.deployed" message="postgresql.pom.xml"/>
+      <echo if:set="lcd_oracle_georaster.pom.xml.deployed"
+            message="lcd_oracle_georaster.pom.xml"/>
+      <echo if:set="lcd_oracle.pom.xml.deployed" message="lcd_oracle.pom.xml"/>
+      <echo if:set="ojdbc6.pom.xml.deployed" message="ojdbc6.pom.xml"/>
+      <echo if:set="sdoapi.pom.xml.deployed" message="sdoapi.pom.xml"/>
+      <echo if:set="lcd_nvg.pom.xml.deployed" message="lcd_nvg.pom.xml"/>
+      <echo if:set="lcd_netcdf.pom.xml.deployed" message="lcd_netcdf.pom.xml"/>
+      <echo if:set="slf4j-api.pom.xml.deployed" message="slf4j-api.pom.xml"/>
+      <echo if:set="joda-time.pom.xml.deployed" message="joda-time.pom.xml"/>
+      <echo if:set="jdom2.pom.xml.deployed" message="jdom2.pom.xml"/>
+      <echo if:set="lcd_ms2525b.pom.xml.deployed" message="lcd_ms2525b.pom.xml"/>
+      <echo if:set="lcd_informix.pom.xml.deployed" message="lcd_informix.pom.xml"/>
+      <echo if:set="ifxjdbcx.pom.xml.deployed" message="ifxjdbcx.pom.xml"/>
+      <echo if:set="ifxjdbc.pom.xml.deployed" message="ifxjdbc.pom.xml"/>
+      <echo if:set="geodetic.pom.xml.deployed" message="geodetic.pom.xml"/>
+      <echo if:set="lcd_grib.pom.xml.deployed" message="lcd_grib.pom.xml"/>
+      <echo if:set="lcd_ecdis_s63.pom.xml.deployed" message="lcd_ecdis_s63.pom.xml"/>
+      <echo if:set="lcd_dwg.pom.xml.deployed" message="lcd_dwg.pom.xml"/>
+      <echo if:set="lcd_usrp.pom.xml.deployed" message="lcd_usrp.pom.xml"/>
+      <echo if:set="lcd_swissdhm.pom.xml.deployed" message="lcd_swissdhm.pom.xml"/>
+      <echo if:set="lcd_nitf.pom.xml.deployed" message="lcd_nitf.pom.xml"/>
+      <echo if:set="lcd_sqlite.pom.xml.deployed" message="lcd_sqlite.pom.xml"/>
+      <echo if:set="libgpkg.pom.xml.deployed" message="libgpkg.pom.xml"/>
+      <echo if:set="spatialite.pom.xml.deployed" message="spatialite.pom.xml"/>
+      <echo if:set="sqlitej.pom.xml.deployed" message="sqlitej.pom.xml"/>
+      <echo if:set="lcd_gdal.pom.xml.deployed" message="lcd_gdal.pom.xml"/>
+      <echo if:set="libgdal.pom.xml.deployed" message="libgdal.pom.xml"/>
+      <echo if:set="lcd_mrsid.pom.xml.deployed" message="lcd_mrsid.pom.xml"/>
+      <echo if:set="mrsid.pom.xml.deployed" message="mrsid.pom.xml"/>
+      <echo if:set="ltidsdk.pom.xml.deployed" message="ltidsdk.pom.xml"/>
+      <echo if:set="geos.pom.xml.deployed" message="geos.pom.xml"/>
+      <echo if:set="tbb.pom.xml.deployed" message="tbb.pom.xml"/>
+      <echo if:set="lcd_bci.pom.xml.deployed" message="lcd_bci.pom.xml"/>
+      <echo if:set="lcd_jpeg2000_encoder.pom.xml.deployed"
+            message="lcd_jpeg2000_encoder.pom.xml"/>
+      <echo if:set="lcd_geospot.pom.xml.deployed" message="lcd_geospot.pom.xml"/>
+      <echo if:set="lcd_dimap.pom.xml.deployed" message="lcd_dimap.pom.xml"/>
+      <echo if:set="lcd_ecw.pom.xml.deployed" message="lcd_ecw.pom.xml"/>
+      <echo if:set="lcd_dgn.pom.xml.deployed" message="lcd_dgn.pom.xml"/>
+      <echo if:set="servletapi.pom.xml.deployed" message="servletapi.pom.xml"/>
+      <echo if:set="bentley_dgn_stub.pom.xml.deployed" message="bentley_dgn_stub.pom.xml"/>
+      <echo if:set="lcd_asterix.pom.xml.deployed" message="lcd_asterix.pom.xml"/>
+      <echo if:set="lcd_asdi.pom.xml.deployed" message="lcd_asdi.pom.xml"/>
+      <echo if:set="lcd_realtime.pom.xml.deployed" message="lcd_realtime.pom.xml"/>
+      <echo if:set="lcd_arcsde.pom.xml.deployed" message="lcd_arcsde.pom.xml"/>
+      <echo if:set="jsde_sdk.pom.xml.deployed" message="jsde_sdk.pom.xml"/>
+      <echo if:set="jpe_sdk.pom.xml.deployed" message="jpe_sdk.pom.xml"/>
+      <echo if:set="com.ibm.icu.pom.xml.deployed" message="com.ibm.icu.pom.xml"/>
+      <echo if:set="lcd_aixm5.pom.xml.deployed" message="lcd_aixm5.pom.xml"/>
+      <echo if:set="lcd_aixm.pom.xml.deployed" message="lcd_aixm.pom.xml"/>
+      <echo if:set="lcd_dafif.pom.xml.deployed" message="lcd_dafif.pom.xml"/>
+      <echo if:set="lcd_arinc.pom.xml.deployed" message="lcd_arinc.pom.xml"/>
+      <echo if:set="lcd_ais.pom.xml.deployed" message="lcd_ais.pom.xml"/>
+      <echo if:set="binding.pom.xml.deployed" message="binding.pom.xml"/>
+      <echo if:set="lcd_lidar.pom.xml.deployed" message="lcd_lidar.pom.xml"/>
+      <echo if:set="lcd_kml.pom.xml.deployed" message="lcd_kml.pom.xml"/>
+      <echo if:set="lcd_simulator.pom.xml.deployed" message="lcd_simulator.pom.xml"/>
+      <echo if:set="lcd_jpeg2000_decoder.pom.xml.deployed"
+            message="lcd_jpeg2000_decoder.pom.xml"/>
+      <echo if:set="crt.pom.xml.deployed" message="crt.pom.xml"/>
+      <echo if:set="lcd_fusion_client.pom.xml.deployed" message="lcd_fusion_client.pom.xml"/>
+      <echo if:set="PngEncoder.pom.xml.deployed" message="PngEncoder.pom.xml"/>
+      <echo if:set="commons-lang3.pom.xml.deployed" message="commons-lang3.pom.xml"/>
+      <echo if:set="lcd_earth_opengl.pom.xml.deployed" message="lcd_earth_opengl.pom.xml"/>
+      <echo if:set="lcd_3d.pom.xml.deployed" message="lcd_3d.pom.xml"/>
+      <echo if:set="lcd_filter_spatial.pom.xml.deployed"
+            message="lcd_filter_spatial.pom.xml"/>
+      <echo if:set="lcd_ecdis.pom.xml.deployed" message="lcd_ecdis.pom.xml"/>
+      <echo if:set="lcd_vpf.pom.xml.deployed" message="lcd_vpf.pom.xml"/>
+      <echo if:set="lcd_geometry.pom.xml.deployed" message="lcd_geometry.pom.xml"/>
+      <echo if:set="lcd_bingmaps.pom.xml.deployed" message="lcd_bingmaps.pom.xml"/>
+      <echo if:set="lcd_lightspeed.pom.xml.deployed" message="lcd_lightspeed.pom.xml"/>
+      <echo if:set="glu-tess.pom.xml.deployed" message="glu-tess.pom.xml"/>
+      <echo if:set="jocl.pom.xml.deployed" message="jocl.pom.xml"/>
+      <echo if:set="lcd_collada.pom.xml.deployed" message="lcd_collada.pom.xml"/>
+      <echo if:set="lcd_sld.pom.xml.deployed" message="lcd_sld.pom.xml"/>
+      <echo if:set="lcd_metadata.pom.xml.deployed" message="lcd_metadata.pom.xml"/>
+      <echo if:set="lcd_filter.pom.xml.deployed" message="lcd_filter.pom.xml"/>
+      <echo if:set="lcd_ows.pom.xml.deployed" message="lcd_ows.pom.xml"/>
+      <echo if:set="lcd_gml3.pom.xml.deployed" message="lcd_gml3.pom.xml"/>
+      <echo if:set="lcd_xml.pom.xml.deployed" message="lcd_xml.pom.xml"/>
+      <echo if:set="woodstox-core.pom.xml.deployed" message="woodstox-core.pom.xml"/>
+      <echo if:set="stax2-api.pom.xml.deployed" message="stax2-api.pom.xml"/>
+      <echo if:set="lcd_earth.pom.xml.deployed" message="lcd_earth.pom.xml"/>
+      <echo if:set="lcd_core.pom.xml.deployed" message="lcd_core.pom.xml"/>
+      <echo if:set="mcstub.pom.xml.deployed" message="mcstub.pom.xml"/>
+      <echo if:set="batik-swing.pom.xml.deployed" message="batik-swing.pom.xml"/>
+      <echo if:set="batik-gui-util.pom.xml.deployed" message="batik-gui-util.pom.xml"/>
+      <echo if:set="batik-bridge.pom.xml.deployed" message="batik-bridge.pom.xml"/>
+      <echo if:set="batik-script.pom.xml.deployed" message="batik-script.pom.xml"/>
+      <echo if:set="batik-gvt.pom.xml.deployed" message="batik-gvt.pom.xml"/>
+      <echo if:set="batik-anim.pom.xml.deployed" message="batik-anim.pom.xml"/>
+      <echo if:set="batik-svg-dom.pom.xml.deployed" message="batik-svg-dom.pom.xml"/>
+      <echo if:set="batik-parser.pom.xml.deployed" message="batik-parser.pom.xml"/>
+      <echo if:set="batik-dom.pom.xml.deployed" message="batik-dom.pom.xml"/>
+      <echo if:set="xalan.pom.xml.deployed" message="xalan.pom.xml"/>
+      <echo if:set="serializer.pom.xml.deployed" message="serializer.pom.xml"/>
+      <echo if:set="batik-xml.pom.xml.deployed" message="batik-xml.pom.xml"/>
+      <echo if:set="batik-ext.pom.xml.deployed" message="batik-ext.pom.xml"/>
+      <echo if:set="batik-css.pom.xml.deployed" message="batik-css.pom.xml"/>
+      <echo if:set="xml-apis-ext.pom.xml.deployed" message="xml-apis-ext.pom.xml"/>
+      <echo if:set="xmlgraphics-commons.pom.xml.deployed"
+            message="xmlgraphics-commons.pom.xml"/>
+      <echo if:set="batik-awt-util.pom.xml.deployed" message="batik-awt-util.pom.xml"/>
+      <echo if:set="batik-util.pom.xml.deployed" message="batik-util.pom.xml"/>
+      <echo if:set="batik-i18n.pom.xml.deployed" message="batik-i18n.pom.xml"/>
+      <echo if:set="batik-constants.pom.xml.deployed" message="batik-constants.pom.xml"/>
+      <echo if:set="forms.pom.xml.deployed" message="forms.pom.xml"/>
+      <echo if:set="common.pom.xml.deployed" message="common.pom.xml"/>
+      <echo if:set="vectormath.pom.xml.deployed" message="vectormath.pom.xml"/>
+      <echo if:set="Jama.pom.xml.deployed" message="Jama.pom.xml"/>
+      <echo if:set="jackson-databind.pom.xml.deployed" message="jackson-databind.pom.xml"/>
+      <echo if:set="jackson-core.pom.xml.deployed" message="jackson-core.pom.xml"/>
+      <echo if:set="jackson-annotations.pom.xml.deployed"
+            message="jackson-annotations.pom.xml"/>
+      <echo if:set="jdom.pom.xml.deployed" message="jdom.pom.xml"/>
+      <echo if:set="jaxen.pom.xml.deployed" message="jaxen.pom.xml"/>
+      <echo if:set="httpmime.pom.xml.deployed" message="httpmime.pom.xml"/>
+      <echo if:set="httpclient-cache.pom.xml.deployed" message="httpclient-cache.pom.xml"/>
+      <echo if:set="httpclient.pom.xml.deployed" message="httpclient.pom.xml"/>
+      <echo if:set="commons-codec.pom.xml.deployed" message="commons-codec.pom.xml"/>
+      <echo if:set="commons-logging.pom.xml.deployed" message="commons-logging.pom.xml"/>
+      <echo if:set="httpcore.pom.xml.deployed" message="httpcore.pom.xml"/>
+      <echo if:set="commons-compress.pom.xml.deployed" message="commons-compress.pom.xml"/>
+      <echo if:set="clibwrapper_jiio.pom.xml.deployed" message="clibwrapper_jiio.pom.xml"/>
+      <echo if:set="jai_imageio.pom.xml.deployed" message="jai_imageio.pom.xml"/>
+      <echo if:set="jai.pom.xml.deployed" message="jai.pom.xml"/>
+      <echo if:set="jai_codec.pom.xml.deployed" message="jai_codec.pom.xml"/>
+      <echo if:set="mlibwrapper_jai.pom.xml.deployed" message="mlibwrapper_jai.pom.xml"/>
+      <echo if:set="jai_core.pom.xml.deployed" message="jai_core.pom.xml"/>
+      <echo if:set="lcd_epsg_resources.pom.xml.deployed"
+            message="lcd_epsg_resources.pom.xml"/>
+      <echo if:set="lcd_geoid_resources.pom.xml.deployed"
+            message="lcd_geoid_resources.pom.xml"/>
+      <echo if:set="lcd_jts_extension.pom.xml.deployed" message="lcd_jts_extension.pom.xml"/>
+      <echo if:set="jts-core.pom.xml.deployed" message="jts-core.pom.xml"/>
+      <echo if:set="lcd_annotations.pom.xml.deployed" message="lcd_annotations.pom.xml"/>
+      <echo if:set="lcd_opengl_binding_jogl2.pom.xml.deployed"
+            message="lcd_opengl_binding_jogl2.pom.xml"/>
+      <echo if:set="jogl-all.pom.xml.deployed" message="jogl-all.pom.xml"/>
+      <echo if:set="gluegen-rt.pom.xml.deployed" message="gluegen-rt.pom.xml"/>
+      <echo if:set="lcd_opengl_binding.pom.xml.deployed"
+            message="lcd_opengl_binding.pom.xml"/>
+      <echo if:set="lcd_nut.pom.xml.deployed" message="lcd_nut.pom.xml"/>
+      <echo if:set="xsom.pom.xml.deployed" message="xsom.pom.xml"/>
+      <echo if:set="relaxngDatatype.pom.xml.deployed" message="relaxngDatatype.pom.xml"/>
+      <echo if:set="LuciadLightspeed.pom.xml.deployed" message="LuciadLightspeed.pom.xml"/>
+      <echo if:set="Advanced_GIS_Engine.pom.xml.deployed"
+            message="Advanced_GIS_Engine.pom.xml"/>
+      <echo if:set="Advanced_Raster_Connectors.pom.xml.deployed"
+            message="Advanced_Raster_Connectors.pom.xml"/>
+      <echo if:set="Real-time_Engine.pom.xml.deployed" message="Real-time_Engine.pom.xml"/>
+      <echo if:set="ArcSDE.pom.xml.deployed" message="ArcSDE.pom.xml"/>
+      <echo if:set="CAD_Connectors.pom.xml.deployed" message="CAD_Connectors.pom.xml"/>
+      <echo if:set="Database_Connectors.pom.xml.deployed"
+            message="Database_Connectors.pom.xml"/>
+      <echo if:set="Google_Earth_Enterprise.pom.xml.deployed"
+            message="Google_Earth_Enterprise.pom.xml"/>
+      <echo if:set="Graph_and_Routing_Engine.pom.xml.deployed"
+            message="Graph_and_Routing_Engine.pom.xml"/>
+      <echo if:set="OGC_Server.pom.xml.deployed" message="OGC_Server.pom.xml"/>
+      <echo if:set="Terrain_Analysis_Engine.pom.xml.deployed"
+            message="Terrain_Analysis_Engine.pom.xml"/>
+      <echo if:set="Weather_Environment_Standards.pom.xml.deployed"
+            message="Weather_Environment_Standards.pom.xml"/>
+      <echo if:set="Aviation_Standards.pom.xml.deployed"
+            message="Aviation_Standards.pom.xml"/>
+      <echo if:set="Defense_Standards.pom.xml.deployed" message="Defense_Standards.pom.xml"/>
+      <echo if:set="Maritime_Standards.pom.xml.deployed"
+            message="Maritime_Standards.pom.xml"/>
+      <echo if:set="Radar_Connectors.pom.xml.deployed" message="Radar_Connectors.pom.xml"/>
+      <echo if:set="S-63.pom.xml.deployed" message="S-63.pom.xml"/>
+      <echo if:set="Defense_Symbology.pom.xml.deployed" message="Defense_Symbology.pom.xml"/>
+      <echo if:set="3D.pom.xml.deployed" message="3D.pom.xml"/>
+      <echo if:set="Lightspeed_Demo_Internal.pom.xml.deployed"
+            message="Lightspeed_Demo_Internal.pom.xml"/>
+      <echo if:set="LuciadLightspeed_LM.pom.xml.deployed"
+            message="LuciadLightspeed_LM.pom.xml"/>
+      <echo if:set="errors" message="===== The following POMs failed to deploy ====="/>
+      <echo if:set="lcd_wms_client_earth_opengl.pom.xml.error"
+            message="lcd_wms_client_earth_opengl.pom.xml"/>
+      <echo if:set="lcd_lucy_symbology.pom.xml.error" message="lcd_lucy_symbology.pom.xml"/>
+      <echo if:set="slf4j-jdk14.pom.xml.error" message="slf4j-jdk14.pom.xml"/>
+      <echo if:set="lcd_wms_server.pom.xml.error" message="lcd_wms_server.pom.xml"/>
+      <echo if:set="batik-svggen.pom.xml.error" message="batik-svggen.pom.xml"/>
+      <echo if:set="ehcache.pom.xml.error" message="ehcache.pom.xml"/>
+      <echo if:set="lcd_wfs_server.pom.xml.error" message="lcd_wfs_server.pom.xml"/>
+      <echo if:set="lcd_lucy_graph.pom.xml.error" message="lcd_lucy_graph.pom.xml"/>
+      <echo if:set="lcd_gdf.pom.xml.error" message="lcd_gdf.pom.xml"/>
+      <echo if:set="lcd_network.pom.xml.error" message="lcd_network.pom.xml"/>
+      <echo if:set="lcd_saphana.pom.xml.error" message="lcd_saphana.pom.xml"/>
+      <echo if:set="ngdbc.pom.xml.error" message="ngdbc.pom.xml"/>
+      <echo if:set="lcd_informix_spatial.pom.xml.error"
+            message="lcd_informix_spatial.pom.xml"/>
+      <echo if:set="lcd_db2.pom.xml.error" message="lcd_db2.pom.xml"/>
+      <echo if:set="db2jcc.pom.xml.error" message="db2jcc.pom.xml"/>
+      <echo if:set="lcd_csw_client.pom.xml.error" message="lcd_csw_client.pom.xml"/>
+      <echo if:set="lcd_lucy.pom.xml.error" message="lcd_lucy.pom.xml"/>
+      <echo if:set="jide-plaf.pom.xml.error" message="jide-plaf.pom.xml"/>
+      <echo if:set="jide-dock.pom.xml.error" message="jide-dock.pom.xml"/>
+      <echo if:set="jide-common.pom.xml.error" message="jide-common.pom.xml"/>
+      <echo if:set="swingx-beaninfo.pom.xml.error" message="swingx-beaninfo.pom.xml"/>
+      <echo if:set="swingx-all.pom.xml.error" message="swingx-all.pom.xml"/>
+      <echo if:set="lcd_oculus.pom.xml.error" message="lcd_oculus.pom.xml"/>
+      <echo if:set="lcd_gee.pom.xml.error" message="lcd_gee.pom.xml"/>
+      <echo if:set="lcd_geospatialpdf.pom.xml.error" message="lcd_geospatialpdf.pom.xml"/>
+      <echo if:set="icepdf-core.pom.xml.error" message="icepdf-core.pom.xml"/>
+      <echo if:set="lcd_bingmaps_3d.pom.xml.error" message="lcd_bingmaps_3d.pom.xml"/>
+      <echo if:set="lcd_wcs_client.pom.xml.error" message="lcd_wcs_client.pom.xml"/>
+      <echo if:set="lcd_wcs_server.pom.xml.error" message="lcd_wcs_server.pom.xml"/>
+      <echo if:set="lcd_wxs_server.pom.xml.error" message="lcd_wxs_server.pom.xml"/>
+      <echo if:set="cors-filter.pom.xml.error" message="cors-filter.pom.xml"/>
+      <echo if:set="lcd_wcs_common.pom.xml.error" message="lcd_wcs_common.pom.xml"/>
+      <echo if:set="lcd_wfs_client.pom.xml.error" message="lcd_wfs_client.pom.xml"/>
+      <echo if:set="lcd_wfs_common.pom.xml.error" message="lcd_wfs_common.pom.xml"/>
+      <echo if:set="lcd_wmts_client.pom.xml.error" message="lcd_wmts_client.pom.xml"/>
+      <echo if:set="lcd_wmts_common.pom.xml.error" message="lcd_wmts_common.pom.xml"/>
+      <echo if:set="lcd_wms_client.pom.xml.error" message="lcd_wms_client.pom.xml"/>
+      <echo if:set="lcd_wms_common.pom.xml.error" message="lcd_wms_common.pom.xml"/>
+      <echo if:set="lcd_tea.pom.xml.error" message="lcd_tea.pom.xml"/>
+      <echo if:set="lcd_mssql.pom.xml.error" message="lcd_mssql.pom.xml"/>
+      <echo if:set="sqljdbc4.pom.xml.error" message="sqljdbc4.pom.xml"/>
+      <echo if:set="lcd_postgresql.pom.xml.error" message="lcd_postgresql.pom.xml"/>
+      <echo if:set="postgresql.pom.xml.error" message="postgresql.pom.xml"/>
+      <echo if:set="lcd_oracle_georaster.pom.xml.error"
+            message="lcd_oracle_georaster.pom.xml"/>
+      <echo if:set="lcd_oracle.pom.xml.error" message="lcd_oracle.pom.xml"/>
+      <echo if:set="ojdbc6.pom.xml.error" message="ojdbc6.pom.xml"/>
+      <echo if:set="sdoapi.pom.xml.error" message="sdoapi.pom.xml"/>
+      <echo if:set="lcd_nvg.pom.xml.error" message="lcd_nvg.pom.xml"/>
+      <echo if:set="lcd_netcdf.pom.xml.error" message="lcd_netcdf.pom.xml"/>
+      <echo if:set="slf4j-api.pom.xml.error" message="slf4j-api.pom.xml"/>
+      <echo if:set="joda-time.pom.xml.error" message="joda-time.pom.xml"/>
+      <echo if:set="jdom2.pom.xml.error" message="jdom2.pom.xml"/>
+      <echo if:set="lcd_ms2525b.pom.xml.error" message="lcd_ms2525b.pom.xml"/>
+      <echo if:set="lcd_informix.pom.xml.error" message="lcd_informix.pom.xml"/>
+      <echo if:set="ifxjdbcx.pom.xml.error" message="ifxjdbcx.pom.xml"/>
+      <echo if:set="ifxjdbc.pom.xml.error" message="ifxjdbc.pom.xml"/>
+      <echo if:set="geodetic.pom.xml.error" message="geodetic.pom.xml"/>
+      <echo if:set="lcd_grib.pom.xml.error" message="lcd_grib.pom.xml"/>
+      <echo if:set="lcd_ecdis_s63.pom.xml.error" message="lcd_ecdis_s63.pom.xml"/>
+      <echo if:set="lcd_dwg.pom.xml.error" message="lcd_dwg.pom.xml"/>
+      <echo if:set="lcd_usrp.pom.xml.error" message="lcd_usrp.pom.xml"/>
+      <echo if:set="lcd_swissdhm.pom.xml.error" message="lcd_swissdhm.pom.xml"/>
+      <echo if:set="lcd_nitf.pom.xml.error" message="lcd_nitf.pom.xml"/>
+      <echo if:set="lcd_sqlite.pom.xml.error" message="lcd_sqlite.pom.xml"/>
+      <echo if:set="libgpkg.pom.xml.error" message="libgpkg.pom.xml"/>
+      <echo if:set="spatialite.pom.xml.error" message="spatialite.pom.xml"/>
+      <echo if:set="sqlitej.pom.xml.error" message="sqlitej.pom.xml"/>
+      <echo if:set="lcd_gdal.pom.xml.error" message="lcd_gdal.pom.xml"/>
+      <echo if:set="libgdal.pom.xml.error" message="libgdal.pom.xml"/>
+      <echo if:set="lcd_mrsid.pom.xml.error" message="lcd_mrsid.pom.xml"/>
+      <echo if:set="mrsid.pom.xml.error" message="mrsid.pom.xml"/>
+      <echo if:set="ltidsdk.pom.xml.error" message="ltidsdk.pom.xml"/>
+      <echo if:set="geos.pom.xml.error" message="geos.pom.xml"/>
+      <echo if:set="tbb.pom.xml.error" message="tbb.pom.xml"/>
+      <echo if:set="lcd_bci.pom.xml.error" message="lcd_bci.pom.xml"/>
+      <echo if:set="lcd_jpeg2000_encoder.pom.xml.error"
+            message="lcd_jpeg2000_encoder.pom.xml"/>
+      <echo if:set="lcd_geospot.pom.xml.error" message="lcd_geospot.pom.xml"/>
+      <echo if:set="lcd_dimap.pom.xml.error" message="lcd_dimap.pom.xml"/>
+      <echo if:set="lcd_ecw.pom.xml.error" message="lcd_ecw.pom.xml"/>
+      <echo if:set="lcd_dgn.pom.xml.error" message="lcd_dgn.pom.xml"/>
+      <echo if:set="servletapi.pom.xml.error" message="servletapi.pom.xml"/>
+      <echo if:set="bentley_dgn_stub.pom.xml.error" message="bentley_dgn_stub.pom.xml"/>
+      <echo if:set="lcd_asterix.pom.xml.error" message="lcd_asterix.pom.xml"/>
+      <echo if:set="lcd_asdi.pom.xml.error" message="lcd_asdi.pom.xml"/>
+      <echo if:set="lcd_realtime.pom.xml.error" message="lcd_realtime.pom.xml"/>
+      <echo if:set="lcd_arcsde.pom.xml.error" message="lcd_arcsde.pom.xml"/>
+      <echo if:set="jsde_sdk.pom.xml.error" message="jsde_sdk.pom.xml"/>
+      <echo if:set="jpe_sdk.pom.xml.error" message="jpe_sdk.pom.xml"/>
+      <echo if:set="com.ibm.icu.pom.xml.error" message="com.ibm.icu.pom.xml"/>
+      <echo if:set="lcd_aixm5.pom.xml.error" message="lcd_aixm5.pom.xml"/>
+      <echo if:set="lcd_aixm.pom.xml.error" message="lcd_aixm.pom.xml"/>
+      <echo if:set="lcd_dafif.pom.xml.error" message="lcd_dafif.pom.xml"/>
+      <echo if:set="lcd_arinc.pom.xml.error" message="lcd_arinc.pom.xml"/>
+      <echo if:set="lcd_ais.pom.xml.error" message="lcd_ais.pom.xml"/>
+      <echo if:set="binding.pom.xml.error" message="binding.pom.xml"/>
+      <echo if:set="lcd_lidar.pom.xml.error" message="lcd_lidar.pom.xml"/>
+      <echo if:set="lcd_kml.pom.xml.error" message="lcd_kml.pom.xml"/>
+      <echo if:set="lcd_simulator.pom.xml.error" message="lcd_simulator.pom.xml"/>
+      <echo if:set="lcd_jpeg2000_decoder.pom.xml.error"
+            message="lcd_jpeg2000_decoder.pom.xml"/>
+      <echo if:set="crt.pom.xml.error" message="crt.pom.xml"/>
+      <echo if:set="lcd_fusion_client.pom.xml.error" message="lcd_fusion_client.pom.xml"/>
+      <echo if:set="PngEncoder.pom.xml.error" message="PngEncoder.pom.xml"/>
+      <echo if:set="commons-lang3.pom.xml.error" message="commons-lang3.pom.xml"/>
+      <echo if:set="lcd_earth_opengl.pom.xml.error" message="lcd_earth_opengl.pom.xml"/>
+      <echo if:set="lcd_3d.pom.xml.error" message="lcd_3d.pom.xml"/>
+      <echo if:set="lcd_filter_spatial.pom.xml.error" message="lcd_filter_spatial.pom.xml"/>
+      <echo if:set="lcd_ecdis.pom.xml.error" message="lcd_ecdis.pom.xml"/>
+      <echo if:set="lcd_vpf.pom.xml.error" message="lcd_vpf.pom.xml"/>
+      <echo if:set="lcd_geometry.pom.xml.error" message="lcd_geometry.pom.xml"/>
+      <echo if:set="lcd_bingmaps.pom.xml.error" message="lcd_bingmaps.pom.xml"/>
+      <echo if:set="lcd_lightspeed.pom.xml.error" message="lcd_lightspeed.pom.xml"/>
+      <echo if:set="glu-tess.pom.xml.error" message="glu-tess.pom.xml"/>
+      <echo if:set="jocl.pom.xml.error" message="jocl.pom.xml"/>
+      <echo if:set="lcd_collada.pom.xml.error" message="lcd_collada.pom.xml"/>
+      <echo if:set="lcd_sld.pom.xml.error" message="lcd_sld.pom.xml"/>
+      <echo if:set="lcd_metadata.pom.xml.error" message="lcd_metadata.pom.xml"/>
+      <echo if:set="lcd_filter.pom.xml.error" message="lcd_filter.pom.xml"/>
+      <echo if:set="lcd_ows.pom.xml.error" message="lcd_ows.pom.xml"/>
+      <echo if:set="lcd_gml3.pom.xml.error" message="lcd_gml3.pom.xml"/>
+      <echo if:set="lcd_xml.pom.xml.error" message="lcd_xml.pom.xml"/>
+      <echo if:set="woodstox-core.pom.xml.error" message="woodstox-core.pom.xml"/>
+      <echo if:set="stax2-api.pom.xml.error" message="stax2-api.pom.xml"/>
+      <echo if:set="lcd_earth.pom.xml.error" message="lcd_earth.pom.xml"/>
+      <echo if:set="lcd_core.pom.xml.error" message="lcd_core.pom.xml"/>
+      <echo if:set="mcstub.pom.xml.error" message="mcstub.pom.xml"/>
+      <echo if:set="batik-swing.pom.xml.error" message="batik-swing.pom.xml"/>
+      <echo if:set="batik-gui-util.pom.xml.error" message="batik-gui-util.pom.xml"/>
+      <echo if:set="batik-bridge.pom.xml.error" message="batik-bridge.pom.xml"/>
+      <echo if:set="batik-script.pom.xml.error" message="batik-script.pom.xml"/>
+      <echo if:set="batik-gvt.pom.xml.error" message="batik-gvt.pom.xml"/>
+      <echo if:set="batik-anim.pom.xml.error" message="batik-anim.pom.xml"/>
+      <echo if:set="batik-svg-dom.pom.xml.error" message="batik-svg-dom.pom.xml"/>
+      <echo if:set="batik-parser.pom.xml.error" message="batik-parser.pom.xml"/>
+      <echo if:set="batik-dom.pom.xml.error" message="batik-dom.pom.xml"/>
+      <echo if:set="xalan.pom.xml.error" message="xalan.pom.xml"/>
+      <echo if:set="serializer.pom.xml.error" message="serializer.pom.xml"/>
+      <echo if:set="batik-xml.pom.xml.error" message="batik-xml.pom.xml"/>
+      <echo if:set="batik-ext.pom.xml.error" message="batik-ext.pom.xml"/>
+      <echo if:set="batik-css.pom.xml.error" message="batik-css.pom.xml"/>
+      <echo if:set="xml-apis-ext.pom.xml.error" message="xml-apis-ext.pom.xml"/>
+      <echo if:set="xmlgraphics-commons.pom.xml.error"
+            message="xmlgraphics-commons.pom.xml"/>
+      <echo if:set="batik-awt-util.pom.xml.error" message="batik-awt-util.pom.xml"/>
+      <echo if:set="batik-util.pom.xml.error" message="batik-util.pom.xml"/>
+      <echo if:set="batik-i18n.pom.xml.error" message="batik-i18n.pom.xml"/>
+      <echo if:set="batik-constants.pom.xml.error" message="batik-constants.pom.xml"/>
+      <echo if:set="forms.pom.xml.error" message="forms.pom.xml"/>
+      <echo if:set="common.pom.xml.error" message="common.pom.xml"/>
+      <echo if:set="vectormath.pom.xml.error" message="vectormath.pom.xml"/>
+      <echo if:set="Jama.pom.xml.error" message="Jama.pom.xml"/>
+      <echo if:set="jackson-databind.pom.xml.error" message="jackson-databind.pom.xml"/>
+      <echo if:set="jackson-core.pom.xml.error" message="jackson-core.pom.xml"/>
+      <echo if:set="jackson-annotations.pom.xml.error"
+            message="jackson-annotations.pom.xml"/>
+      <echo if:set="jdom.pom.xml.error" message="jdom.pom.xml"/>
+      <echo if:set="jaxen.pom.xml.error" message="jaxen.pom.xml"/>
+      <echo if:set="httpmime.pom.xml.error" message="httpmime.pom.xml"/>
+      <echo if:set="httpclient-cache.pom.xml.error" message="httpclient-cache.pom.xml"/>
+      <echo if:set="httpclient.pom.xml.error" message="httpclient.pom.xml"/>
+      <echo if:set="commons-codec.pom.xml.error" message="commons-codec.pom.xml"/>
+      <echo if:set="commons-logging.pom.xml.error" message="commons-logging.pom.xml"/>
+      <echo if:set="httpcore.pom.xml.error" message="httpcore.pom.xml"/>
+      <echo if:set="commons-compress.pom.xml.error" message="commons-compress.pom.xml"/>
+      <echo if:set="clibwrapper_jiio.pom.xml.error" message="clibwrapper_jiio.pom.xml"/>
+      <echo if:set="jai_imageio.pom.xml.error" message="jai_imageio.pom.xml"/>
+      <echo if:set="jai.pom.xml.error" message="jai.pom.xml"/>
+      <echo if:set="jai_codec.pom.xml.error" message="jai_codec.pom.xml"/>
+      <echo if:set="mlibwrapper_jai.pom.xml.error" message="mlibwrapper_jai.pom.xml"/>
+      <echo if:set="jai_core.pom.xml.error" message="jai_core.pom.xml"/>
+      <echo if:set="lcd_epsg_resources.pom.xml.error" message="lcd_epsg_resources.pom.xml"/>
+      <echo if:set="lcd_geoid_resources.pom.xml.error"
+            message="lcd_geoid_resources.pom.xml"/>
+      <echo if:set="lcd_jts_extension.pom.xml.error" message="lcd_jts_extension.pom.xml"/>
+      <echo if:set="jts-core.pom.xml.error" message="jts-core.pom.xml"/>
+      <echo if:set="lcd_annotations.pom.xml.error" message="lcd_annotations.pom.xml"/>
+      <echo if:set="lcd_opengl_binding_jogl2.pom.xml.error"
+            message="lcd_opengl_binding_jogl2.pom.xml"/>
+      <echo if:set="jogl-all.pom.xml.error" message="jogl-all.pom.xml"/>
+      <echo if:set="gluegen-rt.pom.xml.error" message="gluegen-rt.pom.xml"/>
+      <echo if:set="lcd_opengl_binding.pom.xml.error" message="lcd_opengl_binding.pom.xml"/>
+      <echo if:set="lcd_nut.pom.xml.error" message="lcd_nut.pom.xml"/>
+      <echo if:set="xsom.pom.xml.error" message="xsom.pom.xml"/>
+      <echo if:set="relaxngDatatype.pom.xml.error" message="relaxngDatatype.pom.xml"/>
+      <echo if:set="LuciadLightspeed.pom.xml.error" message="LuciadLightspeed.pom.xml"/>
+      <echo if:set="Advanced_GIS_Engine.pom.xml.error"
+            message="Advanced_GIS_Engine.pom.xml"/>
+      <echo if:set="Advanced_Raster_Connectors.pom.xml.error"
+            message="Advanced_Raster_Connectors.pom.xml"/>
+      <echo if:set="Real-time_Engine.pom.xml.error" message="Real-time_Engine.pom.xml"/>
+      <echo if:set="ArcSDE.pom.xml.error" message="ArcSDE.pom.xml"/>
+      <echo if:set="CAD_Connectors.pom.xml.error" message="CAD_Connectors.pom.xml"/>
+      <echo if:set="Database_Connectors.pom.xml.error"
+            message="Database_Connectors.pom.xml"/>
+      <echo if:set="Google_Earth_Enterprise.pom.xml.error"
+            message="Google_Earth_Enterprise.pom.xml"/>
+      <echo if:set="Graph_and_Routing_Engine.pom.xml.error"
+            message="Graph_and_Routing_Engine.pom.xml"/>
+      <echo if:set="OGC_Server.pom.xml.error" message="OGC_Server.pom.xml"/>
+      <echo if:set="Terrain_Analysis_Engine.pom.xml.error"
+            message="Terrain_Analysis_Engine.pom.xml"/>
+      <echo if:set="Weather_Environment_Standards.pom.xml.error"
+            message="Weather_Environment_Standards.pom.xml"/>
+      <echo if:set="Aviation_Standards.pom.xml.error" message="Aviation_Standards.pom.xml"/>
+      <echo if:set="Defense_Standards.pom.xml.error" message="Defense_Standards.pom.xml"/>
+      <echo if:set="Maritime_Standards.pom.xml.error" message="Maritime_Standards.pom.xml"/>
+      <echo if:set="Radar_Connectors.pom.xml.error" message="Radar_Connectors.pom.xml"/>
+      <echo if:set="S-63.pom.xml.error" message="S-63.pom.xml"/>
+      <echo if:set="Defense_Symbology.pom.xml.error" message="Defense_Symbology.pom.xml"/>
+      <echo if:set="3D.pom.xml.error" message="3D.pom.xml"/>
+      <echo if:set="Lightspeed_Demo_Internal.pom.xml.error"
+            message="Lightspeed_Demo_Internal.pom.xml"/>
+      <echo if:set="LuciadLightspeed_LM.pom.xml.error"
+            message="LuciadLightspeed_LM.pom.xml"/>
+      <fail if="errors"
+            message="Some POMs could not be deployed. Check the list above and verify that this is expected (your repository may not allow overwrites)."/>
+   </target>
+
+  <target name="setup:private" depends="setup">
+      <echo>
+      WARNING: you are about to skip deployment of publicly available libraries.
+      You should probably call the deploy target instead of deploy:private.
+      If you continue, Luciad will not provide support relating to missing or invalid dependencies.
+    </echo>
+      <input addproperty="skip.public.libs" message="Continue?" validargs="y,n"
+             defaultvalue="n"/>
+      <fail message="Aborted">
+         <condition>
+            <not>
+               <equals arg1="${skip.public.libs}" arg2="y"/>
+            </not>
+         </condition>
+      </fail>
+  </target>
+
+  <target name="deploy:private" depends="setup:private, deploy"/>
+</project>

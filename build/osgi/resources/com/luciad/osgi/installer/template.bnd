@@ -1,0 +1,6 @@
+Bundle-Version: 2017.1.08
+Export-Package: com.luciad.*
+Private-Package: com.luciad.internal.*
+Import-Package: !*
+Fragment-Host: com.luciad.osgi
+Require-Bundle: thirdparty

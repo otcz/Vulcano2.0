@@ -1,0 +1,5 @@
+linux osname=Linux;processor=x86
+linux64 osname=Linux;processor=x86-64
+win32 osname=%WINDOWS%;processor=x86
+win64 osname=%WINDOWS%;processor=x86-64
+macos_64 osname=macosx;processor=x86-64

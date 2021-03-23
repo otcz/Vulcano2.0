@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sld:GetMap xmlns:sld="http://www.opengis.net/sld"
+            xmlns:wms="http://www.opengis.net/wms"
+            xmlns:ogc="http://www.opengis.net/ogc"
+            xmlns:se="http://www.opengis.net/se"
+            xmlns:ows="http://www.opengis.net/ows"
+            version="1.3.0">
+  <sld:StyledLayerDescriptor version="1.1.0">
+    <sld:NamedLayer>
+      <se:Name>World</se:Name>
+      <sld:NamedStyle>
+        <se:Name></se:Name>
+      </sld:NamedStyle>
+    </sld:NamedLayer>
+    <sld:NamedLayer>
+      <se:Name>Usa_states</se:Name>
+      <sld:UserStyle>
+        <FeatureTypeStyle xmlns="http://www.opengis.net/se"
+                          xmlns:ogc="http://www.opengis.net/ogc"
+                          version="1.1.0">
+          <Name>us_population_density</Name>
+          <Description>
+            <Title>Population in the US</Title>
+            <Abstract>A style that colors the US states based on their population count. It uses an
+              'Interpolate' expression to easily map population to color.
+              States are labeled with their names. The labels have a halo, to make them visible on any background.
+
+              This style requires the properties POP1996 and STATE_NAME, as available in the States model.
+            </Abstract>
+          </Description>
+          <FeatureTypeName>statesType</FeatureTypeName>
+          <Rule>
+            <Description>
+              <Title>Fill color based on population count</Title>
+            </Description>
+            <PolygonSymbolizer>
+              <Fill>
+                <SvgParameter name="fill-opacity">0.7</SvgParameter>
+                <SvgParameter name="fill">
+                  <Interpolate mode="linear" method="color">
+                    <LookupValue>
+                      <ogc:PropertyName>POP1996</ogc:PropertyName>
+                    </LookupValue>
+                    <InterpolationPoint>
+                      <Data>500000</Data>
+                      <Value>#00ff00</Value>
+                    </InterpolationPoint>
+                    <InterpolationPoint>
+                      <Data>4000000</Data>
+                      <Value>#009900</Value>
+                    </InterpolationPoint>
+                    <InterpolationPoint>
+                      <Data>40000000</Data>
+                      <Value>#003300</Value>
+                    </InterpolationPoint>
+                  </Interpolate>
+                </SvgParameter>
+              </Fill>
+            </PolygonSymbolizer>
+          </Rule>
+          <Rule>
+            <Name>county_outline</Name>
+            <MinScaleDenominator>5000000.0</MinScaleDenominator>
+            <PolygonSymbolizer>
+              <Stroke>
+                <SvgParameter name="stroke">#FFFFFF</SvgParameter>
+              </Stroke>
+            </PolygonSymbolizer>
+          </Rule>
+          <Rule>
+            <Name>county_outline</Name>
+            <MaxScaleDenominator>5000000.0</MaxScaleDenominator>
+            <PolygonSymbolizer>
+              <Stroke>
+                <SvgParameter name="stroke">#FFFFFF</SvgParameter>
+                <SvgParameter name="stroke-width">2</SvgParameter>
+              </Stroke>
+            </PolygonSymbolizer>
+          </Rule>
+          <Rule>
+            <Name>state_label</Name>
+            <Description>
+              <Title>Labels the county with their name</Title>
+            </Description>
+            <MaxScaleDenominator>5.0E7</MaxScaleDenominator>
+            <TextSymbolizer>
+              <Label>
+                <ogc:PropertyName>STATE_NAME</ogc:PropertyName>
+              </Label>
+              <Font>
+                <SvgParameter name="font-family">Courier</SvgParameter>
+                <SvgParameter name="font-weight">bold</SvgParameter>
+                <SvgParameter name="font-size">12</SvgParameter>
+              </Font>
+              <Halo>
+                <Radius>1</Radius>
+                <Fill>
+                  <SvgParameter name="fill">#000000</SvgParameter>
+                </Fill>
+              </Halo>
+              <Fill>
+                <SvgParameter name="fill">#ffffff</SvgParameter>
+              </Fill>
+            </TextSymbolizer>
+          </Rule>
+        </FeatureTypeStyle>
+      </sld:UserStyle>
+    </sld:NamedLayer>
+  </sld:StyledLayerDescriptor>
+  <sld:CRS>EPSG:32663</sld:CRS>
+  <sld:BoundingBox>
+    <ows:LowerCorner>-1.3681942066103505E7 2226389.815865471</ows:LowerCorner>
+    <ows:UpperCorner>-7460131.766727518 6679169.447596413</ows:UpperCorner>
+  </sld:BoundingBox>
+  <sld:Output>
+    <sld:Size>
+      <sld:Width>600</sld:Width>
+      <sld:Height>300</sld:Height>
+    </sld:Size>
+    <wms:Format>image/png</wms:Format>
+    <sld:Transparent>true</sld:Transparent>
+    <sld:BGcolor>0x8c96d2</sld:BGcolor>
+  </sld:Output>
+</sld:GetMap>

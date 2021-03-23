@@ -1,0 +1,238 @@
+<!--
+Example Ant build script (http://ant.apache.org/) for deploying Lucy.
+
+The script makes these assumptions:
+- LuciadLightspeed and all Additional and Industrial Components (e.g. LuciadLightspeed.zip, Lucy.zip, 3D.zip,
+  realtime.zip, ...) are unzipped in the same directory. This is nothing
+  but the regular installation procedure.
+- all code written by the customer is put in 'src' (e.g.
+  src/com/mycompany/MyAddOn.java, ...) Note that this directory 'src' does not
+  exist by default, it is up to the customer to copy his/her code in there
+  before using this script. If no source code can be found, the script will just
+  deploy Lucy with the addons it is shipped with. The name of the source
+  directory can easily by changed by modifying the property 'src_dir' in
+  'deploy_lucy.properties'.
+- all extra jar files needed to compile the application are put in (a subfolder
+  of) 'lib'
+
+
+The script takes these steps to deploy the application:
+- Target 'init'
+  - performs initialization
+  - deletes any previous builds with the same version number (default vesion
+    number is x.x.x, can easily be changed in 'deploy_lucy.properties')
+
+- Target 'compile' (skipped if the source folder does not exist)
+  - takes the source files in directory 'src'
+  - compiles those source files (classpath is constructed from 'lib' folder,
+    see above)
+
+- Target 'build'
+  - puts the compiled code in a jar file
+  - obfuscates that jar file and all other jar files that contain or refer
+    Luciad code (e.g. luciadlightspeed.jar and lcd_*.jar), using Proguard
+    (http://proguard.sourceforge.net/). It also generates a .mapping file, which
+    can be used by Proguard to deobfuscate an obfuscated stack trace (refer to
+    the ReTrace Manual of Proguard for details)
+
+- Target 'package'
+   - deploys the application as a zip file. The zip file is put in a subfolder
+     of the folder 'distrib'
+
+'deploy_lucy.properties' contains some properties (such as the version number) that
+ can easily be modified.  Check out the comments in that file for details.
+
+If a custom frontend is used (e.g. TabbedPanesFrontendMain), lucy_end_user.pro needs
+to be adapted. It can also be usefull to only deploy the addons that are
+actually used, instead of all addons. Check the comments in lucy_end_user.pro
+for details.
+
+To use the deployed application, just unzip the packaged zip to a location, copy
+the deployment license, and use the startup scripts to start the application.
+
+This script typically needs some more memory as the default 64 megabytes.
+Something like 1024 megabytes will do. Give Ant more memory using IntelliJ:
+- click Properties button in the 'Ant Build' window
+  (second button from the right hand side)
+- Set the maximum heap size (to 1024 or so)
+
+To give Ant more memory using command line tool:
+- set ANT_OPTS=-Xmx1024m
+- call 'ant -buildfile deploy_lucy.xml'
+-->
+<project name="DeployLucy" default="package" basedir="../../">
+  <property file="build/lucy/deploy_lucy.properties"/>
+
+  <target name="init">
+    <echo message="DEBUG: Java version = ${ant.java.version}"/>
+
+    <!-- The directory of the project that is currently being developed -->
+    <property name="project_dir" value="${basedir}"/>
+
+    <property name="full_package_dir" value="${basedir}/${package_dir}/${application_name}_${version_number}"/>
+    <property name="build_files_dir" value="${full_package_dir}/build_files"/>
+    <property name="classes_dir" value="${build_files_dir}/classes"/>
+    <property name="tmp_dir" value="${build_files_dir}/tmp"/>
+
+    <!-- Check if the source dir exists -->
+    <available property="src_dir_available" file="${src_dir}" type="dir"/>
+
+    <!-- Delete possibly existing files -->
+    <delete dir="${full_package_dir}" failonerror="false" quiet="true"/>
+    <mkdir dir="${full_package_dir}"/>
+    <mkdir dir="${build_files_dir}"/>
+    <mkdir dir="${classes_dir}"/>
+    <mkdir dir="${tmp_dir}"/>
+
+    <!-- Make a manifest file -->
+    <property name="manifest_file" value="${tmp_dir}/MANIFEST.MF"/>
+    <manifest file="${manifest_file}">
+      <section name="${application_basepackage}">
+        <attribute name="Specification-Title" value="${application_name}"/>
+        <attribute name="Specification-Version" value="${version_number}"/>
+        <attribute name="Specification-Vendor" value="${application_vendor}"/>
+        <attribute name="Implementation-Title" value="${application_name}"/>
+        <attribute name="Implementation-Version" value="${version_number}"/>
+        <attribute name="Implementation-Vendor" value="${application_vendor}"/>
+      </section>
+    </manifest>
+
+    <!-- Put all jar files in the lib folder in the classpath (for compilation and obfuscation) -->
+    <path id="classpath">
+      <fileset dir="/lib">
+        <include name="**/*.jar"/>
+      </fileset>
+    </path>
+  </target>
+
+  <target name="compile" depends="init" if="src_dir_available">
+    <!-- Debug is on because otherwise no line numbers are generated, which makes
+         deobfuscating a stack trace very hard -->
+    <javac srcdir="${project_dir}/${src_dir}" destdir="${classes_dir}" classpathref="classpath" debug="on"/>
+  </target>
+
+  <target name="jar" depends="init, compile">
+    <!-- Create jar file containing the code of the application -->
+    <jar jarfile="${tmp_dir}/${application_jar_base}.jar" manifest="${manifest_file}">
+      <fileset dir="${classes_dir}"/>
+    </jar>
+  </target>
+
+  <target name="build" depends="jar">
+    <!-- we can't reliably detect a path relative to the working directory (user.dir), so just try it if proguard.location doesn't work directly -->
+    <condition property="proguard.jar" value="${proguard.location}" else="${user.dir}/${proguard.location}">
+      <available file="${proguard.location}"/>
+    </condition>
+    <available property="proguard.available" file="${proguard.jar}"/>
+    <fail unless="proguard.available" message="You need to download ProGuard (http://proguard.sourceforge.net) to obfuscate your Lucy application. After downloading, put the proguard.jar in the build/proguard directory"/>
+    <taskdef resource="proguard/ant/task.properties">
+      <classpath location="${proguard.jar}"/>
+    </taskdef>
+
+    <!-- This selector selects the jars from the lib directory
+    that contain or refer luciad classes (e.g. classes with lcd, lcx or lcy in their name -->
+    <selector id="obfuscate_input_jars_selector">
+      <or>
+        <filename name="**/luciadlightspeed*.jar"/>
+        <filename name="luciadlightspeed*.jar"/>
+        <filename name="**/lcd*.jar"/>
+        <filename name="lcd*.jar"/>
+        <filename name="**/luciad*.jar"/>
+        <filename name="luciad*.jar"/>
+      </or>
+    </selector>
+
+    <!-- Just take all other classes in lib as the library classes -->
+    <path id="obfuscate_library_jars">
+      <pathelement location="${java.home}/lib/rt.jar"/>
+      <pathelement location="${java.home}/lib/jce.jar"/>
+      <fileset dir="/lib">
+        <not> <selector refid="obfuscate_input_jars_selector"/> </not>
+      </fileset>
+    </path>
+
+    <path id="obfuscate_input_jars">
+      <pathelement location="${tmp_dir}/${application_jar_base}.jar"/>
+      <fileset dir="/lib">
+        <selector refid="obfuscate_input_jars_selector"/>
+      </fileset>
+    </path>
+
+    <mkdir dir="${tmp_dir}/obfuscated/"/>
+
+    <!-- Note that the configuration of Proguard below is a mixed style configuration:
+         the input, output and library jars are configured using Ant, all static
+         configuration is done using a classic Proguard config file -->
+    <proguard printmapping="${build_files_dir}/${application_name}-${version_number}.mapping">
+      <injar refid="obfuscate_input_jars" filter="!version, !META-INF/MANIFEST.MF"/>
+      <outjar location="${tmp_dir}/obfuscated/"/>
+      <libraryjar refid="obfuscate_library_jars"/>
+
+      -include build/proguard/luciadlightspeed.pro
+      -include build/proguard/lucy_end_user.pro
+    </proguard>
+  </target>
+
+  <target name="package" depends="build"
+          description="Builds and packages Lucy as a zip file. Please refer to the top comments in this file.">
+
+    <property name="package_prefix" value="${application_name}_${version_number}" />
+
+    <zip destfile="${full_package_dir}/${application_name}.zip">
+      <zipfileset dir="${project_dir}" prefix="${package_prefix}">
+        <filename name="addons.xml"/>
+      </zipfileset>
+
+      <!-- Batch files to start the application -->
+      <zipfileset dir="${project_dir}" prefix="${package_prefix}" filemode="755">
+        <and>
+          <or>
+            <filename name="*.bat"/>
+            <filename name="*.sh"/>
+          </or>
+          <not><contains text="samples."/></not>
+        </and>
+      </zipfileset>
+
+      <!-- The data directory -->
+      <zipfileset dir="${project_dir}/samples/resources/Data"
+                  includes="Shp/World/world*, Earth/World/**"
+                  prefix="${package_prefix}/Data"/>
+
+      <!-- Documentation -->
+       <zipfileset dir="${project_dir}/docs/developerguide" prefix="${package_prefix}/docs">
+        <filename name="Lucy_UserGuide.pdf"/>
+      </zipfileset>
+      <zipfileset dir="${project_dir}/licenses" prefix="${package_prefix}/licenses">
+        <filename name="ReadMe.txt"/>
+      </zipfileset>
+
+      <!-- The config directory -->
+      <zipfileset dir="${project_dir}/config" prefix="${package_prefix}/config">
+        <exclude name="flightplan/**"/> <!-- exclude the sample data -->
+      </zipfileset>
+
+      <!-- The actual obfuscated application jar -->
+      <zipfileset dir="${tmp_dir}/obfuscated" prefix="${package_prefix}/lib" />
+
+      <!-- All input jars were put in the obfuscated folder.  All other jars still need to be copied
+           for the application to function properly. -->
+      <zipfileset dir="/lib" prefix="${package_prefix}/lib" >
+        <not> <selector refid="obfuscate_input_jars_selector"/> </not>
+      </zipfileset>
+
+      <!-- start.jar -->
+      <zipfileset file="${project_dir}/start.jar" prefix="${package_prefix}"/>
+    </zip>
+
+    <antcall target="cleanup"/>
+
+    <echo message="Output zip file written to ${full_package_dir}/${package_prefix}.zip"/>
+    <echo message="Unzip this file and copy a deployment license with it, then execute the .bat or .sh files to start."/>
+  </target>
+
+  <target name="cleanup">
+    <delete dir="${classes_dir}" failonerror="false" />
+    <delete dir="${tmp_dir}" failonerror="false" />
+  </target>
+</project>

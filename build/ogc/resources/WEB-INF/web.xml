@@ -1,0 +1,233 @@
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <!-- This deployment descriptor defines a set of servlets that give access to
+       a Luciad-based WMS, WFS, WCS and CSW service -->
+
+  <display-name>Luciad OGC WMS/WFS/WCS/CSW services</display-name>
+  <description>
+    Luciad OGC WMS/WFS/WCS/CSW Servlets.
+  </description>
+
+  <!-- We define a CORS filter to allow cross origin domain calls to OGC service resources;
+       this is required for web applications using the OGC services -->
+  <filter>
+    <filter-name>CORSFilter</filter-name>
+    <filter-class>samples.ogc.server.CORSFilter</filter-class>
+
+    <init-param>
+      <param-name>cors.allowOrigin</param-name>
+      <param-value>*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cors.supportedHeaders</param-name>
+      <param-value>X-Requested-With, Content-Type, Origin, Accept</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>CORSFilter</filter-name>
+    <servlet-name>wfs</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CORSFilter</filter-name>
+    <servlet-name>wms</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CORSFilter</filter-name>
+    <servlet-name>wcs</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CORSFilter</filter-name>
+    <servlet-name>csw</servlet-name>
+  </filter-mapping>
+
+  <!-- Context parameter configuration -->
+
+  <!-- The memory tile cache size in MB. Default is 10% of the max heap size. Can be 0. -->
+  <!--<context-param>-->
+    <!--<param-name>memory-cache-size</param-name>-->
+    <!--<param-value>512</param-value>-->
+  <!--</context-param>-->
+
+  <!-- The disk tile cache size in MB. Default is "memory-cache-size x 100". Can be 0. -->
+  <!--<context-param>-->
+    <!--<param-name>disk-cache-size</param-name>-->
+    <!--<param-value>3000</param-value>-->
+  <!--</context-param>-->
+
+  <!-- The disk tile cache path. Supports paths starting with "${java.io.tmpdir}" or "${user.home}". Default is "${java.io.tmpdir}/ogc"-->
+  <!--<context-param>-->
+    <!--<param-name>disk-cache-path</param-name>-->
+    <!--<param-value>3000</param-value>-->
+  <!--</context-param>-->
+
+
+  <!-- Servlet definition for a Luciad-based WMS service -->
+
+  <servlet>
+    <servlet-name>wms</servlet-name>
+    <description>
+      Luciad OGC WMS Servlet.
+    </description>
+    <servlet-class>com.luciad.wms.server.TLcdWMSServlet</servlet-class>
+    <init-param>
+      <param-name>command.dispatcher.factory.class</param-name>
+      <param-value>samples.wms.server.OGCWMSCommandDispatcherFactory</param-value>
+    </init-param>
+    <init-param>
+      <param-name>trace.on</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wms.capabilities.cfg</param-name>
+      <param-value>samples/ogc/server/wms.capabilities.cfg.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>crs.epsg.cfg</param-name>
+      <param-value>samples/ogc/server/crs.epsg.cfg</param-value>
+    </init-param>
+    <init-param>
+      <param-name>crs.auto.cfg</param-name>
+      <param-value>samples/ogc/server/crs.auto.cfg</param-value>
+    </init-param>
+    <init-param>
+      <param-name>crs.auto2.cfg</param-name>
+      <param-value>samples/ogc/server/crs.auto2.cfg</param-value>
+    </init-param>
+    <init-param>
+      <param-name>crs.luciadmap</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>settings.cfg</param-name>
+      <param-value>samples/ogc/server/settings.cfg</param-value>
+    </init-param>
+    <!-- Load this servlet at server startup time -->
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+
+  <!-- Servlet definition for a Luciad-based WFS service -->
+
+  <servlet>
+    <servlet-name>wfs</servlet-name>
+    <description>
+      Luciad OGC WFS Servlet.
+    </description>
+    <servlet-class>com.luciad.ogc.wfs.TLcdWFSServlet</servlet-class>
+    <init-param>
+      <param-name>wfs.command.dispatcher.factory.class</param-name>
+      <param-value>samples.ogc.wfs.server.WFSCommandDispatcherFactory</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wfs.featureTypeList.cfg</param-name>
+      <param-value>samples/ogc/server/wfs.featureTypeList.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wfs.enableLocking</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wfs.enableTransactions</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wfs.schemaLocations.cfg</param-name>
+      <param-value>samples/ogc/server/WFSSchemas.properties</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wfs.10.schemaLocations.cfg</param-name>
+      <param-value>samples/ogc/server/WFS10Schemas.properties</param-value>
+    </init-param>
+    <!-- Load this servlet at server startup time -->
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+
+  <!-- Servlet definition for a Luciad-based WCS service -->
+
+  <servlet>
+    <servlet-name>wcs</servlet-name>
+    <description>
+      Luciad OGC WCS Servlet.
+    </description>
+    <servlet-class>com.luciad.ogc.wcs.TLcdWCSServlet</servlet-class>
+    <init-param>
+      <param-name>ogc.command.dispatcher.factory.class</param-name>
+      <param-value>samples.ogc.wcs.server.WCSCommandDispatcherFactory</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wcs.coverages.cfg</param-name>
+      <param-value>samples/ogc/server/wcs.coverages.cfg.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wcs.outputFormat.geotiff.enableTiling</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!-- Load this servlet at server startup time -->
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>csw</servlet-name>
+    <description>
+      Luciad OGC CSW Servlet.
+    </description>
+    <servlet-class>samples.csw.server.CSWServlet</servlet-class>
+    <init-param>
+      <param-name>csw.command.dispatcher.factory.class</param-name>
+      <param-value>samples.csw.server.CSWCommandDispatcherFactory</param-value>
+    </init-param>
+    <init-param>
+      <param-name>csw.insertEmptyValues</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <init-param>
+      <param-name>csw.versions</param-name>
+      <param-value>3.0.0,2.0.2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>csw.profiles</param-name>
+      <!-- Currently supported values are 'iso' and 'inspire' -->
+      <param-value>iso</param-value>
+    </init-param>
+    <init-param>
+      <param-name>csw.dataDir</param-name>
+      <param-value>Data/csw</param-value>
+    </init-param>
+    <!-- Load this servlet at server startup time -->
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>wms</servlet-name>
+    <url-pattern>/wms</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>wfs</servlet-name>
+    <url-pattern>/wfs</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>wcs</servlet-name>
+    <url-pattern>/wcs</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>csw</servlet-name>
+    <url-pattern>/csw</url-pattern>
+  </servlet-mapping>
+
+  <!-- Define the default session timeout for your application,
+       in minutes.  From a servlet or JSP page, you can modify
+       the timeout for a particular session dynamically by using
+       HttpSession.getMaxInactiveInterval(). -->
+
+  <session-config>
+    <session-timeout>30</session-timeout>    <!-- 30 minutes -->
+  </session-config>
+
+</web-app>

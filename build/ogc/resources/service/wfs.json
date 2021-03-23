@@ -1,0 +1,19 @@
+{
+  "title" : "OGC WFS",
+  "description" : "The OGC WFS focuses on exchanging vector data. This component provides an OGC-certified implementation of version 1.0.0 and 1.1.0, and includes support for Locking and Transactions.</p><p>The base URL is available at <code>{{servletLocation}}/LuciadOGCServices/wfs?</code>.</p><p>A few example requests can be triggered via the buttons below.</p>",
+  "baseQuery": "/LuciadOGCServices/wfs?",
+  "requests": [
+      { "name": "GetCapabilities", 
+        "query": "REQUEST=GetCapabilities&SERVICE=WFS" },
+      { "name": "GetFeature", 
+        "query": "REQUEST=GetFeature&SERVICE=WFS&VERSION=1.1.0&TYPENAME=cities" },
+      { "name": "GetFeature Bbox",
+        "post": "service/wfs_getfeature_bbox.xml" },
+      { "name": "GetFeature IsLike",
+        "post": "service/wfs_getfeature_islike.xml" },
+      { "name": "GetFeature And",
+        "post": "service/wfs_getfeature_and.xml" },
+      { "name": "GetFeature Id",
+        "post": "service/wfs_getfeature_id.xml" }
+    ]
+}

@@ -1,0 +1,299 @@
+/*
+ * This file overrides some defaults in bootstrap.
+ * Ideally, settings that can be configured in config.json should be removed here and compiled into bootstrap.
+ * http://getbootstrap.com/customize/
+ */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.jumbotron {
+  /* A jumbotron must touch the navbar, so undo the additional 20px margin on the body tag */
+  margin-top: -20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: linear-gradient(#1e252d, #2b3540);
+  color: #fff;
+}
+
+.jumbotron h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.jumbotron h1 > span.dash {
+  display: inline-block;
+  border-bottom: 3px solid #c1d92a;
+  width: 24px;
+  margin-right: 10px;
+}
+
+.jumbotron .container > div, .jumbotron .container > p {
+  font-size: 120%;
+  margin-bottom: 15px;
+}
+
+.jumbotron a {
+  color: #c1d92a;
+}
+
+/* remove the margin of the first page-header or it will appear to low */
+/* these selectors are a bit complex because CSS currently lacks a nth-match selector (drafted for CSS4) */
+body > div.container:not(.with-lead) > h1:first-of-type,
+body > div.container:not(.with-lead) div[role = "main"] > h1:first-of-type,
+body > div.container:not(.with-lead) div[data-require] > h1 {
+  margin-top: 0;
+}
+/* http://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class/8539107#8539107 */
+body > div.container:not(.with-lead) div[data-require] ~ div[data-require] > h1 {
+  margin-top: 40px;
+}
+
+.panel-luciad {
+  border-color: #003e51;
+}
+
+.panel-luciad > .panel-heading {
+  color: #fff;
+  background-color: #003e51;
+  border-color: #003e51;
+}
+
+.panel-luciad > .panel-heading > h3 {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.panel-luciad a {
+  color: #003e51;
+}
+
+/* Starting with section 2 (additional components), set a fixed height for the panels */
+.page-header:nth-of-type(n+2) ~ div.row .panel-luciad .panel-body {
+  height: 150px;
+  overflow-y: auto;
+}
+
+#sidebar {
+  /* The width property is relative to the container column when not affixed, but to the page when it is
+   * Using min-width prevents unwanted shrinking of the sidebar */
+  min-width: 25%;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+#sidebar>.nav {
+  margin-bottom: 15px;
+}
+
+#sidebar>a {
+  color: #6b7d82;
+  font-size: 75%;
+  padding-left: 18px;
+}
+
+#sidebar li>a {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sidebar li li>a {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 85%;
+}
+
+#sidebar li li>a::before {
+  content: "";
+  padding-left: 10px;
+}
+
+#sidebar .nav>li>a {
+  border-left: 3px solid transparent;
+  color: #6b7d82;
+}
+
+#sidebar .nav>li>a:hover {
+  background: transparent;
+}
+
+#sidebar .nav>li:not(.active)>a:hover {
+  border-left: 1px solid #385459;
+  padding-left: 17px;
+  color: #385459;
+}
+
+#sidebar .nav>li.active>a {
+  border-left: 3px solid #003e51;
+  color: #003e51;
+}
+
+#sidebar.affix-top {
+  position: static;
+}
+
+#sidebar.affix {
+  position: fixed;
+  top: 70px;
+}
+
+/* if the navbar is hidden, shift the sidebar up by 50px or it will end up strangely low */
+#sidebar.affix.nav-unpinned {
+  top: 20px;
+}
+
+#sidebar.sidebar-collapse>ul>li>ul>li {
+  display: none;
+}
+
+#sidebar.sidebar-collapse>ul>li.active>ul>li {
+  display: inline;
+}
+
+/* An oddity with JQuery.offset() causes affix to break if you resize the window and scroll to the bottom.
+ * This style prevents JQuery from doing that. */
+#sidebar.affix-bottom {
+  position: relative;
+}
+
+/* Luciad navbar theme */
+#navbar {
+  background-color: #fff;
+  border-bottom: none;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all .25s ease-in-out;
+}
+
+#navbar .dropdown-menu {
+  text-transform: initial;
+}
+
+#navbar.nav-unpinned {
+  top: -70px; /* 50px height + 20px margin (shadow) */
+}
+
+#navbar .navbar-nav>li>a, #navbar .navbar-text {
+  color: #263240;
+  font-weight: bold;
+}
+
+#navbar .navbar-brand img {
+  margin-top: -7px;
+}
+
+#navbar .navbar-nav>li:not(.active)>a {
+  padding-bottom: 15px;
+}
+
+#navbar .navbar-nav>.active>a, #navbar .navbar-nav>.active>a:focus, #navbar .navbar-nav>.active>a:hover {
+  color: #9a9a9a;
+  background-color: #fff;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #c5d000;
+}
+
+#navbar .navbar-nav>li>a:hover {
+  background-color: transparent;
+  color: #9a9a9a;
+}
+
+/* Collapse at 1200px instead of the default 768px */
+@media (max-width: 1200px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in{
+    display:block !important;
+  }
+}
+
+/* Align navbar items right, but only if it's not collapsed */
+@media (min-width: 1200px) {
+  #navbar .navbar-nav {
+    float: right;
+  }
+}
+
+.dropdown-menu.dropdown-fixed {
+  height: auto;
+  max-height: 400px;
+  overflow-x: hidden;
+}
+
+
+.footer {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #1e252d;
+}
+
+.footer p {
+  color: #fff;
+  margin-top: 15px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* The default red color sheme is a bit aggressive */
+code {
+  color: #213d43;
+  background-color: #e5e8eb;
+}
+
+/* Don't color code elements in an alert, it looks bad */
+.alert code {
+  color: inherit;
+  background-color: inherit;
+}
+
+/* API reference iframe */
+/* Quite hacky, but far easier than getting javadoc to produce friendlier output */
+iframe.reference {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px); /* Requires CSS3, full height minus the navbar and footer */
+  border: none;
+}

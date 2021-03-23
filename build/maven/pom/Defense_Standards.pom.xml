@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.luciad</groupId>
+   <artifactId>Defense_Standards</artifactId>
+   <version>2017.1.08</version>
+   <packaging>pom</packaging>
+   <dependencies>
+      <dependency>
+         <groupId>com.luciad</groupId>
+         <artifactId>lcd_usrp</artifactId>
+         <version>2017.1.08</version>
+      </dependency>
+      <dependency>
+         <groupId>com.luciad</groupId>
+         <artifactId>lcd_nitf</artifactId>
+         <version>2017.1.08</version>
+      </dependency>
+      <dependency>
+         <groupId>com.luciad</groupId>
+         <artifactId>lcd_bci</artifactId>
+         <version>2017.1.08</version>
+      </dependency>
+      <dependency>
+         <groupId>com.luciad</groupId>
+         <artifactId>lcd_vpf</artifactId>
+         <version>2017.1.08</version>
+      </dependency>
+   </dependencies>
+</project>

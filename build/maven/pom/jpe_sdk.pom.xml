@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.esri</groupId>
+   <artifactId>jpe_sdk</artifactId>
+   <version>9.4</version>
+   <packaging>jar</packaging>
+   <dependencies>
+      <dependency>
+         <groupId>com.ibm</groupId>
+         <artifactId>com.ibm.icu</artifactId>
+         <version>3.6.1</version>
+      </dependency>
+   </dependencies>
+</project>

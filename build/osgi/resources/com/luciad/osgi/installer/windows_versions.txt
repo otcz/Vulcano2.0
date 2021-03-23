@@ -1,0 +1,13 @@
+WindowsXP
+Windows2003
+WindowsVista
+Windows7
+Windows8
+Windows10
+WindowsServer2008
+WindowsServer2008R2
+WindowsServer2012
+WindowsServer2012R2
+WindowsServer2015
+WindowsServer2015R2
+WindowsServer2016

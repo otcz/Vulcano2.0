@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:util="http://www.luciad.com/util" xmlns:xs="http://www.w3.org/2001/XMLSchema" lang="en" ng-app="luciadWebServicesFrontEnd">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/luciad.css">
+    <script src="lib/js/jquery-1.11.3.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script>
+      function updateNav() {
+        $("#navbar-content li").each(
+            function() {
+              var $this = $(this);
+              if ($('a', $this).attr('href') === document.location.hash) {
+                $this.addClass("active");
+              } else {
+                $this.removeClass("active");
+              }
+            });
+      }
+      $(document).ready(updateNav);
+      $(window).bind("hashchange", updateNav);
+    </script>
+    <title>Welcome to Luciad's OGC web services</title>
+  </head>
+  <body>
+    <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-content" aria-expanded="false" aria-controls="navbar-content">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.luciad.com" rel="home">
+            <img src="img/luciad-logo-blue-scaled.png" width="109" height="30" alt="Luciad" title="Luciad">
+          </a>
+        </div>
+        <div id="navbar-content" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#/overview">Overview</a></li>
+            <li><a href="#/wms">WMS</a></li>
+            <li><a href="#/wfs">WFS</a></li>
+            <li><a href="#/wcs">WCS</a></li>
+            <li><a href="#/csw">CSW</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" ng-view>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p>Luciad &middot; <a href="http://www.luciad.com">luciad.com</a></p>
+      </div>
+    </footer>
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="lib/js/main.js"></script>
+  </body>
+</html>

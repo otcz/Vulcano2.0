@@ -1,0 +1,165 @@
+<!--
+Example Ant build script for building and obfuscating the samples.
+
+1. Building the samples
+The 'build_samples' target of this script compiles all sample classes in the 'samples/src' directory
+and packages the compiled classes in a jar file in the 'samples/lib' folder.
+
+2. Obfuscating the samples.
+The 'build_obfuscated_samples' target of this script uses ProGuard to obfuscate all LuciadLightspeed jars
+as well as the jar files in the 'samples/lib' folder to distrib/samples/obfuscated. The result of this
+target is a fully working, obfuscated LuciadLightspeed application that can be run with a deployment license.
+
+Notes
+=====
+Building the samples and obfuscating the samples are two separate steps in this build file.
+The default target only obfuscates the samples. This means it does not compile them from source first.
+
+Call the 'deploy_samples' target if you want the obfuscated result to start from the sample source files.
+
+Running the build script
+========================
+This script typically needs some more memory as the default 64 megabytes.
+Something like 1024 megabytes will do. Give Ant more memory using IntelliJ:
+- click Properties button in the 'Ant Build' window
+  (second button from the right hand side)
+- Set the maximum heap size (to 1024 or so)
+
+To give Ant more memory using command line tool:
+- set ANT_OPTS=-Xmx1024m
+- call 'ant -buildfile deploy_lucy.xml'
+
+-->
+<project name="obfuscate_project" default="obfuscate" basedir="../../">
+  <property file="build/lucy/deploy_lucy.properties"/>
+
+  <property name="project.dir" value="${basedir}"/>
+  <property name="build.dir" value="distrib/samples"/>
+  <property name="work.dir" value="${build.dir}/build_files"/>
+  <property name="distribution.dir" value="${build.dir}/obfuscated"/>
+  <dirname property="ant.dir" file="${ant.file}"/>
+  <property file="${ant.dir}/obfuscate_project.properties"/>
+
+  <!-- This selector selects all the jars that contain LuciadLightspeed code, and that should be obfuscated. -->
+  <selector id="luciad_jars">
+    <or>
+      <filename name="**/luciadlightspeed*.jar"/>
+      <filename name="luciadlightspeed*.jar"/>
+      <filename name="**/lcd*.jar"/>
+      <filename name="lcd*.jar"/>
+      <filename name="**/luciad*.jar"/>
+      <filename name="luciad*.jar"/>
+     <!-- <filename name="lucy.jar"/>-->
+    </or>
+  </selector>
+<!--esto se agrego-->
+  <path id="obfuscate_library_jars">
+    <pathelement location="${java.home}/lib/rt.jar"/>
+    <pathelement location="${java.home}/lib/jce.jar"/>
+    <fileset dir="/lib">
+      <not> <selector refid="luciad_jars"/> </not>
+    </fileset>
+  </path>
+
+
+  <!--hasta aqui  se agrego-->
+
+  <selector id="program_jars">
+    <or>
+      <filename name="VulcanoCAFUE.jar"/>
+    </or>
+  </selector>
+
+  <target name="echo_java_home">
+    <echo message="${java.home}"/>
+
+  </target>
+
+  <target name="obfuscate">
+    <available property="proguard.available" file="${proguard.location}"/>
+    <fail unless="proguard.available" message="You need to download ProGuard (http://proguard.sourceforge.net) to obfuscate the samples. After downloading, put the proguard.jar in the build/proguard.directory"/>
+
+    <taskdef resource="proguard/ant/task.properties">
+      <classpath location="${proguard.location}"/>
+    </taskdef>
+
+    <!--ProGuard is not configured for incremental obfuscation, so remove the results of any
+    possible previous obfuscation. -->
+    <delete>
+      <fileset dir="${distribution.dir}/lib" erroronmissingdir="false">
+        <selector refid="luciad_jars"/>
+      </fileset>
+      <fileset dir="${distribution.dir}/samples/lib" erroronmissingdir="false"/>
+    </delete>
+
+    <!--
+    This is a mixed-style ProGuard configuration:
+      - injars, outjars and library jars are configured using ant types,
+      - keep directives are specified in ProGuard's configuration format, in separate files
+    -->
+    <proguard>
+      <configuration dir="${project.dir}/">
+        <include name="build/proguard/myconfig.pro"/>
+      </configuration>
+
+      <configuration dir="${project.dir}/">
+       <include name="build/proguard/luciadlightspeed.pro"/>
+        <!--  <include name="build/proguard/lucy_end_user.pro"/>-->
+      </configuration>
+     <!-- <configuration dir="${project.dir}/">
+        <include name="build/proguard/lucy_end_user.pro"/>
+      </configuration>
+-->
+      <configuration file="build/proguard/myconfig.pro"/>
+
+      <injar>
+        <fileset dir="${project.dir}/out/artifacts/VulcanoCAFUE_jar">
+          <selector refid="luciad_jars"/>
+        </fileset>
+      </injar>
+      <outjar dir="${distribution.dir}/out/artifacts/VulcanoCAFUE_jar"/>
+
+      <injar>
+        <file name="${project.dir}/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar"/>
+        <!--<fileset dir="${project.dir}/out/artifacts/ColombianArmy_jar">-->
+        <!--<filename name="${project.dir}/out/artifacts/ColombianArmy_jar/ColombianArmy.jar"/>-->
+        <!--</fileset>-->
+      </injar>
+      <outjar dir="${distribution.dir}/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar"/>
+
+      <libraryjar>
+        <fileset dir="${project.dir}/out/artifacts/VulcanoCAFUE_jar" includes="*.jar">
+          <and>
+            <not>
+              <selector refid="luciad_jars"/>
+            </not>
+            <not>
+              <selector refid="program_jars"/>
+            </not>
+          </and>
+        </fileset>
+      </libraryjar>
+
+      <libraryjar location="${java.home}/lib/rt.jar"/>
+      <libraryjar location="${java.home}/lib/jce.jar"/>
+      <libraryjar location="${java.home}/lib/ext/nashorn.jar"/>
+      <libraryjar location="${java.home}/lib/ext/jaccess.jar"/>
+    </proguard>
+
+    <!-- copy library jars -->
+    <copy todir="${distribution.dir}/out/artifacts/VulcanoCAFUE_jar/">
+      <fileset dir="${project.dir}/out/artifacts/VulcanoCAFUE_jar/">
+        <and>
+          <not>
+            <selector refid="luciad_jars"/>
+          </not>
+          <not>
+            <selector refid="program_jars"/>
+          </not>
+        </and>
+      </fileset>
+    </copy>
+
+  </target>
+
+</project>

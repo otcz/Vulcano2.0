@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Example SLD style library -->
+<StyledLayerDescriptor version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld sld/1.0.0/StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NamedLayer>
+		<Name>Usa_states</Name>
+		<UserStyle>
+			<Name>Default</Name>
+			<IsDefault>1</IsDefault>
+			<FeatureTypeStyle>
+				<Rule>
+					<PolygonSymbolizer>
+						<Fill>
+							<CssParameter name="fill">#F4EABE</CssParameter>
+						</Fill>
+						<Stroke>
+							<CssParameter name="stroke">#400000</CssParameter>
+							<CssParameter name="stroke-width">1</CssParameter>
+						</Stroke>
+					</PolygonSymbolizer>
+					<TextSymbolizer>
+						<Label>
+							<ogc:PropertyName>STATE_NAME</ogc:PropertyName>
+						</Label>
+						<Font>
+							<CssParameter name="font-family">Arial</CssParameter>
+							<CssParameter name="font-style">italic</CssParameter>
+							<CssParameter name="font-weight">bold</CssParameter>
+							<CssParameter name="font-size">14</CssParameter>
+						</Font>
+						<LabelPlacement>
+							<PointPlacement>
+								<AnchorPoint>
+									<AnchorPointX>0.5</AnchorPointX>
+									<AnchorPointY>0.5</AnchorPointY>
+								</AnchorPoint>
+							</PointPlacement>
+						</LabelPlacement>
+						<!--  make the label easy to read-->
+						<Halo>
+							<Radius>
+								<ogc:Literal>2</ogc:Literal>
+							</Radius>
+							<Fill>
+								<CssParameter name="fill">#FFFFFF</CssParameter>
+								<CssParameter name="fill-opacity">0.85</CssParameter>
+							</Fill>
+						</Halo>
+						<Fill>
+							<CssParameter name="fill">#6D470B</CssParameter>
+						</Fill>
+					</TextSymbolizer>
+				</Rule>
+			</FeatureTypeStyle>
+		</UserStyle>
+		<UserStyle>
+			<Name>Mono</Name>
+			<IsDefault>0</IsDefault>
+			<FeatureTypeStyle>
+				<Rule>
+					<PolygonSymbolizer>
+						<Fill>
+							<CssParameter name="fill">#FFFFFF</CssParameter>
+						</Fill>
+						<Stroke>
+							<CssParameter name="stroke">#8e8888</CssParameter>
+							<CssParameter name="stroke-width">2</CssParameter>
+						</Stroke>
+					</PolygonSymbolizer>
+					<TextSymbolizer>
+						<Label>
+							<ogc:PropertyName>STATE_NAME</ogc:PropertyName>
+						</Label>
+						<Font>
+							<CssParameter name="font-family">Arial</CssParameter>
+							<CssParameter name="font-style">normal</CssParameter>
+							<CssParameter name="font-weight">bold</CssParameter>
+							<CssParameter name="font-size">14</CssParameter>
+						</Font>
+						<!-- this centers the label on the polygon's centroid-->
+						<LabelPlacement>
+							<PointPlacement>
+								<AnchorPoint>
+									<AnchorPointX>0.5</AnchorPointX>
+									<AnchorPointY>0.5</AnchorPointY>
+								</AnchorPoint>
+							</PointPlacement>
+						</LabelPlacement>
+						<!--  make the label easy to read-->
+						<Halo>
+							<Radius>
+								<ogc:Literal>4</ogc:Literal>
+							</Radius>
+							<Fill>
+								<CssParameter name="fill">#8e8888</CssParameter>
+								<CssParameter name="fill-opacity">0.85</CssParameter>
+							</Fill>
+						</Halo>
+						<Fill>
+							<CssParameter name="fill">#000000</CssParameter>
+						</Fill>
+					</TextSymbolizer>
+				</Rule>
+			</FeatureTypeStyle>
+		</UserStyle>
+
+	</NamedLayer>
+	<NamedLayer>
+		<Name>Usa_rivers</Name>
+		<UserStyle>
+			<Name>Default</Name>
+			<IsDefault>1</IsDefault>
+			<FeatureTypeStyle>
+				<Rule>
+					<LineSymbolizer>
+						<Stroke>
+							<CssParameter name="stroke">#0998d8</CssParameter>
+							<CssParameter name="stroke-width">1</CssParameter>
+						</Stroke>
+					</LineSymbolizer>
+				</Rule>
+			</FeatureTypeStyle>
+		</UserStyle>
+		<UserStyle>
+			<Name>Accented</Name>
+			<IsDefault>0</IsDefault>
+			<FeatureTypeStyle>
+				<Rule>
+					<LineSymbolizer>
+						<Stroke>
+							<CssParameter name="stroke">#aba4a4</CssParameter>
+							<CssParameter name="stroke-width">4</CssParameter>
+						</Stroke>
+					</LineSymbolizer>
+				</Rule>
+			</FeatureTypeStyle>
+			<FeatureTypeStyle>
+				<Rule>
+					<LineSymbolizer>
+						<Stroke>
+							<CssParameter name="stroke">#e7e3e3</CssParameter>
+							<CssParameter name="stroke-width">1</CssParameter>
+						</Stroke>
+					</LineSymbolizer>
+				</Rule>
+			</FeatureTypeStyle>
+		</UserStyle>
+	</NamedLayer>
+	<NamedLayer>
+		<Name>Usa_cities</Name>
+		<UserStyle>
+			<Name>Default</Name>
+			<IsDefault>1</IsDefault>
+			<FeatureTypeStyle>
+				<Rule>
+					<PointSymbolizer>
+						<Graphic>
+							<Mark>
+								<WellKnownName>circle</WellKnownName>
+								<Fill>
+									<CssParameter name="fill">#F70909</CssParameter>
+								</Fill>
+							</Mark>
+							<Opacity>1.0</Opacity>
+							<Size>6.0</Size>
+							<Rotation>0</Rotation>
+						</Graphic>
+					</PointSymbolizer>
+				</Rule>
+			</FeatureTypeStyle>
+		</UserStyle>
+		<UserStyle>
+			<Name>Diamonds</Name>
+			<IsDefault>0</IsDefault>
+			<FeatureTypeStyle>
+				<Rule>
+					<Abstract>Rule to render a point when scale is between infinity and 1:30,000,000</Abstract>
+					<MinScaleDenominator>30000000</MinScaleDenominator>
+					<PointSymbolizer>
+						<Graphic>
+							<Mark>
+								<WellKnownName>square</WellKnownName>
+								<Stroke>
+									<CssParameter name="stroke">#4f4f4f</CssParameter>
+									<CssParameter name="stroke-width">2</CssParameter>
+								</Stroke>
+							</Mark>
+							<Opacity>1.0</Opacity>
+							<Size>5.0</Size>
+							<Rotation>0</Rotation>
+						</Graphic>
+					</PointSymbolizer>
+				</Rule>
+				<Rule>
+					<Abstract>Rule to render a point when scale is between 1:30,000,000 and 1:10,000,000</Abstract>
+                    <MinScaleDenominator>10000000</MinScaleDenominator>
+					<MaxScaleDenominator>30000000</MaxScaleDenominator>
+					<PointSymbolizer>
+						<Graphic>
+							<Mark>
+								<WellKnownName>square</WellKnownName>
+								<Stroke>
+									<CssParameter name="stroke">#4f4f4f</CssParameter>
+									<CssParameter name="stroke-width">2</CssParameter>
+								</Stroke>
+							</Mark>
+							<Opacity>1.0</Opacity>
+							<Size>8.0</Size>
+							<Rotation>45</Rotation>
+						</Graphic>
+					</PointSymbolizer>
+				</Rule>
+				<Rule>
+					<Abstract>Rule to render a point when scale is between 1:10,000,000and 0</Abstract>
+					<MaxScaleDenominator>10000000</MaxScaleDenominator>
+					<PointSymbolizer>
+						<Graphic>
+							<Mark>
+								<WellKnownName>square</WellKnownName>
+								<Stroke>
+									<CssParameter name="stroke">#4f4f4f</CssParameter>
+									<CssParameter name="stroke-width">2</CssParameter>
+								</Stroke>
+							</Mark>
+							<Opacity>1.0</Opacity>
+							<Size>13.0</Size>
+							<Rotation>0</Rotation>
+						</Graphic>
+					</PointSymbolizer>
+					<TextSymbolizer>
+						<Label>
+							<ogc:PropertyName>CITY</ogc:PropertyName>
+						</Label>
+						<Font>
+							<CssParameter name="font-family">Arial</CssParameter>
+							<CssParameter name="font-style">italic</CssParameter>
+							<CssParameter name="font-weight">bold</CssParameter>
+							<CssParameter name="font-size">12</CssParameter>
+						</Font>
+						<!-- this centers the label on the polygon's centroid-->
+						<LabelPlacement>
+							<PointPlacement>
+								<AnchorPoint>
+									<AnchorPointX>0.5</AnchorPointX>
+									<AnchorPointY>0.5</AnchorPointY>
+								</AnchorPoint>
+								<Displacement>
+									<DisplacementX>0</DisplacementX>
+									<DisplacementY>16</DisplacementY>
+								</Displacement>
+							</PointPlacement>
+						</LabelPlacement>
+						<!--  make the label easy to read-->
+						<Halo>
+							<Radius>
+								<ogc:Literal>2</ogc:Literal>
+							</Radius>
+							<Fill>
+								<CssParameter name="fill">#FFFFFF</CssParameter>
+								<CssParameter name="fill-opacity">0.85</CssParameter>
+							</Fill>
+						</Halo>
+						<Fill>
+							<CssParameter name="fill">#4f4f4f</CssParameter>
+						</Fill>
+					</TextSymbolizer>
+				</Rule>
+			</FeatureTypeStyle>
+		</UserStyle>
+	</NamedLayer>
+</StyledLayerDescriptor>

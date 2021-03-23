@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.luciad</groupId>
+   <artifactId>lcd_jts_extension</artifactId>
+   <version>2017.1.08</version>
+   <packaging>jar</packaging>
+   <dependencies>
+      <dependency>
+         <groupId>com.vividsolutions</groupId>
+         <artifactId>jts-core</artifactId>
+         <version>1.14.0</version>
+      </dependency>
+   </dependencies>
+</project>

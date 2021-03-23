@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sld:GetMap xmlns:sld="http://www.opengis.net/sld"
+            xmlns:wms="http://www.opengis.net/wms"
+            xmlns:se="http://www.opengis.net/se"
+            xmlns:ows="http://www.opengis.net/ows" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.3.0">
+  <sld:StyledLayerDescriptor version="1.1.0">
+    <sld:NamedLayer>
+      <se:Name>World</se:Name>
+      <sld:NamedStyle>
+        <se:Name></se:Name>
+      </sld:NamedStyle>
+    </sld:NamedLayer>
+    <sld:UserLayer>
+      <sld:RemoteOWS>
+        <sld:Service>WFS</sld:Service>
+        <se:OnlineResource
+            xlink:href="http://localhost:8080/LuciadOGCServices/wfs" xlink:type="simple"/>
+      </sld:RemoteOWS>
+      <sld:LayerFeatureConstraints>
+        <sld:FeatureTypeConstraint>
+          <se:FeatureTypeName>cities</se:FeatureTypeName>
+        </sld:FeatureTypeConstraint>
+      </sld:LayerFeatureConstraints>
+      <sld:UserStyle>
+        <FeatureTypeStyle xmlns="http://www.opengis.net/se"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          version="1.1.0">
+          <Name>Simple point</Name>
+          <Description>
+            <Title>Simple point</Title>
+            <Abstract>Considers any object as a point and renders it with a square.</Abstract>
+          </Description>
+          <Rule>
+            <Name>point</Name>
+            <Description>
+              <Title>point rule</Title>
+              <Abstract>rule to render a point</Abstract>
+            </Description>
+            <PointSymbolizer>
+              <Graphic>
+                <Mark>
+                  <WellKnownName>square</WellKnownName>
+                  <Fill>
+                    <SvgParameter name="fill">#ff00ff</SvgParameter>
+                  </Fill>
+                </Mark>
+                <Opacity>1.0</Opacity>
+                <Size>8</Size>
+                <Rotation>0</Rotation>
+              </Graphic>
+            </PointSymbolizer>
+          </Rule>
+        </FeatureTypeStyle>
+      </sld:UserStyle>
+    </sld:UserLayer>
+  </sld:StyledLayerDescriptor>
+  <sld:CRS>EPSG:32663</sld:CRS>
+  <sld:BoundingBox>
+    <ows:LowerCorner>-1.3681942066103505E7 2226389.815865471</ows:LowerCorner>
+    <ows:UpperCorner>-7460131.766727518 6679169.447596413</ows:UpperCorner>
+  </sld:BoundingBox>
+  <sld:Output>
+    <sld:Size>
+      <sld:Width>600</sld:Width>
+      <sld:Height>300</sld:Height>
+    </sld:Size>
+    <wms:Format>image/png</wms:Format>
+    <sld:Transparent>true</sld:Transparent>
+    <sld:BGcolor>0x8c96d2</sld:BGcolor>
+  </sld:Output>
+</sld:GetMap>

@@ -1,0 +1,5 @@
+linux linux-i586
+linux64 linux-amd64
+win32 windows-i586
+win64 windows-amd64
+macos_64 macosx-universal

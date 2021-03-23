@@ -1,0 +1,15 @@
+{
+  "title" : "OGC CSW",
+  "description" : "The OGC CSW focuses on discovering data sources by its metadata. This component provides OGC-certified implementations of version 2.0.2 and 3.0.0.</p><p>The base URL is available at <code>{{servletLocation}}/LuciadOGCServices/csw?</code>.</p><p>A few example requests can be triggered via the buttons below.</p>",
+  "baseQuery": "/LuciadOGCServices/csw?",
+  "requests": [
+    { "name": "GetCapabilities",
+      "query": "REQUEST=GetCapabilities&SERVICE=CSW" },
+    { "name": "GetRecordById",
+      "query": "REQUEST=GetRecordById&SERVICE=CSW&VERSION=3.0.0&ID=urn:uuid:784e2afd-a9fd-44a6-9a92-a3848371c8ec" },
+    { "name": "GetRecords",
+      "query": "REQUEST=GetRecords&SERVICE=CSW&VERSION=3.0.0&Q=ante&TYPENAMES=csw:Record&NAMESPACE=(csw,http://www.opengis.net/cat/csw/3.0)"},
+    { "name": "OpenSearch",
+      "query": "REQUEST=OpenSearch&SERVICE=CSW&VERSION=3.0.0&Q=ante&TEMPLATE=1" }
+  ]
+}

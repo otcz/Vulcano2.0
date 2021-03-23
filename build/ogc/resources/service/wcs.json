@@ -1,0 +1,12 @@
+{
+  "title" : "OGC WCS",
+  "description" : "The OGC WCS focuses on delivering raster data. This component provides OGC-certified implementations of version 1.0.0 and 1.1.0/1.1.1.</p><p>The base URL is available at <code>{{servletLocation}}/LuciadOGCServices/wcs?</code>.</p><p>A few example requests can be triggered via the buttons below.</p>",
+  "baseQuery": "/LuciadOGCServices/wcs?",
+  "requests": [
+      { "name": "GetCapabilities", 
+        "query": "REQUEST=GetCapabilities&SERVICE=WCS&VERSION=1.0.0" },
+      { "name": "DescribeCoverage", 
+        "query": "REQUEST=DescribeCoverage&SERVICE=WCS&VERSION=1.0.0&COVERAGE=usa" }
+    ]
+  
+}

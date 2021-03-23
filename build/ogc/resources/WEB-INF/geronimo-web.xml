@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web:web-app xmlns:dep="http://geronimo.apache.org/xml/ns/deployment-1.2"
+             xmlns:web="http://geronimo.apache.org/xml/ns/j2ee/web-2.0.1">
+  <dep:environment>
+    <dep:moduleId>
+      <dep:groupId>com.luciad</dep:groupId>
+      <dep:artifactId>server</dep:artifactId>
+    </dep:moduleId>
+    <dep:inverse-classloading/>
+  </dep:environment>
+  <web:context-root>/LuciadOGCServices</web:context-root>
+</web:web-app>

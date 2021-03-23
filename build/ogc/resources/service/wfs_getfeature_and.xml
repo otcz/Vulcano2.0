@@ -1,0 +1,21 @@
+<!-- Example of a GetFeature XML POST request containing a boolean And condition,
+     consisting of two property value arithmetic conditions -->
+<wfs:GetFeature xmlns:wfs="http://www.opengis.net/wfs"
+                xmlns:ogc="http://www.opengis.net/ogc"
+                service="WFS"
+                version="1.1.0">
+  <wfs:Query typeName="cities">
+    <ogc:Filter>
+      <ogc:And>
+        <ogc:PropertyIsGreaterThan>
+          <ogc:PropertyName>TOT_POP</ogc:PropertyName>
+          <ogc:Literal>600000</ogc:Literal>
+        </ogc:PropertyIsGreaterThan>
+        <ogc:PropertyIsGreaterThan>
+          <ogc:PropertyName>TOT_HU</ogc:PropertyName>
+          <ogc:Literal>300000</ogc:Literal>
+        </ogc:PropertyIsGreaterThan>
+      </ogc:And>
+    </ogc:Filter>
+  </wfs:Query>
+</wfs:GetFeature>

@@ -1,0 +1,12 @@
+<!--
+This ant build script unzips the custom Lucy frontend that integrates Lucy into an Eclipse RCP platform.
+-->
+<project name="Eclipse integration" default="integrate" basedir="../..">
+  <target name="createintegrationprojects">
+    <unzip src="build/lucy_on_eclipse/eclipse_integration.zip" dest="distrib/lucy_on_eclipse"/>
+  </target>
+
+  <target name="integrate" depends="createintegrationprojects">
+    <echo message="Please read the Lucy_EclipseIntegrationGuide.pdf guide to see how to get Lucy running inside Eclipse."/>
+  </target>
+</project>

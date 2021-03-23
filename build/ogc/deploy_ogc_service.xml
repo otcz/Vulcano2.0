@@ -1,0 +1,289 @@
+<!--
+Example Ant build script (http://ant.apache.org/) for deploying the OGC server sample.
+
+The script assumes that the core (LuciadLightspeed.zip) and the LuciadLightspeed Web Server Suite distribution (Ogc_server.zip)
+are unzipped in the same directory. This is nothing but the regular installation procedure.
+
+The script takes these steps to deploy the application:
+- Target 'init'
+  - performs initialization
+  - deletes any previous builds with the same version number (set by the 'application_version' property)
+
+- Target 'compile_src'
+  - takes the source files in the 'samples/src' directory
+  - compiles those source files (classpath is constructed from 'lib' folder,
+    see above)
+
+- Target 'create_jar'
+  - puts the compiled code in a jar file
+
+- Target 'obfuscate_jar'
+  - obfuscates the jar files created in 'create_jar' and all other jar files that contain or refer
+    Luciad code (e.g. luciadlightspeed.jar and lcd_*.jar), using Proguard
+    (http://proguard.sourceforge.net/). It also generates a .mapping file, which
+    can be used by Proguard to deobfuscate an obfuscated stack trace (refer to
+    the ReTrace Manual of Proguard for details)
+
+- Target 'build_deployment_war'
+   - builds a deployment version of the server and puts it in a war file. The war file is put in
+     the folder 'distrib'
+
+'deploy_ogc_service.properties' contains some properties (such as the version number) that
+ can easily be modified.  Check out the comments in that file for details.
+
+This script typically needs some more memory as the default 64 megabytes.
+Something like 1024 megabytes will do. Give Ant more memory using IntelliJ:
+- click Properties button in the 'Ant Build' window
+  (second button from the right hand side)
+- Set the maximum heap size (to 1024 or so)
+
+To give Ant more memory using command line tool:
+- set ANT_OPTS=-Xmx1024m
+- call 'ant -buildfile deploy_ogc_service.xml'
+-->
+<project name="DeployOGC" default="build_deployment_war" basedir="../../">
+
+  <property environment="env"/>
+  <property file="build/ogc/deploy_ogc_service.properties"/>
+
+  <selector id="excluded_jars">
+    <or>
+      <filename name="lcd_geoid_resources.jar"/>
+    </or>
+  </selector>
+  <selector id="application_jars">
+    <and>
+      <or>
+        <filename name="luciadlightspeed.jar"/>
+        <filename name="lcd_*.jar"/>
+      </or>
+      <not>
+        <selector refid="excluded_jars"/>
+      </not>
+    </and>
+  </selector>
+  <selector id="container_jars">
+    <or>
+      <or>
+        <filename name="servlet*.jar"/>
+        <filename name="javax.websocket-api*.jar"/>
+        <filename name="jetty*.jar"/>
+        <filename name="cdi*.jar"/> <!-- part of jetty distribution -->
+        <filename name="websocket*.jar"/> <!-- part of jetty distribution -->
+        <filename name="javax-websocket-*-impl-9.4.3.v20170317.jar"/> <!-- part of jetty distribution -->
+      </or>
+    </or>
+  </selector>
+  <selector id="library_jars">
+    <and>
+      <filename name="*.jar"/>
+      <not>
+        <or>
+          <selector refid="application_jars"/>
+          <selector refid="container_jars"/>
+          <selector refid="excluded_jars"/>
+        </or>
+      </not>
+    </and>
+  </selector>
+
+  <target name="init">
+    <echo message="DEBUG: Java version = ${ant.java.version}"/>
+    <!-- The directory of the project that is currently being developed -->
+    <property name="project_dir" value="${basedir}"/>
+    <!-- The destination folder -->
+    <property name="full_package_dir" value="${project_dir}/${package_dir}/${application_name}_${application_version}"/>
+    <property name="build_files_dir" value="${full_package_dir}/build_files"/>
+    <property name="classes_dir" value="${build_files_dir}/classes"/>
+    <property name="ogcresources_dir" value="${build_files_dir}/ogcresources"/>
+    <property name="tmp_dir" value="${build_files_dir}/tmp"/>
+    <property name="html_dir" value="${tmp_dir}/html"/>
+    <!-- Check if the source dir exists -->
+    <!-- Delete possibly existing files -->
+    <delete dir="${full_package_dir}" failonerror="false" quiet="true"/>
+    <mkdir dir="${full_package_dir}"/>
+    <mkdir dir="${build_files_dir}"/>
+    <mkdir dir="${classes_dir}"/>
+    <mkdir dir="${tmp_dir}"/>
+    <!-- LCD-8307 For temporarily storing jars with replaced '+' characters -->
+    <mkdir dir="${tmp_dir}/lib" />
+    <mkdir dir="${html_dir}"/>
+    <!-- Make a manifest file -->
+    <property name="manifest_file" value="${tmp_dir}/MANIFEST.MF"/>
+    <manifest file="${manifest_file}">
+      <section name="${application_basepackage}">
+        <attribute name="Specification-Title" value="${application_name}"/>
+        <attribute name="Specification-Version" value="${application_version}"/>
+        <attribute name="Specification-Vendor" value="${application_vendor}"/>
+        <attribute name="Implementation-Title" value="${application_name}"/>
+        <attribute name="Implementation-Version" value="${application_version}"/>
+        <attribute name="Implementation-Vendor" value="${application_vendor}"/>
+      </section>
+    </manifest>
+    <!-- copy html resources and replace product info keys -->
+    <tstamp>
+      <format property="current_year" pattern="yyyy"/>
+    </tstamp>
+    <copy todir="${html_dir}">
+      <fileset dir="${project_dir}/build/ogc/resources">
+        <include name="*.html"/>
+      </fileset>
+      <filterchain>
+        <tokenfilter>
+          <replacestring from="__PRODUCT_NAME__" to="${application_name}"/>
+          <replacestring from="__VERSION__" to="${application_version}"/>
+          <replacestring from="__YEAR__" to="${current_year}"/>
+        </tokenfilter>
+      </filterchain>
+    </copy>
+    <!-- Put all jar files in the lib folder in the classpath (for compilation and obfuscation) + add the samples -->
+    <path id="classpath">
+      <fileset dir="/lib">
+        <include name="*.jar"/>
+      </fileset>
+    </path>
+    <!-- Extract the OGC XML schemas from the lcd_wxs_server jar to a temporary location --> 
+    <unjar src="/lib/lcd_wxs_server.jar" dest="${ogcresources_dir}">
+      <patternset>
+        <include name="ogcresources/**/*"/>
+      </patternset>
+    </unjar>
+  </target>
+
+  <target name="compile_src" depends="init" >
+    <!--  Note: debug is on because otherwise no line numbers are generated, which makes deobfuscating a stack trace very hard -->
+    <javac srcdir="${project_dir}/samples/src"
+           excludes="samples/fusion/platform/**"
+           destdir="${classes_dir}"
+           classpathref="classpath"
+           includeantruntime="false"
+           source="1.8"
+           target="1.8"
+           debug="true"
+           debuglevel="vars,lines,source"/>
+  </target>
+
+  <target name="create_jar" depends="compile_src">
+    <!-- Create jar file containing the code of the application -->
+    <jar jarfile="${tmp_dir}/${application_jar_base}.jar" manifest="${manifest_file}">
+      <fileset dir="${classes_dir}"/>
+    </jar>
+  </target>
+
+  <target name="obfuscate_jar" depends="create_jar">
+    <!-- we can't reliably detect a path relative to the working directory (user.dir), so just try it if proguard.location doesn't work directly -->
+    <condition property="proguard.jar" value="${proguard.location}" else="${user.dir}/${proguard.location}">
+      <available file="${proguard.location}"/>
+    </condition>
+    <available property="proguard.available" file="${proguard.jar}"/>
+    <fail unless="proguard.available" message="You need to download ProGuard (http://proguard.sourceforge.net) to obfuscate the samples. After downloading, put the proguard.jar in the build/proguard directory"/>
+
+    <taskdef resource="proguard/ant/task.properties">
+      <classpath location="${proguard.jar}"/>
+    </taskdef>
+
+    <!-- Library jars that don't require obfuscation -->
+    <path id="obfuscate_library_jars">
+      <fileset dir="/lib">
+        <or>
+          <selector refid="library_jars"/>
+          <selector refid="container_jars"/>
+        </or>
+      </fileset>
+    </path>
+    <!-- Input jars that require obfuscation -->
+    <path id="obfuscate_input_jars">
+      <!-- The jar of the sample classes -->
+      <pathelement location="${tmp_dir}/${application_jar_base}.jar"/>
+      <!-- Other selected input jars -->
+      <fileset dir="/lib">
+        <selector refid="application_jars"/>
+      </fileset>
+    </path>
+    <!-- Note that the configuration of Proguard below is a mixed style configuration:
+           the input, output and library jars are configured using Ant, all static
+           configuration is done using a classic Proguard config file -->
+    <proguard printmapping="${build_files_dir}/${application_name}-${application_version}.mapping">
+      <injar refid="obfuscate_input_jars" filter="!version, !META-INF/MANIFEST.MF, !Dummy.class"/>
+      <outjar location="${tmp_dir}/obfuscatedjars"/>
+      <libraryjar refid="obfuscate_library_jars"/>
+      -include build/proguard/luciad_ogcservice.pro
+    </proguard>
+  </target>
+
+  <target name="build_deployment_war" depends="obfuscate_jar">
+    <war destfile="${full_package_dir}/${application_name}.war"
+         webxml="${project_dir}/build/ogc/resources/WEB-INF/web.xml"
+         manifest="${manifest_file}">
+      <!--Create the WEB-INF/lib directory -->
+      <!-- Library jars -->
+      <lib dir="/lib" >
+        <selector refid="library_jars"/>
+      </lib>
+      <lib dir="/lib/logging">
+        <include name="*.jar"/>
+      </lib>
+      <!-- Obfuscated server jar -->
+      <lib file="${tmp_dir}/obfuscatedjars/*.jar"/>
+      <!-- Deployment license jar -->
+      <lib file="${project_dir}/licenses/deployment.jar" erroronmissingdir="false"/>
+      <!-- Create the WEB-INF/classes directory -->
+      <!-- Configuration files -->
+      <classes dir="${project_dir}/config">
+        <!-- WMS -->
+        <include name="samples/ogc/server/crs.epsg.cfg"/>
+        <include name="samples/ogc/server/crs.auto.cfg"/>
+        <include name="samples/ogc/server/crs.auto2.cfg"/>
+        <include name="samples/ogc/server/settings.cfg"/>
+        <include name="samples/ogc/server/wms.capabilities.cfg.xml"/>
+        <!-- WFS -->
+        <include name="samples/ogc/server/wfs.featureTypeList.xml"/>
+        <include name="samples/ogc/server/WFS10Schemas.properties"/>
+        <include name="samples/ogc/server/WFSSchemas.properties"/>
+        <!-- WCS -->
+        <include name="samples/ogc/server/wcs.coverages.cfg.xml"/>
+      </classes>
+      <classes dir="${project_dir}/build/ogc">
+        <!-- Logging configuration -->
+        <include name="logging.properties"/>
+        <include name="logback.xml"/>
+      </classes>
+      <!-- License -->
+      <classes dir="${project_dir}/licenses" includes="deployment_license.txt" erroronmissingdir="false"/>
+      <!-- Data files -->
+      <classes dir="${project_dir}/samples/resources/">
+        <!-- WFS -->
+        <include name="Data/Shp/Usa/**"/>
+        <!-- WCS -->
+        <include name="Data/Rst/usa.rst"/>
+        <include name="Data/Rst/usa.gif"/>
+        <include name="Data/Rst/wash_spot_small.gif"/>
+        <include name="Data/Rst/wash_spot_small.rst"/>
+        <!-- CSW -->
+        <include name="Data/csw/**"/>
+      </classes>
+      <!-- Other required resources: -->
+      <!-- 1. Front-end resources -->
+      <zipfileset dir="${html_dir}"/>
+      <zipfileset dir="${project_dir}/build/ogc/resources/lib" prefix="lib"/>
+      <zipfileset dir="${project_dir}/build/ogc/resources/xsl" prefix="xsl"/>
+      <zipfileset dir="${project_dir}/build/ogc/resources/service" prefix="service"/>
+      <!-- 2. OGC XML Schemas -->
+      <zipfileset dir="${ogcresources_dir}/ogcresources/schemas/" prefix="schemas"/>
+      <!-- 3. Sample SLD file for WMS -->
+      <zipfileset dir="${project_dir}/build/ogc/resources/sld" prefix="Data/sld"/>
+      <!-- 4. Vendor-specific deployment configuration files -->
+      <zipfileset dir="${project_dir}/build/ogc/resources/WEB-INF" prefix="WEB-INF"/>
+    </war>
+
+    <antcall target="cleanup_deployment"/>
+
+    <echo message="Output war file written to ${full_package_dir}/${application_name}.war"/>
+  </target>
+
+  <target name="cleanup_deployment">
+    <delete dir="${classes_dir}" failonerror="false"/>
+    <delete dir="${tmp_dir}" failonerror="false"/>
+    <delete dir="${ogcresources_dir}" failonerror="false"/>
+  </target>
+</project>

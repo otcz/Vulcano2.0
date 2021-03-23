@@ -1,0 +1,23 @@
+<project name="com.luciad.osgi.sample" default="bundle">
+  <target name="bundle">
+    <property file="build.properties"/>
+
+    <property name="target" value="${output..}"/>
+
+    <mkdir dir="${target}/classes"/>
+
+    <javac includeantruntime="false" source="1.6" target="1.6"
+           srcdir="${source..}" destdir="${target}">
+      <classpath>
+        <pathelement location="../felix-framework-4.2.1/bin/felix.jar"/>
+        <fileset dir="../../../lib" includes="*.jar"/>
+      </classpath>
+    </javac>
+
+    <mkdir dir="../../../distrib/osgi"/>
+    <jar destfile="../../../distrib/osgi/${ant.project.name}.jar"
+         manifest="META-INF/MANIFEST.MF">
+      <fileset dir="${target}"/>
+    </jar>
+  </target>
+</project>
