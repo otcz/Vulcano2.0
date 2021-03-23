@@ -1,5 +1,6 @@
 package com.company.front;
 
+import com.company.back.JButtonTrayectoria;
 import com.luciad.text.TLcdLonLatPointFormat;
 
 
@@ -11,45 +12,31 @@ import java.awt.event.ActionListener;
 
 public class DatosTirofrm extends JFrame {
 
-    private static Object DatosTirofrm;
-
-    private static DatosTirofrm datosTirofrm;
-    public JLabel lbDistancia, lbAzimut, lbituacion, lbOrientacion, lbCuadrante, lbTiempoVuelo, lbCoordenadasTitulo,
+    public JLabel lbDistancia, lbAzimut, lbSituacion, lbOrientacion, lbCuadrante, lbTiempoVuelo, lbCoordenadasTitulo,
             lbCarga, lbBlanco, lbArma, lbObservadorAdelantado, lbMunicion, lbTrayectoria, lbIntervalo,
             lbPrintTitulo, lbCoordenadasN, lbCoordenadasS, lbTexBlanco, lbTexArma, lbTexSituacion, lbTexOrientacion, lbTexCuadrante,
             lbTexCoordenadasN, lbTexCoordenadasS, lbTexMunicion1A, lbTexIntervalo, lbTexTiempoVuelo, lbTexCarga, lbTexCoordenadasOA,
             lbTexCoordenadasBlanco, lbTexCoordenadasArma;
 
-
-
     public JFormattedTextField texResultadoCoordenadasA, texResultadoCoordenadasB, texResultadoCoordenadasC;
 
-
-    public JSpinner spEfectivos1, spEfectivos2, spEfectivos3, spGradosN, spMinutosN, spSegundosN, spGradosS,
-            spMinutosS, spSegundosS, spGradosX, spMinutosX, spSegundosX, spGradosY, spMinutosY, spSegundosY;
-
     public JComboBox cbBlanco, cbObservadorAdelantado, cbTrayectoria, cbMunicion, cbCode, cbArma;
-    public JScrollBar scScrollPanel;
     public JPanel pPanel;
-    public JFrame fUnidadD;
-    public JScrollPane scMirar;
-    public JTable jtTabla;
-    public JButton btnGuardar, btnEliminar, btnCorreccion, btnCalcular,btnImprimir;
-    public Image imgImage;
+    public JButton btnGuardar, btnEliminar, btnCorreccion, btnCalcular, btnImprimir;
     public TLcdLonLatPointFormat formato = new TLcdLonLatPointFormat(TLcdLonLatPointFormat.DEFAULT2);
 
-    //esto es un metodo constructor
+    public  JButtonTrayectoria btnTrayectoria;
+
     public DatosTirofrm() {
         setSize(450, 750);
         setTitle("DATOS DE TIRO ESTANDAR");
         setResizable(false);
-//        setVisible(true);
+        setVisible(true);
         Panel1();
         setBackground(Color.BLUE);
+
     }
 
-    //metodo de paneles
-    //dentro de este metodo va lojado los constructores de  los metodos que van agregados al panel
     private void Panel1() {
 
         pPanel = new JPanel();
@@ -70,11 +57,10 @@ public class DatosTirofrm extends JFrame {
         //paintComponent(Graphics g);
     }
 
-
     private void EtiquetasComboBox() {
 
         lbPrintTitulo = new JLabel("Datos de tiro");
-        lbPrintTitulo.setBounds(10, 1, 150, 30);
+        lbPrintTitulo.setBounds(10, 1, 400, 30);
         lbPrintTitulo.setVisible(true);
         lbPrintTitulo.setFont(new Font("britannic bold", Font.BOLD, 20));
         pPanel.add(lbPrintTitulo);
@@ -103,6 +89,8 @@ public class DatosTirofrm extends JFrame {
         lbTrayectoria.setFont(new Font("arial", Font.BOLD, 16));
         lbTrayectoria.setBounds(10, 170, 180, 20);
         pPanel.add(lbTrayectoria);
+
+
     }
 
     private void Combobox() {
@@ -129,7 +117,7 @@ public class DatosTirofrm extends JFrame {
 
     private void EtiquetasCoordendas() {
 
-        lbCoordenadasTitulo  = new JLabel("Coordenadas");
+        lbCoordenadasTitulo = new JLabel("Coordenadas");
         lbCoordenadasTitulo.setBounds(150, 200, 150, 20);
         lbCoordenadasTitulo.setVisible(true);
         lbCoordenadasTitulo.setFont(new Font("britannic bold", Font.BOLD, 20));
@@ -240,10 +228,10 @@ public class DatosTirofrm extends JFrame {
         Intervalo.setBounds(110, 400, 180, 20);
         pPanel.add(Intervalo);
 
-        lbituacion = new JLabel("Situacion:");
-        lbituacion.setFont(new Font("arial", Font.BOLD, 16));
-        lbituacion.setBounds(10, 430, 180, 20);
-        pPanel.add(lbituacion);
+        lbSituacion = new JLabel("Situacion:");
+        lbSituacion.setFont(new Font("arial", Font.BOLD, 16));
+        lbSituacion.setBounds(10, 430, 180, 20);
+        pPanel.add(lbSituacion);
 
         JLabel situacion = new JLabel();
         situacion.setFont(new Font("arial", Font.ITALIC, 22));
@@ -251,49 +239,48 @@ public class DatosTirofrm extends JFrame {
         pPanel.add(situacion);
 
         lbOrientacion = new JLabel("Orientación:");
-        lbOrientacion .setFont(new Font("arial", Font.BOLD, 16));
+        lbOrientacion.setFont(new Font("arial", Font.BOLD, 16));
         lbOrientacion.setBounds(10, 460, 180, 20);
         pPanel.add(lbOrientacion);
 
         JLabel Orientacion = new JLabel();
-        Orientacion .setFont(new Font("arial", Font.ITALIC, 22));
+        Orientacion.setFont(new Font("arial", Font.ITALIC, 22));
         Orientacion.setBounds(110, 460, 180, 20);
         pPanel.add(Orientacion);
 
         lbCuadrante = new JLabel("Cuadrante:");
-        lbCuadrante .setFont(new Font("arial", Font.BOLD, 16));
+        lbCuadrante.setFont(new Font("arial", Font.BOLD, 16));
         lbCuadrante.setBounds(10, 490, 180, 20);
         pPanel.add(lbCuadrante);
 
         JLabel Cuadrante = new JLabel();
-        Cuadrante .setFont(new Font("arial", Font.ITALIC, 22));
+        Cuadrante.setFont(new Font("arial", Font.ITALIC, 22));
         Cuadrante.setBounds(110, 490, 180, 20);
         pPanel.add(Cuadrante);
 
         lbTiempoVuelo = new JLabel("Tiempo de V:");
-        lbTiempoVuelo  .setFont(new Font("arial", Font.BOLD, 16));
+        lbTiempoVuelo.setFont(new Font("arial", Font.BOLD, 16));
         lbTiempoVuelo.setBounds(10, 520, 180, 20);
         pPanel.add(lbTiempoVuelo);
 
         JLabel TiempoVuelo = new JLabel();
-        TiempoVuelo  .setFont(new Font("arial", Font.ITALIC, 22));
+        TiempoVuelo.setFont(new Font("arial", Font.ITALIC, 22));
         TiempoVuelo.setBounds(110, 520, 180, 20);
         pPanel.add(TiempoVuelo);
 
         lbCarga = new JLabel("Carga:");
-        lbCarga  .setFont(new Font("arial", Font.BOLD, 16));
+        lbCarga.setFont(new Font("arial", Font.BOLD, 16));
         lbCarga.setBounds(10, 550, 180, 20);
         pPanel.add(lbCarga);
 
         JLabel Carga = new JLabel();
-        Carga  .setFont(new Font("arial", Font.ITALIC, 22));
+        Carga.setFont(new Font("arial", Font.ITALIC, 22));
         Carga.setBounds(110, 550, 180, 20);
         pPanel.add(Carga);
 
     }
 
     private void Spinner() {
-
 
 
     }
@@ -308,7 +295,7 @@ public class DatosTirofrm extends JFrame {
         btnEliminar.setBounds(300, 430, 100, 20);
         pPanel.add(btnEliminar);
 
-        btnImprimir = new JButton(new ImageIcon("src\\images\\impresora.png"));
+        btnImprimir = new JButton(new ImageIcon(getClass().getResource("impresoraPDF.png")));
         btnImprimir.setBounds(300, 330, 100, 60);
         pPanel.add(btnImprimir);
 
@@ -334,10 +321,15 @@ public class DatosTirofrm extends JFrame {
             }
         });
         pPanel.add(btnGuardar);
+
+        btnTrayectoria= new JButtonTrayectoria();
+        btnTrayectoria.setEnabled(false);
+        btnTrayectoria.setDatosTirofrm(this);
+        btnTrayectoria.setBounds(300, 530, 100, 40);
+
+        pPanel.add(btnTrayectoria);
+
     }
-
-
-
 
     public void paint(Graphics g) {
         super.paint(g);
@@ -346,14 +338,7 @@ public class DatosTirofrm extends JFrame {
 
     }
 
-    public static DatosTirofrm getSingletonInstance() {
-        if (datosTirofrm == null) {
-            datosTirofrm = new DatosTirofrm();
-        } else {
 
-        }
-        return datosTirofrm;
-    }
 
 }
 

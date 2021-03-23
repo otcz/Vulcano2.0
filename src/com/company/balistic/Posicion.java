@@ -1,8 +1,7 @@
 package com.company.balistic;
 
-import com.company.back.ListadoArmamento;
-import com.company.back.ListadoBlancos;
-import com.company.back.ListadoObservadoresAdelantado;
+
+import com.company.control.DatosTiro;
 import com.luciad.geodesy.TLcdEllipsoid;
 import com.luciad.shape.shape3D.TLcdLonLatHeightPoint;
 
@@ -35,7 +34,6 @@ public class Posicion extends Tools {
         setDistancia();
         setAzimut();
         setIntervalo();
-
     }
 
     public void setDistancia() {
@@ -47,9 +45,8 @@ public class Posicion extends Tools {
     }
 
     public void setIntervalo() {
-        this.intervalo = (int) (puntoB.getHeight() - puntoA.getHeight());
+        this.intervalo = (int) (puntoB.getZ() - puntoA.getZ());
     }
-
 
     public double getDistancia() {
         return distancia;

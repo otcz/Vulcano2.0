@@ -9,25 +9,23 @@ import com.luciad.symbology.app6a.model.TLcdEditableAPP6AObject;
 import com.luciad.symbology.milstd2525b.model.ILcdMS2525bCoded;
 import com.luciad.symbology.milstd2525b.model.TLcdEditableMS2525bObject;
 
+import java.util.Calendar;
 import java.util.Enumeration;
 
-public class EventoModelosVista implements ILcdModelListener {
-
-
+public class AgregaNombreSimologiaPorDefecto implements ILcdModelListener {
     @Override
     public void modelChanged(TLcdModelChangedEvent tLcdModelChangedEvent) {
-        if (tLcdModelChangedEvent.getCode() == TLcdModelChangedEvent.OBJECT_ADDED) {
-            try {
+        if (tLcdModelChangedEvent.getCode() == TLcdModelChangedEvent.OBJECT_ADDED || tLcdModelChangedEvent.getCode() == TLcdModelChangedEvent.OBJECT_CHANGED) {
+            if (tLcdModelChangedEvent.getModel() instanceof TLcdVectorModel) {
                 agregarNombre(tLcdModelChangedEvent.getModel());
-            } catch (Exception e) {
-
             }
-        } else if (tLcdModelChangedEvent.getCode() == TLcdModelChangedEvent.OBJECT_CHANGED) {
-            agregarNombre(tLcdModelChangedEvent.getModel());
         }
     }
 
     public void agregarNombre(ILcdModel model) {
+        Calendar calen = Calendar.getInstance();
+        String fecha = "" + calen.get(Calendar.DAY_OF_MONTH) + calen.get(Calendar.HOUR_OF_DAY) +
+                calen.get(Calendar.MINUTE) + calen.get(Calendar.SECOND) + (calen.get(Calendar.MONTH) + 1) + calen.get(Calendar.YEAR);
         Enumeration enumeration = model.elements();
         int c = 0;
         while (enumeration.hasMoreElements()) {
@@ -36,18 +34,18 @@ public class EventoModelosVista implements ILcdModelListener {
             if (objeto instanceof TLcdEditableMS2525bObject) {
                 TLcdEditableMS2525bObject editableMS2525bObject = (TLcdEditableMS2525bObject) vectorModel.elementAt(c);
                 if (editableMS2525bObject.getTextModifierValue(ILcdMS2525bCoded.sUniqueDesignation) == null) {
-                    editableMS2525bObject.putTextModifier(ILcdMS2525bCoded.sUniqueDesignation, "Nuevo simbolo");
+                    editableMS2525bObject.putTextModifier(ILcdMS2525bCoded.sUniqueDesignation, "Nuevo simbolo" + fecha);
+
                 }
             } else if (objeto instanceof TLcdEditableAPP6AObject) {
                 TLcdEditableAPP6AObject editableAPP6AObject = (TLcdEditableAPP6AObject) vectorModel.elementAt(c);
                 if (editableAPP6AObject.getTextModifierValue(ILcdAPP6ACoded.sUniqueDesignation) == null) {
-                    editableAPP6AObject.putTextModifier(ILcdAPP6ACoded.sUniqueDesignation, "Nuevo simbolo");
+                    editableAPP6AObject.putTextModifier(ILcdAPP6ACoded.sName, "Nuevo simbolo" + fecha);
+                    editableAPP6AObject.putTextModifier(ILcdAPP6ACoded.sUniqueDesignation, "Nuevo simbolo" + fecha);
                 }
             }
 
             c++;
         }
-
-
     }
 }

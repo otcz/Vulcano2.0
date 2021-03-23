@@ -11,6 +11,7 @@ import com.luciad.shape.shape2D.TLcdLonLatPoint;
 import com.luciad.shape.shape3D.TLcdLonLatHeightPoint;
 import com.luciad.view.ILcdView;
 import com.luciad.view.lightspeed.ILspView;
+
 import java.awt.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -18,7 +19,7 @@ import java.text.DecimalFormatSymbols;
 
 
 /**
- *1.  Instancie un nuevo objeto de la clase perfil terreno
+ * 1.  Instancie un nuevo objeto de la clase perfil terreno
  * 2. Set Proporcional x y proporcional Y (Son los valores proporcionales que convierten una distancia en pixeles)
  * 3. Set posicion (posicion entre el arma y el blanco)
  * 4. Set fLucyEnv (Vista del ambiente de Lucy)
@@ -29,30 +30,27 @@ import java.text.DecimalFormatSymbols;
 
 public class PerfilTerreno {
 
-    private static PerfilTerreno perfilTerreno;
-    Dimension dimension=new Dimension();
-    Posicion posicion = new Posicion();
-    Polygon polygon=new Polygon();
+    Dimension dimension = new Dimension();
+    Polygon polygon = new Polygon();
     double proporcionalX;
     double proporcionalY;
-   // public ILcyLucyEnv fLucyEnv;
+    public Posicion posicion;
     private static ILcdView vistaActiva;
 
 
-    public PerfilTerreno() {
+    public PerfilTerreno(Posicion posicion) {
+        this.posicion=posicion;
+
     }
 
     public void calcularPerfilTerreno(ILcdView vistaActiva) {
         setVistaActiva(vistaActiva);
-//        setVistaActiva(getfLucyEnv().getCombinedMapManager().getActiveMapComponent().getMainView());
         double cambioPosicion = Math.floor(posicion.getDistancia() / 50);
-        polygon=new Polygon();
+        polygon = new Polygon();
         for (int i = 0; i <= 46; i++) {
             try {
                 TLcdLonLatPoint punto = calculaPolares(posicion.getPuntoA(), posicion.getAzimut(), cambioPosicion * i);
-
-
-                        polygon.addPoint((int) (cambioPosicion * i*getProporcionalX()), (int)(dimension.getHeight()-(calculaAltura(punto, (ILspView) getVistaActiva())*getProporcionalY())));
+                polygon.addPoint((int) (cambioPosicion * i * getProporcionalX()), (int) (dimension.getHeight() - (calculaAltura(punto, (ILspView) getVistaActiva()) * getProporcionalY())));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -60,9 +58,9 @@ public class PerfilTerreno {
         TLcdLonLatPoint punto = null;
         try {
             punto = calculaPolares(posicion.getPuntoA(), posicion.getAzimut(), posicion.getDistancia());//Agrega un punto en la ultima posicion (porque cambio posicion no es entero, faltan distancias por agregar
-            polygon.addPoint((int) (posicion.getDistancia()*getProporcionalX()), (int)(calculaAltura(punto, (ILspView) getVistaActiva())*getProporcionalY()));
-            polygon.addPoint((int) (posicion.getDistancia()*getProporcionalX()), (int) dimension.getHeight());
-            polygon.addPoint (0, (int) dimension.getHeight());
+            polygon.addPoint((int) (posicion.getDistancia() * getProporcionalX()), (int) (calculaAltura(punto, (ILspView) getVistaActiva()) * getProporcionalY()));
+            polygon.addPoint((int) (posicion.getDistancia() * getProporcionalX()), (int) dimension.getHeight());
+            polygon.addPoint(0, (int) dimension.getHeight());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,15 +86,6 @@ public class PerfilTerreno {
         return Double.parseDouble(formateador.format(altura));
     }
 
-    public static PerfilTerreno getSingletonInstance() {
-        if (perfilTerreno == null) {
-            perfilTerreno = new PerfilTerreno();
-        } else {
-
-        }
-        return perfilTerreno;
-    }
-
     public Posicion getPosicion() {
         return posicion;
     }
@@ -105,7 +94,7 @@ public class PerfilTerreno {
         this.posicion = posicion;
     }
 
-    public  ILcdView getVistaActiva() {
+    public ILcdView getVistaActiva() {
         return vistaActiva;
     }
 
@@ -113,13 +102,6 @@ public class PerfilTerreno {
         PerfilTerreno.vistaActiva = vistaActiva;
     }
 
-//    public ILcyLucyEnv getfLucyEnv() {
-//        return fLucyEnv;
-//    }
-//
-//    public void setfLucyEnv(ILcyLucyEnv fLucyEnv) {
-//        this.fLucyEnv = fLucyEnv;
-//    }
 
     public double getProporcionalX() {
         return proporcionalX;
