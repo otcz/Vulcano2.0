@@ -33,7 +33,7 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
     public JButtonAddCartografia() {
         setIcon(new ImageIcon((getClass().getResource("mapareset.png"))));
         addActionListener(this);
-        setToolTipText("Puedes agregar cartografia predecargada");
+        setToolTipText("Puedes agregar cartografia predecargada (Capa Altura Colombia y Capa Mundo o World)");
 
     }
 
