@@ -23,7 +23,7 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
         setToolTipText("Puedes agregar cartografia predecargada (Capa Altura Colombia y Capa Mundo o World)");
         File myDocuments = new File(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0");
         if (!myDocuments.exists()){
-           new CrearCarpetasVulcano();
+        //   new CrearCarpetasVulcano();
         }
     }
 
