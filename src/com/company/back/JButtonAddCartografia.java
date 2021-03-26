@@ -7,6 +7,7 @@ import com.luciad.model.ILcdModel;
 import com.luciad.view.ILcdView;
 import com.luciad.view.lightspeed.ILspView;
 import com.luciad.view.lightspeed.layer.ILspLayer;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,8 +23,8 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
         addActionListener(this);
         setToolTipText("Puedes agregar cartografia predecargada (Capa Altura Colombia y Capa Mundo o World)");
         File myDocuments = new File(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0");
-        if (!myDocuments.exists()){
-        //   new CrearCarpetasVulcano();
+        if (!myDocuments.exists()) {
+            new CrearCarpetasVulcano();
         }
     }
 
@@ -32,12 +33,11 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(this)) {
             try {
+                new CrearCarpetasVulcano();
+                isPosibleGraficarCapaColombia(colombia(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/capa altura colombia"));
+                isPosibleGraficarCapaMundo(capaMundo(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/world"));
 
-                isPosibleGraficarCapaColombia(colombia( System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/capa altura colombia"));
-                isPosibleGraficarCapaMundo(capaMundo( System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/world"));
-            }
-            catch (Exception n)
-            {
+            } catch (Exception n) {
 
             }
 
@@ -111,7 +111,7 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
 
         }
         vista3D.addLayer(layer);
-        vista3D.moveLayerAt(vista3D.layerCount()-1,layer);
+        vista3D.moveLayerAt(vista3D.layerCount() - 1, layer);
         return true;
     }
 

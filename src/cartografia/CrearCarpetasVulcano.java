@@ -23,9 +23,11 @@ public class CrearCarpetasVulcano {
 
         File capaalturacolombia = new File(getClass().getResource("capaalturacolombia").getPath());
         File world = new File(getClass().getResource("Data/Shp/World").getPath());
+       File word = new File(getClass().getResource("recursos/Formato informacion sistema de fuegos.xlsx").getPath());
 
         copiarDirectorio(capaalturacolombia.getPath(), carpetas.get(0).getPath()+"/capa altura colombia");
         copiarDirectorio(world.getPath(), carpetas.get(0).getPath()+"/world");
+        copiarDirectorio(word.getPath(), carpetas.get(1).getPath());
 
     }
 
@@ -43,7 +45,6 @@ public class CrearCarpetasVulcano {
         Colombia.mkdir();
         World.mkdir();
     }
-
 
     private void copiarArchivo(String sOrigen, String sDestino) {
         try {
@@ -98,7 +99,4 @@ public class CrearCarpetasVulcano {
     }
 
 
-   // public static void main(String[] args) {
-   //     new carpetas.cartografia.CrearCarpetasVulcano();
-   // }
 }
