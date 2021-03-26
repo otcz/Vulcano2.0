@@ -7,21 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage0.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage0.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage0.db0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage0.lg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage0.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage1.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage1.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage1.db0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage1.lg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/coverage1.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/log.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/tilerepository.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/tilerepository.ref" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/tilerepository_metadata.ref" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/capaalturacolombia/tilerepository_metadata.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ant/WHATSNEW" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/WHATSNEW" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/lucy/deploy_lucy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/lucy/deploy_lucy.xml" afterDir="false" />

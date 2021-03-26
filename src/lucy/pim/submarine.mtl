@@ -1,0 +1,99 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  3.5.10.1242
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl SubMain
+Ka 0 0 0
+Kd 0.509804 0.509804 0.509804
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 32
+map_Kd submarine.bmp
+map_bump submarine.bmp
+bump submarine.bmp
+
+newmtl Roer
+Ka 0 0 0
+Kd 0.286275 0.0705882 0.0705882
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 32
+
+newmtl ____Default
+Ka 0 0 0
+Kd 0.509804 0.509804 0.509804
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 128
+map_Kd submarine.tga
+map_bump submarine.tga
+bump submarine.tga
+
+newmtl SubHut
+Ka 0 0 0
+Kd 0.509804 0.509804 0.509804
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 32
+map_bump submarinehut.bmp
+bump submarinehut.bmp
+
+newmtl Reling
+Ka 0 0 0
+Kd 0.509804 0.509804 0.509804
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 4
+map_Kd submarinereling.bmp
+map_opacity submarinereling.bmp
+map_d submarinereling.bmp
+
+newmtl Reling2
+Ka 0 0 0
+Kd 0.215686 0.215686 0.215686
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 2048
+map_Kd submarinereling3.bmp
+map_opacity submarinereling3.bmp
+map_d submarinereling3.bmp
+
+newmtl Explorer_Default
+Ka 0.117647 0.117647 0.117647
+Kd 0.752941 0.752941 0.752941
+Ks 0.752941 0.752941 0.752941
+illum 2
+Ns 8
+
+newmtl SchroefHouder
+Ka 0 0 0
+Kd 0.286275 0.0705882 0.0705882
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 32
+
+newmtl Schroef1
+Ka 0 0 0
+Kd 0.572549 0.435294 0.0705882
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 32
+
+newmtl _sided2
+Ka 0 0 0
+Kd 0.505882 0.529412 0.631373
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 32
+map_bump submarine.tga
+bump submarine.tga
+
+newmtl Metal_Grey_Plain
+Ka 0 0 0
+Kd 0.439216 0.439216 0.439216
+Ks 0.898039 0.898039 0.898039
+illum 2
+Ns 12.1257
