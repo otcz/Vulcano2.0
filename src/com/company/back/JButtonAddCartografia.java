@@ -1,29 +1,16 @@
 package com.company.back;
 
+import cartografia.CrearCarpetasVulcano;
 import com.company.control.BasicLayerFactory;
 import com.luciad.earth.model.TLcdEarthRepositoryModelDecoder;
 import com.luciad.model.ILcdModel;
-import com.luciad.model.TLcdModelDescriptor;
-import com.luciad.model.TLcdVectorModel;
-import com.luciad.reference.TLcdGeodeticReference;
-import com.luciad.shape.ILcdPoint;
-import com.luciad.shape.shape3D.TLcdLonLatHeightPoint;
-import com.luciad.util.TLcdNoBoundsException;
-import com.luciad.util.TLcdOutOfBoundsException;
-import com.luciad.view.ILcdLayer;
 import com.luciad.view.ILcdView;
-import com.luciad.view.gxy.ILcdGXYLayer;
-import com.luciad.view.gxy.ILcdGXYView;
-import com.luciad.view.gxy.TLcdGXYLayer;
-import com.luciad.view.gxy.TLcdGXYViewFitAction;
 import com.luciad.view.lightspeed.ILspView;
 import com.luciad.view.lightspeed.layer.ILspLayer;
-import com.luciad.view.lightspeed.layer.TLspLayer;
-import com.luciad.view.lightspeed.util.TLspViewNavigationUtil;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 
 import static com.company.ShowReadMeAddOn.getiLcyLucyEnv;
@@ -34,7 +21,10 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
         setIcon(new ImageIcon((getClass().getResource("mapareset.png"))));
         addActionListener(this);
         setToolTipText("Puedes agregar cartografia predecargada (Capa Altura Colombia y Capa Mundo o World)");
-
+        File myDocuments = new File(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0");
+        if (!myDocuments.exists()){
+           new CrearCarpetasVulcano();
+        }
     }
 
 
@@ -42,8 +32,9 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(this)) {
             try {
-                isPosibleGraficarCapaColombia(colombia("src/capa altura colombia"));
-                isPosibleGraficarCapaMundo(capaMundo("src/Data/Earth/World"));
+
+                isPosibleGraficarCapaColombia(colombia( System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/capa altura colombia"));
+                isPosibleGraficarCapaMundo(capaMundo( System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/world"));
             }
             catch (Exception n)
             {

@@ -4,7 +4,6 @@ import com.company.back.*;
 import com.luciad.lucy.map.ILcyGenericMapManagerListener;
 import com.luciad.lucy.map.TLcyCombinedMapManager;
 import com.luciad.lucy.map.TLcyGenericMapManagerEvent;
-import com.luciad.lucy.map.lightspeed.TLcyLspMapComponent;
 import com.luciad.view.ILcdLayer;
 import com.luciad.view.ILcdView;
 import com.luciad.view.gxy.ILcdGXYView;

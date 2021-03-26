@@ -125,7 +125,7 @@ public class DataRepositoryAddOn extends ALcyPreferencesAddOn {
     getAllDataSourceHandlersFileTypeDescriptors(formatManager.getCompositeDataSourceHandler(),
                                                 supportedFileTypes);
     //get all the actions
-    createDataSourceActions(aLucyEnv, new String[]{"Data"}, aSearchDepth,
+    createDataSourceActions(aLucyEnv, new String[]{"cartografia/Data"}, aSearchDepth,
                             fAddedActions, aRoot, aMapManager, supportedFileTypes, fExecutor);
     //insert them in the menu bar
     ILcyMenuBar menuBar = aLucyEnv.getMainMenuBar();
