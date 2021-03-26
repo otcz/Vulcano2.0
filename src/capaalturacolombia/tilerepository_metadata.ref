@@ -1,0 +1,12 @@
+#Wed Jan 27 14:46:30 COT 2016
+TLcdGeodeticReference.geodeticDatum.ILcdGeodeticDatumFactory.class=com.luciad.geodesy.TLcdNIMA8350GeodeticDatumFactory
+TLcdGeodeticReference.name=WGS_1984
+TLcdGeodeticReference.referenceMetadata.1.axis.orientation=EAST
+ILcdModelReference.class=com.luciad.reference.TLcdGeodeticReference
+TLcdGeodeticReference.referenceMetadata.axesCount=2
+TLcdGeodeticReference.referenceMetadata.0.axis.orientation=NORTH
+TLcdGeodeticReference.referenceMetadata.authorityName=EPSG
+TLcdGeodeticReference.referenceMetadata.authorityCode=4326
+TLcdGeodeticReference.geodeticDatum.TLcdNIMA8350GeodeticDatumFactory.geodeticDatumName=WGS_1984
+TLcdGeodeticReference.referenceMetadata.1.axis.name=Geodetic longitude
+TLcdGeodeticReference.referenceMetadata.0.axis.name=Geodetic latitude

@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metadata>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W067\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-67.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W067\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-67.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W067\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-67.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W067\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-67.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W068\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-68.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W068\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-68.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W068\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-68.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W068\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-68.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W068\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-68.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W068\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-68.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W068\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-68.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W069\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-69.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\S03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-3.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\S04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-4.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\S05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-5.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W070\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-70.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\S03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-3.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\S04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-4.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\S05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-5.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W071\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-71.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N11.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>11.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N12.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>12.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\S03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-3.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W072\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-72.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N09.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>9.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N10.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>10.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N11.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>11.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N12.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>12.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\S03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-3.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W073\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-73.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N09.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>9.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N10.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>10.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N11.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>11.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\S03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-3.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W074\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-74.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N09.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>9.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N10.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>10.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N11.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>11.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W075\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-75.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N09.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>9.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N10.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>10.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\S02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-2.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W076\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-76.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N09.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>9.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\S01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>-1.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W077\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-77.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N05.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>5.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N06.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>6.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W078\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-78.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W079\N02.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>2.0</BoundsY>
+    <BoundsX>-79.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W079\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-79.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W079\N07.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>7.0</BoundsY>
+    <BoundsX>-79.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W079\N08.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>8.0</BoundsY>
+    <BoundsX>-79.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W079\N15.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>15.0</BoundsY>
+    <BoundsX>-79.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W079\N00.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>0.0</BoundsY>
+    <BoundsX>-79.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W079\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-79.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W080\N01.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>1.0</BoundsY>
+    <BoundsX>-80.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W080\N15.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>15.0</BoundsY>
+    <BoundsX>-80.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W081\N13.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>13.0</BoundsY>
+    <BoundsX>-81.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W081\N14.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>14.0</BoundsY>
+    <BoundsX>-81.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W082\N04.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>4.0</BoundsY>
+    <BoundsX>-82.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W082\N12.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>12.0</BoundsY>
+    <BoundsX>-82.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W082\N13.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>13.0</BoundsY>
+    <BoundsX>-82.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+  <Asset>
+    <Source>D:\Desktop\material para capas\COLOMBIA_RELEASABLE\DTED\W082\N03.DT1</Source>
+    <TimeStamp>2016-01-27 14:42:13.920</TimeStamp>
+    <CoverageType>IMAGE</CoverageType>
+    <BoundsH>1.0</BoundsH>
+    <TypeName>Raster</TypeName>
+    <PixelDensity>1440000.0</PixelDensity>
+    <ZOrder>0</ZOrder>
+    <BoundsY>3.0</BoundsY>
+    <BoundsX>-82.0</BoundsX>
+    <BoundsW>1.0</BoundsW>
+    <Decoder>com.luciad.internal.lucy.earth.terrain.w$1</Decoder>
+  </Asset>
+</Metadata>
+
