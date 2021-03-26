@@ -1,13 +1,13 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="VulcanoCAFUE:jar">
+  <artifact name="VulcanoCAFUE:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar</output-path>
-    <root id="archive" name="VulcanoCAFUE_jar.jar">
+    <root id="root">
       <element id="archive" name="VulcanoCAFUE.jar">
         <element id="module-output" name="VulcanoCAFUE" />
       </element>
       <element id="library" level="project" name="dll" />
-      <element id="library" level="project" name="batik-anim-1.7" />
       <element id="library" level="project" name="deployment" />
+      <element id="library" level="project" name="batik-anim-1.7" />
       <element id="library" level="project" name="lightspeed" />
     </root>
   </artifact>
