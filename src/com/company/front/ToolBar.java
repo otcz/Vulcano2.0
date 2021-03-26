@@ -29,6 +29,7 @@ public class ToolBar {
                     setVista(tLcyGenericMapManagerEvent.getMapComponent().getMainView());
                     toolBar = (JToolBar) tLcyGenericMapManagerEvent.getMapComponent().getToolBar().getComponent();
                     toolBar.add(new JButtonAreaInicio());
+                    toolBar.add(new JButtonAddCartografia());
                     toolBar.add(new JTextCoordenadas());
                     toolBar.add(new JButtonCDT());
                     toolBar.add(new JButtonLineaVista());
