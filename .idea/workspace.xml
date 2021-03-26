@@ -7,9 +7,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
-      <change afterPath="$PROJECT_DIR$/src/cartografia/CrearCarpetasVulcano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.db0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.lg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.db0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.lg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository_metadata.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository_metadata.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Dc/directory.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Dc/streets.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Dc/streets.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Europe/directory.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Europe/europe.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Europe/europe.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Ithaca/directory.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Ithaca/streets.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Ithaca/streets.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/Ithaca/streets.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.README.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.VERSION.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.prj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.sld" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Africa.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Africa.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Africa.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Africa.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Asia.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Asia.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Asia.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Asia.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Australia.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Australia.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Australia.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Australia.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Europe.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Europe.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Europe.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Europe.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/North_America.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/North_America.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/North_America.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/North_America.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/South_America.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/South_America.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/South_America.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/South_America.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.db0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.lg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.db0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.lg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository_metadata.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository_metadata.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/world.dbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/world.ref" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/world.shp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/world.shx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/world.sld" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Shp/World/world.sty" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ant/WHATSNEW" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/WHATSNEW" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/lucy/deploy_lucy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/lucy/deploy_lucy.xml" afterDir="false" />
@@ -20,136 +100,33 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ELIMIANR.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/DataRepositoryAddOn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/DataRepositoryAddOn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/addons_datarepository_sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/addons_datarepository_sample.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/data_repository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/data_repository.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/readme.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/readme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_nl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_nl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/arcsde/TLcyArcSDEDecoderAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/arcsde/TLcyArcSDEDecoderAddOn.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/asterix/lightspeed/TLcyLspASTERIXFormatAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/asterix/lightspeed/TLcyLspASTERIXFormatAddOn.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/bingmaps/TLcyBingMapsAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/bingmaps/TLcyBingMapsAddOn.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/dafif/dafifAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/dafif/dafifAddOn.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/datarepository/datarepository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/datarepository/datarepository.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/fusionclient/TLcyFusionClientAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/fusionclient/TLcyFusionClientAddOn.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lspmap/TLcyLspMapAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lspmap/TLcyLspMapAddOn.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lucy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lucy.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/map/map_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/map/map_addon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/map/map_units.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/map/map_units.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/map/mapoverview_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/map/mapoverview_addon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/s63/TLcyS63FormatAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/s63/TLcyS63FormatAddOn.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/vpf/vpf_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/vpf/vpf_addon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wcsclient/wcsclient_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wcsclient/wcsclient_addon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wfsclient/wfsclient_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wfsclient/wfsclient_addon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wmsclient/wmsclient_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wmsclient/wmsclient_addon.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wmts/TLcyWMTSClientAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/wmts/TLcyWMTSClientAddOn.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/workspace/defaultWorkspace_gxy.lws" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/workspace/defaultWorkspace_gxy.lws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage0.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage0.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.db0" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage0.db0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.lg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage0.lg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage0.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage0.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage1.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage1.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.db0" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage1.db0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.lg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage1.lg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/coverage1.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/coverage1.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/tilerepository.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/tilerepository.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository_metadata.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/tilerepository_metadata.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Earth/World/tilerepository_metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Earth/World/tilerepository_metadata.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Dc/directory.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Dc/directory.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Dc/streets.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Dc/streets.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Dc/streets.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Dc/streets.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Europe/directory.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Europe/directory.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Europe/europe.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Europe/europe.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Europe/europe.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Europe/europe.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Ithaca/directory.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Ithaca/directory.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Ithaca/streets.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Ithaca/streets.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Ithaca/streets.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Ithaca/streets.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/Ithaca/streets.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/Ithaca/streets.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.README.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.README.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.VERSION.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.VERSION.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.prj" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.prj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.sld" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/NaturalEarth/50m_cultural/ne_50m_admin_0_countries_lakes.sld" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Africa.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Africa.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Africa.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Africa.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Africa.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Africa.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Africa.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Africa.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Antarctica.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Antarctica.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Antarctica.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Antarctica.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Antarctica.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Asia.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Asia.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Asia.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Asia.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Asia.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Asia.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Asia.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Asia.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Australia.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Australia.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Australia.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Australia.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Australia.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Australia.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Australia.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Australia.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Europe.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Europe.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Europe.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Europe.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Europe.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Europe.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Europe.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Europe.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/North_America.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/North_America.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/North_America.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/North_America.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/North_America.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/North_America.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/North_America.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/North_America.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Oceania.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Oceania.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Oceania.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/Oceania.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/Oceania.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/South_America.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/South_America.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/South_America.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/South_America.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/South_America.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/South_America.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/South_America.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/South_America.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage0.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage0.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.db0" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage0.db0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.lg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage0.lg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage0.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage0.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage1.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage1.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.db0" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage1.db0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.lg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage1.lg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/coverage1.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/coverage1.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/tilerepository.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/tilerepository.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository_metadata.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/tilerepository_metadata.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/tilerepository_metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/tilerepository_metadata.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/world.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/world.dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/world.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/world.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/world.shp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/world.shp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/world.shx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/world.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/world.sld" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/world.sld" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Shp/World/world.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/Data/Shp/World/world.sty" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage0.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage0.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage0.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage0.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage0.db0" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage0.db0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage0.lg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage0.lg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage0.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage0.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage1.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage1.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage1.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage1.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage1.db0" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage1.db0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage1.lg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage1.lg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/coverage1.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/coverage1.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/log.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/log.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/tilerepository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/tilerepository.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/tilerepository.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/tilerepository.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/tilerepository_metadata.ref" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/tilerepository_metadata.ref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/capa altura colombia/tilerepository_metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/capaalturacolombia/tilerepository_metadata.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/DataRepositoryAddOn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DataRepositoryAddOn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/addons_datarepository_sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/addons_datarepository_sample.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/back/JButtonAddCartografia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/JButtonAddCartografia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/control/CrearCarpetasVulcano.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/data_repository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/data_repository.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/readme.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/readme.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/DefaultResources_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/DefaultResources_es.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/DefaultResources_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/DefaultResources_fr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/DefaultResources_nl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/DefaultResources_nl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/arcsde/TLcyArcSDEDecoderAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/arcsde/TLcyArcSDEDecoderAddOn.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/asterix/lightspeed/TLcyLspASTERIXFormatAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/asterix/lightspeed/TLcyLspASTERIXFormatAddOn.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/bingmaps/TLcyBingMapsAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/bingmaps/TLcyBingMapsAddOn.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/dafif/dafifAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/dafif/dafifAddOn.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/datarepository/datarepository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/datarepository/datarepository.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/fusionclient/TLcyFusionClientAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/fusionclient/TLcyFusionClientAddOn.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/lspmap/TLcyLspMapAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/lspmap/TLcyLspMapAddOn.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/map/map_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/map/map_addon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/map/map_units.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/map/map_units.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/map/mapoverview_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/map/mapoverview_addon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/s63/TLcyS63FormatAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/s63/TLcyS63FormatAddOn.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/vpf/vpf_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/vpf/vpf_addon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/wcsclient/wcsclient_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/wcsclient/wcsclient_addon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/wfsclient/wfsclient_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/wfsclient/wfsclient_addon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/wmsclient/wmsclient_addon.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/wmsclient/wmsclient_addon.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lucy/wmts/TLcyWMTSClientAddOn.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lucy/wmts/TLcyWMTSClientAddOn.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,13 +153,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/license/development.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src" />
       <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src\lucy" />
       <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src\com\company\back" />
       <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src\com\company\control" />
