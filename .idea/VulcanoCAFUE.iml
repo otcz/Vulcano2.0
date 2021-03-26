@@ -7,9 +7,9 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="batik-anim-1.7" level="project" />
-    <orderEntry type="library" exported="" name="lightspeed" level="project" />
-    <orderEntry type="library" exported="" name="dll" level="project" />
-    <orderEntry type="library" exported="" name="deployment" level="project" />
+    <orderEntry type="library" name="batik-anim-1.7" level="project" />
+    <orderEntry type="library" name="lightspeed" level="project" />
+    <orderEntry type="library" name="dll" level="project" />
+    <orderEntry type="library" name="deployment" level="project" />
   </component>
 </module>
