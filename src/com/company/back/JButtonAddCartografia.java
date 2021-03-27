@@ -32,16 +32,22 @@ public class JButtonAddCartografia extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(this)) {
-            try {
-                new CrearCarpetasVulcano();
-                isPosibleGraficarCapaColombia(colombia(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/capa altura colombia"));
-                isPosibleGraficarCapaMundo(capaMundo(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/world"));
+            ILcdView vista = getiLcyLucyEnv().getCombinedMapManager().getActiveMapComponent().getMainView();
+            if (vista instanceof ILspView) {
+                try {
+                    File myDocuments = new File(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0");
+                    if (!myDocuments.exists()) {
+                        new CrearCarpetasVulcano();
+                    }
 
-            } catch (Exception n) {
+                    isPosibleGraficarCapaColombia(colombia(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/capa altura colombia"));
+                    isPosibleGraficarCapaMundo(capaMundo(System.getProperty("user.home") + "/" + "Archivos Vulcano v2.0/cartografia/world"));
+
+                } catch (Exception n) {
+                    n.printStackTrace();
+                }
 
             }
-
-
         }
 
     }

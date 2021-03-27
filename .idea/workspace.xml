@@ -7,6 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/VulcanoCAFUE_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ant/WHATSNEW" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/WHATSNEW" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" afterDir="false" />
@@ -29,8 +31,10 @@
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_nl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_nl.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lucy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lucy.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/workspace/defaultWorkspace_gxy.lws" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/workspace/defaultWorkspace_gxy.lws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cartografia/CrearCarpetasVulcano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/CrearCarpetasVulcano.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/back/JButtonAddCartografia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/JButtonAddCartografia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recursos/Formato informacion sistema de fuegos.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +53,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/license/development.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/license/deployment.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,6 +63,7 @@
       <recent name="C:\Users\oscar\OneDrive\Escritorio\VulcanoCAFUE" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src\cartografia" />
       <recent name="D:\Vulcano2.0" />
       <recent name="C:\Users\oscar\OneDrive\Escritorio\VulcanoCAFUE\src" />
     </key>
