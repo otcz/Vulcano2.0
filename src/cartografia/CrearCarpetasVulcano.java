@@ -1,4 +1,5 @@
 package cartografia;
+import capaalturacolombia.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class CrearCarpetasVulcano {
             crearSubCarpetas();
         }
 
-        File capaalturacolombia = new File(getClass().getResource("capaalturacolombia").getPath());
+        File capaalturacolombia = new File(("capaalturacolombia"));
         File world = new File(getClass().getResource("Data/Shp/World").getPath());
       //  File word = new File(getClass().getResource("Formato.xlsx").getPath());
 
