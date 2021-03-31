@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="deployment">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/license/deployment.jar!/" />
+      <root url="jar://$PROJECT_DIR$/license/development.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
