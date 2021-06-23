@@ -7,18 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
-      <change beforePath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ant/WHATSNEW" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/WHATSNEW" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/build/ant/etc/mmetrics-frames.xsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lucy/deploy_lucy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/lucy/deploy_lucy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ogc/deploy_ogc_service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/ogc/deploy_ogc_service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ogc/resources/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/ogc/resources/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/osgi/com.luciad.osgi.sample/src/com/luciad/osgi/sample/lightspeed/fundamentals/basicapplication/BasicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/osgi/com.luciad.osgi.sample/src/com/luciad/osgi/sample/lightspeed/fundamentals/basicapplication/BasicApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/osgi/src/com/luciad/osgi/installer/SamplesBundleStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/osgi/src/com/luciad/osgi/installer/SamplesBundleStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ELIMIANR.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/DataRepositoryAddOn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/DataRepositoryAddOn.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/addons_datarepository_sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/addons_datarepository_sample.xml" afterDir="false" />
@@ -39,6 +28,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1p83ODGRGiIhR0Rvn2mc8rPvjkF" />

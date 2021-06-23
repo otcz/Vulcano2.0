@@ -14,7 +14,7 @@
         to register their data source handlers and model decoders to the Lucy Environment-->
     <addon>
       <priority>9998</priority>
-      <name>Data Repository</name>
+      <name>cartografia.Data Repository</name>
       <class>com.company.DataRepositoryAddOn</class>
       <configFile>com/company/data_repository.cfg</configFile>
     </addon>
