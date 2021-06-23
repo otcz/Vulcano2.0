@@ -6,22 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/DataRepositoryAddOn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/DataRepositoryAddOn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/addons_datarepository_sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/addons_datarepository_sample.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/data_repository.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/data_repository.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/readme.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/readme.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_es.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_fr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_nl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/DefaultResources_nl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lucy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/lucy.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/workspace/defaultWorkspace_gxy.lws" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/lucy/workspace/defaultWorkspace_gxy.lws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cartografia/CrearCarpetasVulcano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cartografia/CrearCarpetasVulcano.java" afterDir="false" />
-    </list>
+    <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
