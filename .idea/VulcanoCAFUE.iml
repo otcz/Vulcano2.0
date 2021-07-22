@@ -11,14 +11,5 @@
     <orderEntry type="library" name="lightspeed" level="project" />
     <orderEntry type="library" name="dll" level="project" />
     <orderEntry type="library" name="deployment" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES />
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/src" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>
