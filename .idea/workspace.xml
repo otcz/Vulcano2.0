@@ -6,11 +6,27 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master" />
+    <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
+      <change afterPath="$PROJECT_DIR$/src/com/company/front/globo/AsignaGloboElementosVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/front/globo/Seleccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/front/globo/mensaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -39,6 +55,7 @@
       <recent name="C:\Users\oscar\OneDrive\Escritorio\VulcanoCAFUE" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src\com\company\front\globo" />
       <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src\cartografia" />
       <recent name="D:\Vulcano2.0" />
       <recent name="C:\Users\oscar\OneDrive\Escritorio\VulcanoCAFUE\src" />
