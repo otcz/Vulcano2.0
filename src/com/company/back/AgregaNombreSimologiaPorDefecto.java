@@ -1,5 +1,9 @@
 package com.company.back;
 
+import com.luciad.datamodel.ILcdAnnotation;
+import com.luciad.datamodel.ILcdDataObject;
+import com.luciad.datamodel.TLcdDataProperty;
+import com.luciad.datamodel.TLcdDataPropertyBuilder;
 import com.luciad.model.ILcdModel;
 import com.luciad.model.ILcdModelListener;
 import com.luciad.model.TLcdModelChangedEvent;
@@ -8,14 +12,17 @@ import com.luciad.symbology.app6a.model.ILcdAPP6ACoded;
 import com.luciad.symbology.app6a.model.TLcdEditableAPP6AObject;
 import com.luciad.symbology.milstd2525b.model.ILcdMS2525bCoded;
 import com.luciad.symbology.milstd2525b.model.TLcdEditableMS2525bObject;
+import javafx.beans.binding.ObjectExpression;
 
 import java.util.Calendar;
 import java.util.Enumeration;
 
-public class AgregaNombreSimologiaPorDefecto implements ILcdModelListener {
+import static com.luciad.internal.ogc.wfs.common.model.TLinWFS20DataTypes.PropertyName;
+
+public class  AgregaNombreSimologiaPorDefecto implements ILcdModelListener {
     @Override
     public void modelChanged(TLcdModelChangedEvent tLcdModelChangedEvent) {
-        if (tLcdModelChangedEvent.getCode() == TLcdModelChangedEvent.OBJECT_ADDED || tLcdModelChangedEvent.getCode() == TLcdModelChangedEvent.OBJECT_CHANGED) {
+        if (tLcdModelChangedEvent.getCode() == TLcdModelChangedEvent.OBJECT_ADDED) {
             if (tLcdModelChangedEvent.getModel() instanceof TLcdVectorModel) {
                 agregarNombre(tLcdModelChangedEvent.getModel());
             }
@@ -36,16 +43,19 @@ public class AgregaNombreSimologiaPorDefecto implements ILcdModelListener {
                 if (editableMS2525bObject.getTextModifierValue(ILcdMS2525bCoded.sUniqueDesignation) == null) {
                     editableMS2525bObject.putTextModifier(ILcdMS2525bCoded.sUniqueDesignation, "Nuevo simbolo" + fecha);
 
+
                 }
             } else if (objeto instanceof TLcdEditableAPP6AObject) {
                 TLcdEditableAPP6AObject editableAPP6AObject = (TLcdEditableAPP6AObject) vectorModel.elementAt(c);
                 if (editableAPP6AObject.getTextModifierValue(ILcdAPP6ACoded.sUniqueDesignation) == null) {
                     editableAPP6AObject.putTextModifier(ILcdAPP6ACoded.sName, "Nuevo simbolo" + fecha);
                     editableAPP6AObject.putTextModifier(ILcdAPP6ACoded.sUniqueDesignation, "Nuevo simbolo" + fecha);
+
                 }
             }
-
             c++;
+
         }
+
     }
 }

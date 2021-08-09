@@ -1,7 +1,9 @@
 package com.company.back.excel;
 
+import com.company.back.PruebaDelete;
 import com.luciad.internal.lucy.gui.TLinAccessiblePopupMenuButton;
 import com.luciad.lucy.gui.TLcyAlwaysFitJToolBar;
+import com.luciad.model.ILcdModel;
 import com.luciad.model.TLcdVectorModel;
 import com.luciad.reference.TLcdGeodeticReference;
 import com.luciad.shape.shape2D.TLcdLonLatPoint;
@@ -123,6 +125,10 @@ public class GraficarUnidades {
                                     double dbCantidadUnidades = getMS2525c().size();
                                     int valorProgreso = (int) ((100 / dbCantidadUnidades) * (i + 1));
                                     capa.getModel().addElement(getMS2525c().get(i), 0);
+                                    Object DD = new PruebaDelete();
+                                    capa.getModel().addElement(DD, 0);
+                                    System.out.println(((PruebaDelete)DD).getPrueba() + " OK PC");
+
                                     getJbBarraProgreso().setForeground(new Color(0xF6393939, true));
                                     getLbProgreso().setText("Importando  unidades de Excel-->\"" + new File(getNombreExcelImportadoPoraCadaUnidad().get(i).toString()).getName() + "\" a  capa-->\"" + capa.getLabel() + "\"  " + valorProgreso + "%…  ");
                                     getLbProgreso().setToolTipText("Excel-->\"" + new File(getNombreExcelImportadoPoraCadaUnidad().get(i).toString()).getName() + "\" a  capa-->\"" + capa.getLabel() + "\"  " + valorProgreso + "%");

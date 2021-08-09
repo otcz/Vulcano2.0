@@ -27,22 +27,17 @@ package com.company.front.globo;
 import com.luciad.gui.TLcdGUIIcon;
 import com.luciad.gui.swing.TLcdSWIcon;
 import com.luciad.model.ILcdModel;
-import com.luciad.model.ILcdModelListener;
-import com.luciad.model.TLcdModelChangedEvent;
-import com.luciad.model.TLcdVectorModel;
 import com.luciad.shape.ILcdPoint;
 import com.luciad.shape.ILcdPointList;
-import com.luciad.shape.shape2D.*;
+import com.luciad.symbology.app6a.model.TLcdEditableAPP6AObject;
 import com.luciad.symbology.milstd2525b.model.ILcdMS2525bCoded;
 import com.luciad.symbology.milstd2525b.model.TLcdEditableMS2525bObject;
 import com.luciad.text.TLcdLonLatPointFormat;
-import com.luciad.util.TLcdLonLatCoord;
-import com.luciad.util.TLcdLonLatFormatter;
-import com.luciad.util.TLcdLonLatParser;
 import com.luciad.view.lightspeed.layer.TLspLayerTreeNode;
 import com.luciad.view.swing.ALcdBalloonDescriptor;
 import com.luciad.view.swing.ILcdBalloonContentProvider;
 import com.luciad.view.swing.TLcdModelElementBalloonDescriptor;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -69,7 +64,8 @@ public class mensaje implements ILcdBalloonContentProvider {
     public JLabel lbCampo5;
     public JLabel lbCampo6;
     String nombre = null;
-    TLcdEditableMS2525bObject simbolo = null;
+    TLcdEditableMS2525bObject simboloMS2525 = null;
+    TLcdEditableAPP6AObject simboloAPP6 = null;
     ILcdModel model = null;
     ILcdPoint point = null;
     ILcdPointList pointList = null;
@@ -115,11 +111,26 @@ public class mensaje implements ILcdBalloonContentProvider {
         final JPanel pNorte;
         final JPanel pSur;
         final String etiquetas[] = {"Misi\u00f3n", "Efectivos", "Municici\u00f3n", "Serial"};
-        simbolo = (TLcdEditableMS2525bObject) balloonDescriptor.getObject();
-        point = simbolo.getPoint(0);
-        pointList = simbolo.getPointList();
-        model = balloonDescriptor.getModel();
-        nombre = simbolo.getTextModifierValue(ILcdMS2525bCoded.sUniqueDesignation);
+
+        if (balloonDescriptor.getObject() instanceof TLcdEditableMS2525bObject) {
+            simboloMS2525 = (TLcdEditableMS2525bObject) balloonDescriptor.getObject();
+            point = simboloMS2525.getPoint(0);
+            pointList = simboloMS2525.getPointList();
+            model = balloonDescriptor.getModel();
+            nombre = simboloMS2525.getTextModifierValue(ILcdMS2525bCoded.sUniqueDesignation);
+
+        }
+        else   if (balloonDescriptor.getObject() instanceof TLcdEditableMS2525bObject) {
+            simboloAPP6 = (TLcdEditableAPP6AObject) balloonDescriptor.getObject();
+            point = simboloAPP6.getPoint(0);
+            pointList = simboloAPP6.getPointList();
+            model = balloonDescriptor.getModel();
+            nombre = simboloAPP6.getTextModifierValue(ILcdMS2525bCoded.sUniqueDesignation);
+
+        }
+
+
+
 
         pPanePrincipal = new JPanel();
         pNorte = new JPanel();
@@ -221,8 +232,6 @@ public class mensaje implements ILcdBalloonContentProvider {
         return pPanePrincipal;
 
     }
-
-
 
 
 }

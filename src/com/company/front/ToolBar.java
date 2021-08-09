@@ -58,8 +58,8 @@ public class ToolBar {
                     } else if (evt.getNewValue() != null) {
                         bAbrioVista = true;
                         bCerroVista = false;
-                        AsignaGloboElementosVista asignaGloboElementosVista = new AsignaGloboElementosVista(getVista());
-                        asignaGloboElementosVista.asignarGlobo();
+                      //  AsignaGloboElementosVista asignaGloboElementosVista = new AsignaGloboElementosVista(getVista());
+                      //  asignaGloboElementosVista.asignarGlobo();
                     }
 
                 } catch (Exception e) {
