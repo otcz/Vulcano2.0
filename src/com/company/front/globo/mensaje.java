@@ -110,7 +110,7 @@ public class mensaje implements ILcdBalloonContentProvider {
         final JPanel pCentro3;
         final JPanel pNorte;
         final JPanel pSur;
-        final String etiquetas[] = {"Misi\u00f3n", "Efectivos", "Municici\u00f3n", "Serial"};
+        final String etiquetas[] = {"Sistema", "Serial", "Municici\u00f3n", "CDTE SISTEMA"};
 
         if (balloonDescriptor.getObject() instanceof TLcdEditableMS2525bObject) {
             simboloMS2525 = (TLcdEditableMS2525bObject) balloonDescriptor.getObject();
