@@ -168,7 +168,7 @@ public class mensaje implements ILcdBalloonContentProvider {
         lbCampo6.setText("  Efectivos ");
 
 
-        lbLat.setText("Latitjhvjh");
+        lbLat.setText("Latitud");
         lbLon.setText("  Longitud ");
         rbSegregado.setText("Segregado   ");
         rbAgregado.setText("Agregado");
