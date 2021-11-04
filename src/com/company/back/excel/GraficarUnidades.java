@@ -1,9 +1,8 @@
 package com.company.back.excel;
 
-import com.company.back.PruebaDelete;
+import com.company.back.SimboloMilStd2525b;
 import com.luciad.internal.lucy.gui.TLinAccessiblePopupMenuButton;
 import com.luciad.lucy.gui.TLcyAlwaysFitJToolBar;
-import com.luciad.model.ILcdModel;
 import com.luciad.model.TLcdVectorModel;
 import com.luciad.reference.TLcdGeodeticReference;
 import com.luciad.shape.shape2D.TLcdLonLatPoint;
@@ -52,7 +51,8 @@ public class GraficarUnidades {
                             latLonAdouble(unidad.getLat().get(j).toString()));
                     TLcdVectorModel vectorModel = new TLcdVectorModel();
                     vectorModel.setModelReference(new TLcdGeodeticReference());
-                    TLcdEditableMS2525bObject MS2525c = new TLcdEditableMS2525bObject(caracteresSimbolo(unidad, j));
+                    SimboloMilStd2525b MS2525c = new SimboloMilStd2525b(caracteresSimbolo(unidad, j));
+                    MS2525c.setMantenimiento(String.valueOf(i));
                     MS2525c.move2D(punto);
                     MS2525c.putTextModifier(ILcdMS2525bCoded.sHigherFormation, unidad.getUnidadSuperior().get(j).toString());
                     MS2525c.putTextModifier(ILcdMS2525bCoded.sUniqueDesignation, unidad.getNombre().get(j).toString());
@@ -125,9 +125,9 @@ public class GraficarUnidades {
                                     double dbCantidadUnidades = getMS2525c().size();
                                     int valorProgreso = (int) ((100 / dbCantidadUnidades) * (i + 1));
                                     capa.getModel().addElement(getMS2525c().get(i), 0);
-                                    Object DD = new PruebaDelete();
-                                    capa.getModel().addElement(DD, 0);
-                                    System.out.println(((PruebaDelete)DD).getPrueba() + " OK PC");
+
+                                    SimboloMilStd2525b simboloMilStd2525b = (SimboloMilStd2525b) getMS2525c().get(i);
+                                    System.out.println(simboloMilStd2525b.getMantenimiento());
 
                                     getJbBarraProgreso().setForeground(new Color(0xF6393939, true));
                                     getLbProgreso().setText("Importando  unidades de Excel-->\"" + new File(getNombreExcelImportadoPoraCadaUnidad().get(i).toString()).getName() + "\" a  capa-->\"" + capa.getLabel() + "\"  " + valorProgreso + "%…  ");
@@ -190,7 +190,7 @@ public class GraficarUnidades {
             return 25;
         }
 
-      return  200;
+        return 200;
     }
 
     //Metodos auxiliares para conformar las caracterisicas del simbolo__________________________________________________
