@@ -7,13 +7,106 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
-      <change afterPath="$PROJECT_DIR$/src/com/company/back/Municion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/back/SimboloMilStd2525b.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/A_inicio/control/EventoBotonEntrarValidarUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/A_inicio/control/EventoClicSalir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/A_inicio/control/EventoTeclaSiguienteComponente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/A_inicio/control/EventoTeclaValidarUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/A_inicio/modelo/DatosUsuarioBD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/A_inicio/modelo/ValidarUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/A_inicio/vista/Inicio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/B_menuPrincipal/control/EventoCrearTipoMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/B_menuPrincipal/control/EventoEstadisticaLoteMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/B_menuPrincipal/control/EventoEstadisticaTipoMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/B_menuPrincipal/control/EventoMenuNuevoRegistro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/B_menuPrincipal/control/EventoVerRegistros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/B_menuPrincipal/vista/Principal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/AbrirVentanaPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/AlmacenMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/EventoBotonNuevoTipoMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/EventoBotonRegistrar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/EventoTeclaSiguienteComponente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/MostrarDatosMuniEnTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/RecoletarDatosMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/controlador/VerificaLotes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/modelo/EncabezadoTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/modelo/Jtable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/modelo/ModeloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/modelo/Municion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/modelo/TituloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/C_nuevoRegistro/vista/NuevoRegistro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/control/AlmacenTipoMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/control/EventoBotonGuardarLote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/control/EventoSalir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/control/EventoTeclaSiguienteComponente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/control/VerificarTiposMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/modelo/GuardarTipoMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/modelo/TipoMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/D_nuevoTipoMunicion/vista/CrearNuevoTipoMunicion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/E_verRegistro/control/PonerRegistrosEnTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/E_verRegistro/modelo/EncabezadoTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/E_verRegistro/modelo/Jtable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/E_verRegistro/modelo/ModeloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/E_verRegistro/modelo/TituloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/E_verRegistro/vista/VerRegistro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/F_estadisticaLoteMuni/modelo/EncabezadoTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/F_estadisticaLoteMuni/modelo/Jtable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/F_estadisticaLoteMuni/modelo/ModeloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/F_estadisticaLoteMuni/modelo/TituloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/F_estadisticaLoteMuni/vista/LoteMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/G_estadisticaTipoMuni/modelo/EncabezadoTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/G_estadisticaTipoMuni/modelo/Jtable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/G_estadisticaTipoMuni/modelo/ModeloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/G_estadisticaTipoMuni/modelo/TituloTabla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/G_estadisticaTipoMuni/vista/TipoMuni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/Archivo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/Guardar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/Imagen2_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/Lote.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/LotesMunicion.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/LotesMunicion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/Nuevo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/Palet_35545.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/Userx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/VerRegistro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/atras.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/atras_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/ayuda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/blue2-1686530_960_720 (1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/blue2-1686530_960_720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/cajaMuni32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/caja_municion_grande.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/cargar_excel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/document_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/document_48_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/documento.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/escudo esart.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/estadistica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/estadistica1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/estadistica2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/estadistica3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/excel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/excel_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/fomato.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/formeto_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/logo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/municion1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/municion_caja1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/imagen/xRoja.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/jcommon-1.0.23.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/jfreechart-1.0.19-demo.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/jfreechart-1.0.19-experimental.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/jfreechart-1.0.19-swt.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/jfreechart-1.0.19.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/jfreesvg-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/junit-4.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/orsoncharts-1.4-eval-nofx.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/orsonpdf-1.6-eval.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/servlet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/administrarMunicion/librerias/swtgraphics2d.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/back/excel/GraficarUnidades$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/back/excel/GraficarUnidades$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/back/excel/GraficarUnidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/back/excel/GraficarUnidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/back/PruebaDelete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/back/excel/GraficarUnidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/back/excel/GraficarUnidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/back/AgregaNombreSimologiaPorDefecto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/back/AgregaNombreSimologiaPorDefecto.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +137,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/license/development.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/administrarMunicion/librerias/swtgraphics2d.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src\administrarMunicion" />
+      <recent name="C:\Users\oscar\GitHub\Vulcano2.0\src" />
       <recent name="C:\Users\oscar\OneDrive\Escritorio\VulcanoCAFUE" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
