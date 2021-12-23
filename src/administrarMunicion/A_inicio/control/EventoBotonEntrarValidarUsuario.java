@@ -17,6 +17,7 @@ public class EventoBotonEntrarValidarUsuario implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         ValidarUsuario validarUsuario = new ValidarUsuario();
         validarUsuario.ValidarUsuario(usuario.getText(), clave.getText());
     }
