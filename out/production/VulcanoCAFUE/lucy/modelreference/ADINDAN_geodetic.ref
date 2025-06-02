@@ -1,3 +1,0 @@
-ILcdModelReference.class = com.luciad.lucy.addons.modelreference.TLcyGeodeticReference
-TLcdGeodeticReference.geodeticDatum.ILcdGeodeticDatumFactory.class = com.luciad.geodesy.TLcdNIMA8350GeodeticDatumFactory
-TLcdGeodeticReference.geodeticDatum.TLcdNIMA8350GeodeticDatumFactory.geodeticDatumName = ADINDAN

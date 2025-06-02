@@ -1,4 +1,0 @@
-#Wed Jul 19 17:08:30 CEST 2006
-TLcdGeodeticReference.geodeticDatum.TLcdNIMA8350GeodeticDatumFactory.geodeticDatumName=WGS_1984
-ILcdModelReference.class=com.luciad.reference.TLcdGeodeticReference
-TLcdGeodeticReference.geodeticDatum.ILcdGeodeticDatumFactory.class=com.luciad.geodesy.TLcdNIMA8350GeodeticDatumFactory
