@@ -5,16 +5,16 @@
       <artifact name="VulcanoCAFUE:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e95d5-d42b-4a18-9150-d610cfdb5d5b" name="Default Changelist" comment="Primer commit Master">
-      <change afterPath="$PROJECT_DIR$/src/com/company/front/globo/AsignaGloboElementosVista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/front/globo/Seleccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/front/globo/mensaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VulcanoCAFUE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/VulcanoCAFUE_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/VulcanoCAFUE_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/batik_anim_1_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/activation_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lightspeed.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VulcanoCAFUE/com/company/front/ToolBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/front/ToolBar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +37,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1p83ODGRGiIhR0Rvn2mc8rPvjkF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/license/development.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DataRepositorySampleMain.executor": "Run",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\oscar\OneDrive\Escritorio\VulcanoCAFUE" />
@@ -130,7 +132,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit Master" />

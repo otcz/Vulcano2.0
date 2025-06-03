@@ -103,29 +103,11 @@ To give Ant more memory using command line tool:
       </configuration>
 
       <configuration dir="${project.dir}/">
-       <include name="build/proguard/luciadlightspeed.pro"/>
-        <!--  <include name="build/proguard/lucy_end_user.pro"/>-->
+        <include name="build/proguard/luciadlightspeed.pro"/>
       </configuration>
-     <!-- <configuration dir="${project.dir}/">
-        <include name="build/proguard/lucy_end_user.pro"/>
-      </configuration>
--->
-      <configuration file="build/proguard/myconfig.pro"/>
 
-      <injar>
-        <fileset dir="${project.dir}/out/artifacts/VulcanoCAFUE_jar">
-          <selector refid="luciad_jars"/>
-        </fileset>
-      </injar>
-      <outjar dir="${distribution.dir}/out/artifacts/VulcanoCAFUE_jar"/>
-
-      <injar>
-        <file name="${project.dir}/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar"/>
-        <!--<fileset dir="${project.dir}/out/artifacts/ColombianArmy_jar">-->
-        <!--<filename name="${project.dir}/out/artifacts/ColombianArmy_jar/ColombianArmy.jar"/>-->
-        <!--</fileset>-->
-      </injar>
-      <outjar dir="${distribution.dir}/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar"/>
+      <injar name="${project.dir}/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE.jar"/>
+      <outjar name="${distribution.dir}/out/artifacts/VulcanoCAFUE_jar/VulcanoCAFUE-obfuscated.jar"/>
 
       <libraryjar>
         <fileset dir="${project.dir}/out/artifacts/VulcanoCAFUE_jar" includes="*.jar">
