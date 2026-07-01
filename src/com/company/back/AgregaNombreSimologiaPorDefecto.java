@@ -12,7 +12,6 @@ import com.luciad.symbology.app6a.model.ILcdAPP6ACoded;
 import com.luciad.symbology.app6a.model.TLcdEditableAPP6AObject;
 import com.luciad.symbology.milstd2525b.model.ILcdMS2525bCoded;
 import com.luciad.symbology.milstd2525b.model.TLcdEditableMS2525bObject;
-import javafx.beans.binding.ObjectExpression;
 
 import java.util.Calendar;
 import java.util.Enumeration;
